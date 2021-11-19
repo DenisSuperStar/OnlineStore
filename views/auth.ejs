@@ -1,0 +1,33 @@
+<%- include("partials/metadata") %>
+    <body>
+        <main>
+            <%- include("partials/menu") %>
+            <div class="container">
+                <form action="/user/auth" method="post">
+                    <div class="mb-3">
+                        <label for="formControlName" class="form-label">Имя пользователя</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="formControlName" 
+                            placeholder="Введите имя пользователя" 
+                            name="name"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="formControlPassword" class="form-label">Ваш пароль</label>
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            id="formControlPassword" 
+                            placeholder="Введите пароль пользователя" 
+                            name="password"
+                            autocomplete="off"
+                        >
+                    </div>
+                </form>
+            </div>
+        </main> 
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<%- include("partials/metadata") %>
+    <body>
+        <main>
+            <%- include("partials/menu") %>
+            <div class="container">
+                <form action="" enctype="multipart/form-data" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="itName">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="size">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="stuff">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="price">
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" name="item">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-light" value="Добавить товар">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
