@@ -1,17 +1,9 @@
 [
     {
-        "_id": 1,
-        "login": "user1",
-        "password": "password1"
-    },
-    {
-        "_id": 2,
-        "login": "user2",
-        "password": "password2"
-    },
-    {
-        "_id": 3,
-        "login": "user3",
-        "password": "password3"
+        "password": "$2b$10$43kwUN.gsYBo6OBPHIJTReCI5xRUlR/jmc3dQk1..kOzWTg4SN/2y",
+        "_id": "34665639-d85c-4a24-a175-af83aca4c99d",
+        "firstName": "Денис",
+        "lastName": "Шклярский",
+        "nickName": "Денисик"
     }
 ]

@@ -3,24 +3,56 @@
         <main>
             <%- include("partials/menu") %>
             <div class="container">
-                <form action="" enctype="multipart/form-data" method="post">
+                <form enctype="multipart/form-data" method="post">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="itName">
+                        <label class="form-label" for="formControlItemName">Наименование товара</label>
+                        <textarea 
+                            class="form-control" 
+                            id="formControlItemname" 
+                            placeholder="Введите название товаара" 
+                            name="itemName"
+                        >
+                        </textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="size">
+                        <label class="form-label" for="formControlSize">Размер</label>
+                        <textarea 
+                            class="form-control" 
+                            id="formControlSize" 
+                            placeholder="Укажите размер" 
+                            name="size"
+                        >
+                        </textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="stuff">
+                        <label class="form-label" for="formControlStuff">Название материала</label>
+                        <textarea 
+                            class="form-control" 
+                            id="formControlStuff" 
+                            placeholder="Укажите материал" 
+                            name="stuff"
+                        >
+                        </textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="price">
+                        <label class="form-label" for="formControlPrice">Цена товара</label>
+                        <textarea 
+                            class="form-control" 
+                            id="formControlPrice" 
+                            placeholder="Укажите цену" 
+                            name="price"
+                        >
+                        </textarea>
                     </div>
                     <div class="mb-3">
                         <input type="file" name="item">
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-light" value="Добавить товар">
+                        <input 
+                            type="submit" 
+                            class="btn btn-light" 
+                            value="Добавить"
+                        >
                     </div>
                 </form>
             </div>

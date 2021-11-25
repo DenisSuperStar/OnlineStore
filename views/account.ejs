@@ -3,7 +3,7 @@
         <main>
             <%- include("partials/menu") %>
             <div class="container">
-                <form action="/user/account" method="post">
+                <form method="post">
                     <div class="mb-3">
                         <label for="formControlFirstName" class="form-label">Имя</label>
                         <input 
@@ -27,14 +27,32 @@
                         >
                     </div>
                     <div class="mb-3">
+                        <label for="formControlNickName" class="form-label">Ник</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="formControlNickName" 
+                            placeholder="Ваше имя на сайте"
+                            name="nickName"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="mb-3">
                         <label for="formControlPassword" class="form-label">Пароль</label>
                         <input 
                             type="password" 
                             class="form-control" 
                             id="formControlPassword" 
-                            placeholder="Придумайте пароль" 
+                            placeholder="Введите ваш пароль" 
                             name="password"
                             autocomplete="off"
+                        > 
+                    </div>
+                    <div class="mb-3">
+                        <input 
+                            type="submit" 
+                            class="btn btn-light" 
+                            value="Зарегистрироваться"
                         >
                     </div>
                 </form>
