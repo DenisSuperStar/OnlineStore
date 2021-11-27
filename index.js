@@ -8,7 +8,7 @@ const { v4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const salt = 10;
 const fs = require('fs');
-const usersFilePath = './service/users.json';
+const userFilePath = './service/users.json';
 const itemFilePath = './service/items.json';
 
 app.set('views', './views');
@@ -28,18 +28,18 @@ app.get('/user/account', (req, res) => {
   });
 });
 
+const readUserFileToPromise = (dirFile) => {
+  return new Promise((res, rej) => {
+    fs.readFile(dirFile, 'utf-8', (err, data) => {
+      if (err) rej(err);
+      else res(data);
+    });
+  });
+}
+
 app.post('/user/account', async (req, res) => {
   const { body } = req;
   const { firstName, lastName, nickName, password } = JSON.parse(JSON.stringify(body));
-
-  const readUsersFileToPromise = (dirFile) => {
-    return new Promise((res, rej) => {
-      fs.readFile(dirFile, 'utf-8', (err, data) => {
-        if (err) rej(err);
-        else res(data);
-      });
-    });
-  }
 
   if (
     !firstName || !lastName  ||
@@ -51,7 +51,7 @@ app.post('/user/account', async (req, res) => {
   await bcrypt.hash(password, salt)
     .then(hash => user.password = hash);
   
-  readUsersFileToPromise(usersFilePath)
+  readUserFileToPromise(userFilePath)
     .then(result => {
       const users = JSON.parse(result);
       let userExist;
@@ -69,7 +69,7 @@ app.post('/user/account', async (req, res) => {
         users.push(user);
 
         const convertUsersToFile = JSON.stringify(users, null, 4);
-        fs.writeFileSync(usersFilePath, convertUsersToFile);
+        fs.writeFileSync(userFilePath, convertUsersToFile);
 
         res.redirect('/user/auth');
       } else {
@@ -84,52 +84,57 @@ app.get('/user/auth', (req, res) => {
   });
 });
 
+const getUserData = (dataUser, userNick) => {
+  const users = JSON.parse(dataUser);
+  const searchedUser;
+
+  users.forEach(user => {
+    if (userNick == user.nickName) {
+      searchedUser = user.nickName;
+    }
+  });
+
+  return { userNick: searchedUser, users }
+}
+
+const getMatchPassword = (userInfo, selfPassword) => {
+  const { userNick, users } = userInfo;
+  let matchPassword;
+
+  users.forEach(user => {
+    if (userNick == user.nickName) {
+      matchPassword = bcrypt.compare(selfPassword, user.password);
+    }
+  });
+
+  return matchPassword;
+}
+
 app.post('/user/auth', (req, res) => {
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
-  const readUsersFileToPromise = (dirFile) => {
-    return new Promise((res, rej) => {
-      fs.readFile(dirFile, 'utf-8', (err, data) => {
-        if (err) rej(err);
-        else res(data);
-      });
-    });
-  }
-
   if (!nickName || !password) return res.redirect('/user/auth');
 
-  readUsersFileToPromise(usersFilePath)
-    .then(result => {
-      const users = JSON.parse(result);
-      let userExist = [];
-      
-      users.forEach(user => {
-        if (nickName == user.nickName) {
-          userExist.push(user.nickName);
-        }
-      });
-
-      if (userExist[0]) {
-        let matchPassword;
-
-        users.forEach(user => {
-          if (userExist[0] == user.nickName) {
-            matchPassword = bcrypt.compare(password, user.password);
-          }
-        });
-
-        return matchPassword;
-      } else {
-        return res.redirect('/user/account');
-      }
+  readUserFileToPromise(userFilePath)
+    .then(fileToUsers => {
+      return getUserData(fileToUsers, nickName);
     })
-    .then(matchPassword => {
-      matchPassword ? res.redirect('/item') : ""; 
+    .then(dataUser => {
+      return getMatchPassword(dataUser, password);
+    })
+    .then(equalPassword => {
+      if (equalPassword) {
+        const userId = v4();
+
+        res.redirect(`/item/${userId}`);
+      } else {
+        res.redirect('/user/account');
+      }
     });
 });
 
-app.get('/item', (req, res) => {
+app.get('/item/:uId', (req, res) => {
   res.render('home', {
     title: 'Каталог товаров.'
   });
@@ -141,53 +146,22 @@ app.get('/item/upload/confirm', (req, res) => {
   });
 });
 
+
 app.post('/item/upload/confirm', (req, res) => {
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
-  const readUsersFileToPromise = (dirFile) => {
-    return new Promise((res, rej) => {
-      fs.readFile(dirFile, 'utf-8', (err, data) => {
-        if (err) rej(err);
-        else res(data);
-      });
-    });
-  }
-
   if (!nickName || !password) return res.redirect('/item/upload/confirm');
 
-  readUsersFileToPromise(usersFilePath)
-    .then(result => {
-      const users = JSON.parse(result);
-      const findUser = [];
-
-      users.forEach(user => {
-        if (nickName == user.nickName) {
-          findUser.push(user.nickName);
-        }
-      });
-
-      return {
-        currentUser: findUser[0],
-        users
-      }
+  readUserFileToPromise(userFilePath)
+    .then(fileToUsers => {
+      return getUserData(fileToUsers, nickName);
     })
-    .then(data => {
-      const { currentUser, users } = data;
-      const userCheckPassword = [];
-      let comparePassword;
-
-      users.forEach(user => {
-        if (currentUser == user.nickName) {
-          comparePassword = bcrypt.compare(password, user.password);
-          userCheckPassword.push(comparePassword);
-        }
-      })
-
-      return userCheckPassword;
+    .then(dataUser => {
+      return getMatchPassword(dataUser, password);
     })
-    .then(checkPassword => {
-      if (checkPassword[0]) {
+    .then(equalPassword => {
+      if (equalPassword) {
         const userId = v4();
 
         res.redirect(`/item/upload/${userId}`);
@@ -218,52 +192,20 @@ app.post('/item/delete/confirm', (req, res) => {
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
-  const readUsersFileToPromise = (dirFile) => {
-    return new Promise((res, rej) => {
-      fs.readFile(dirFile, 'utf-8', (err, data) => {
-        if (err) rej(err);
-        else res(data);
-      });
-    });
-  }
-
   if (!nickName || !password) return res.redirect('/item/delete/confirm');
 
-  readUsersFileToPromise(usersFilePath)
-    .then(result => {
-      const users = JSON.parse(result);
-      const searchUser = [];
-
-      users.forEach(user => {
-        if (nickName == user.nickName) {
-          searchUser.push(user.nickName);
-        }
-      });
-
-      return {
-        selfUser: searchUser[0],
-        users
-      }
+  readUserFileToPromise(userFilePath)
+    .then(fileToUsers => {
+      return getUserData(fileToUsers, nickName);
     })
-    .then(data => {
-      const { selfUser, users } = data;
-      const matchPassword = [];
-      let comparePassword;
-
-      users.forEach(user => {
-        if (selfUser == user.nickName) {
-          comparePassword = bcrypt.compare(password, user.password);
-          matchPassword.push(comparePassword);
-        }
-      });
-
-      return matchPassword;
+    .then(dataUser => {
+      return getMatchPassword(dataUser, password);
     })
-    .then(matchPassword => {
-      if (matchPassword[0]) {
+    .then(equalPassword => {
+      if (equalPassword) {
         const userId = v4();
 
-        res.redirect(`/item/upload/${userId}`);
+        res.redirect(`/item/delete/${userId}`);
       } else {
         res.redirect('/item/delete/confirm');
       }
