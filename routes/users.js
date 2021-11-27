@@ -1,23 +1,15 @@
 const { Router } = require('express');
 const user = Router();
 
+const { renderAccount } = require('../controllers/users/renderAccountFormController.js');
+const { processAccount } = require('../controllers/users/processUserAccountDataController.js');
+const { renderAuth } = require('../controllers/users/renderAuthFormController.js');
+const { processAuth } = require('../controllers/users/processAuthDataController');
 
+user.get('/account', renderAccount);
+user.post('/account', processAccount);
 
-/*user.get('/account', userAccount);
+user.get('/auth', renderAuth);
+user.post('/auth', processAuth);
 
-user.post('/account', account);
-
-user.get('/auth', userAuth);
-
-user.post('/auth', auth);
-
-module.exports = {
-    users: user
-}*/
-
-user.get('/account', userAccount);
-user.post('/account', account);
-
-module.exports = {
-    users: user
-}
+module.exports = user;
