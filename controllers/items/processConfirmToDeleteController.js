@@ -1,8 +1,6 @@
 const { v4 } = require('uuid');
 const path = require('path');
 const userFilePath = path.join(__dirname, '../../service/users.json');
-console.log('Путь из confirm to delete');
-console.log(userFilePath);
 const { readUserFileToPromise } = require('../../config/readUserFile.js');
 const { getUserData } = require('../../config/userData.js');
 const { getMatchPassword } = require('../../config/matchPassword.js');
