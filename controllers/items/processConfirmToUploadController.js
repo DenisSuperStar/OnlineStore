@@ -1,23 +1,11 @@
-const fs = require('fs');
 const { v4 } = require('uuid');
-const bcrypt = require('bcrypt');
-const userFilePath = '../../service/users.json';
+const path = require('path');
+const userFilePath = path.join(__dirname, '../../service/users.json');
+console.log('path from confirm to upload');
+console.log(userFilePath);
 const { readUserFileToPromise } = require('../../config/readUserFile.js');
 const { getUserData } = require('../../config/userData.js');
-const {  } = require('../../config/matchPassword.js');
-  
-const getMatchPassword = (userInfo, selfPassword) => {
-    const { userNick, users } = userInfo;
-    let matchPassword;
-
-    users.forEach(user => {
-        if (userNick == user.nickName) {
-            matchPassword = bcrypt.compare(selfPassword, user.password);
-        }
-    });
-
-    return matchPassword;
-}
+const { getMatchPassword } = require('../../config/matchPassword.js');
 
 module.exports.processConfirmToUpload = (req, res) => {
     const { body } = req;

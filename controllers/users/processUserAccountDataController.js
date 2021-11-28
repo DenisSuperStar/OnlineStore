@@ -1,17 +1,9 @@
-const fs = require('fs');
+const path = require('path');
 const { v4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const salt = 10;
-const userFilePath = '../../service/users.json';
-
-const readUserFileToPromise = (dirFile) => {
-    return new Promise((res, rej) => {
-        fs.readFile(dirFile, 'utf-8', (err, data) => {
-            if (err) rej(err);
-            else res(data);
-        });
-    });
-}
+const userFilePath = path.join(__dirname, '../../service/users.json');
+const { readUserFileToPromise } = require('../../config/readUserFile');
 
 module.exports.processAccount = async (req, res) => {
     const { body } = req;
@@ -47,9 +39,9 @@ module.exports.processAccount = async (req, res) => {
                 const convertUsersToFile = JSON.stringify(users, null, 4);
                 fs.writeFileSync(userFilePath, convertUsersToFile);
 
-                res.redirect('/user/auth');
+                res.redirect(`/item/${user._id}`);
             } else {
-                res.redirect('/user/account');
+                res.redirect('/user/auth');
             } 
         });
 }
