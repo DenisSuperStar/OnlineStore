@@ -19,26 +19,6 @@ app.get('/', (req, res) => {
   res.redirect('/user/account');
 });
 
-
-app.get('/item/upload/:uId', (req, res) => {
-  res.render('upload', {
-    title: 'Добавление нового товара.'
-  });
-});
-
-app.post('/item/upload/:uId', upload.single('item'), (req, res) => {
-  // загрузка товара
-  console.log(req.file, req.body);
-});
-
-app.get('/item/delete/:uId', (req, res) => {
-  res.send('Page of item delete!');
-});
-
-app.post('/item/delete/:uId', (req, res) => {
-  console.log(body);
-});
-
 app.listen(PORT, () => {
   console.log(`Server listens on ${PORT}`);
 });
