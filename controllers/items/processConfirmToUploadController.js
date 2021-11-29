@@ -1,7 +1,7 @@
 const { v4 } = require('uuid');
 const path = require('path');
 const userFilePath = path.join(__dirname, '../../service/users.json');
-const { readUserFileToPromise } = require('../../config/readUserFile.js');
+const { readFileToPromise } = require('../../config/toPromise.js');
 const { getUserData } = require('../../config/userData.js');
 const { getMatchPassword } = require('../../config/matchPassword.js');
 
@@ -11,7 +11,7 @@ module.exports.processConfirmToUpload = (req, res) => {
 
     if (!nickName || !password) return res.redirect('/item/upload/confirm');
 
-    readUserFileToPromise(userFilePath)
+    readFileToPromise(userFilePath)
         .then(fileToUsers => {
             return getUserData(fileToUsers, nickName);
         })
