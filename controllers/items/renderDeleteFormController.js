@@ -9,7 +9,7 @@ module.exports.renderDelete = (req, res) => {
     readFileToPromise(itemFilePath)
         .then(itemData => {
             const items = JSON.parse(itemData);
-            const item = items.find(item => item.id == id);
+            const item = items.find(item => item._id == id);
 
             res.render('delete', {
                 title: 'Удаление товара.',
