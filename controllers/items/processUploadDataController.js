@@ -1,0 +1,29 @@
+const fs = require('fs');
+const path = require('path');
+const { v4 } = require('uuid');
+const itemFilePath = path.join(__dirname, '../../service/items.json');
+const { readFileToPromise } = require('../../config/toPromise');
+
+module.exports.processUpload = (req, res) => {
+    const { body } = req;
+    const { itemName, size, stuff, price } = JSON.parse(JSON.stringify(body));
+
+    if (!itemName || !size) return res.redirect('/item/upload');
+
+    readFileToPromise(itemFilePath)
+        .then(fileToItems => {
+            const items = JSON.parse(fileToItems);
+            const item = new Object();
+
+            item._id = v4();
+            item.name = itemName;
+            item.size = size;
+            item.stuff = stuff;
+            item.price = price;
+
+            items.push(item);
+
+            const convertItemsToFile = JSON.stringify(items, null, 4);
+            fs.writeFileSync(itemFilePath, convertItemsToFile);
+        });
+}
