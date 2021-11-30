@@ -1,6 +1,6 @@
 const path = require('path');
 const itemFilePath = path.join(__dirname, '../../service/items.json');
-const { readFileToPromise } = require('../../config/toPromise');
+const { readFileToPromise } = require('../../config/toPromise.js');
 
 
 module.exports.renderDelete = (req, res) => {
