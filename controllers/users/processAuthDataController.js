@@ -1,9 +1,9 @@
 const path = require('path');
 const { v4 } = require('uuid');
 const userFilePath = path.join(__dirname, '../../service/users.json');
-const { readFileToPromise } = require('../../config/toPromise.js');
-const { getUserData } = require('../../config/userData.js');
-const { getMatchPassword } = require('../../config/matchPassword.js');
+const { readFileToPromise } = require('../../config/toPromise');
+const { getUserData } = require('../../config/userData');
+const { getMatchPassword } = require('../../config/matchPassword');
 
 module.exports.processAuth = (req, res) => {
     const { body } = req;

@@ -1,6 +1,6 @@
 const path = require('path');
 const itemFilePath = path.join(__dirname, '../../service/items.json');
-const { readFileToPromise } = require('../../config/toPromise.js');
+const { readFileToPromise } = require('../../config/toPromise');
 
 module.exports.renderAttach = (req, res) => {
     const { id } = req.params;

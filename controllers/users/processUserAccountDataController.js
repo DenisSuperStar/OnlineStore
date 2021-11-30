@@ -3,7 +3,7 @@ const { v4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const salt = 10;
 const userFilePath = path.join(__dirname, '../../service/users.json');
-const { readFileToPromise } = require('../../config/toPromise.js');
+const { readFileToPromise } = require('../../config/toPromise');
 
 module.exports.processAccount = async (req, res) => {
     const { body } = req;
