@@ -5,11 +5,15 @@ const itemFilePath = path.join(__dirname, '../../service/items.json');
 const { readFileToPromise } = require('../../config/toPromise');
 
 module.exports.processUpload = (req, res) => {
-    const { body } = req;
+    const { params, body } = req;
+    const { id } = params;
     const { itemName, size, stuff, price } = JSON.parse(JSON.stringify(body));
-
-    if (!itemName || !size) return res.redirect('/item/upload');
-
+    
+    if (
+        !itemName || !size ||
+        !stuff || !price
+    ) return res.redirect('/item/upload');
+    
     readFileToPromise(itemFilePath)
         .then(fileToItems => {
             const items = JSON.parse(fileToItems);
@@ -25,5 +29,7 @@ module.exports.processUpload = (req, res) => {
 
             const convertItemsToFile = JSON.stringify(items, null, 4);
             fs.writeFileSync(itemFilePath, convertItemsToFile);
+
+            res.redirect(`/item/upload/${id}`);
         });
 }
