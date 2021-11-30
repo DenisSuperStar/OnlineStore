@@ -1,0 +1,65 @@
+<%- include("partials/metadata") %>
+    <body>
+        <main>
+            <%- include("partials/menu") %>
+            <div class="container">
+                <form enctype="multipart/form-data" method="post">
+                    <input type="hidden" value="" name="itemId">
+                    <div class="mb-3">
+                        <label class="form-label" for="formControlItemName">Наименование товара</label>
+                        <textarea
+                            class="form-control"
+                            id="formControlItemName"
+                            placeholder="Введите название товаара"
+                            name="itemName"
+                            disabled
+                        >
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="formControlSize">Размер</label>
+                        <textarea
+                            class="form-control"
+                            id="formControlSize"
+                            placeholder="Укажите размер"
+                            name="size"
+                            disabled
+                        >
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="formControlStuff">Название материала</label>
+                        <textarea
+                            class="form-control"
+                            id="formControlStuff"
+                            placeholder="Укажите материал"
+                            name="stuff"
+                            disabled
+                        >
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-control" for="formControlPrice">Цена товара</label>
+                        <textarea
+                            class="form-control"
+                            id="formControlPrice"
+                            placeholder="Укажите цену"
+                            name="price"
+                            disabled
+                        >
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" name="attachFile">
+                    </div>
+                    <div class="mb-3">
+                        <input 
+                            type="submit" 
+                            class="btn btn-light" 
+                            value="Прикрепить файл"
+                        >
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
