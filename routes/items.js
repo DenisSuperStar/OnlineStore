@@ -9,14 +9,17 @@ const { renderUpload } = require('../controllers/items/renderUploadFormControlle
 const { processUpload } = require('../controllers/items/processUploadDataController.js');
 const { renderDelete } = require('../controllers/items/renderDeleteFormController.js');
 const { processDelete } = require('../controllers/items/processDeleteDataController.js');
+const { renderAttach } = require('../controllers/items/renderAttachFormController.js');
 
 item.get('/:uId', renderCatalog);
 
 item.get('/upload/confirm', renderConfirm);
 item.post('/upload/confirm', processConfirmToUpload);
 
-item.get('/upload/:uId', renderUpload);
-item.post('/upload/:uId', processUpload);
+item.get('/upload/:uId/:id', renderUpload);
+item.post('/upload/:uId/:id', processUpload);
+
+item.get('/upload/:id', renderAttach);
 
 item.get('/delete/confirm', renderConfirm);
 item.post('/delete/confirm', processConfirmToDelete);
