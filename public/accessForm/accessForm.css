@@ -1,0 +1,37 @@
+.cm-access-form {
+    width: 396px;
+    padding: 10px 0 24px;
+    margin-top: 40px;
+}
+
+.cm-access-form__input-box,
+.cm-access-form__login-btn-box {
+    padding: 0 16px;
+}
+
+.cm-access-form__input-text {
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.cm-access-form__login-btn {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 20px;
+}
+
+.cm-access-form__underline {
+    border-bottom: 1px solid #dadde1;
+    margin: 20px 16px;
+}
+
+.cm-access-form__input-box--centered {
+    display: flex;
+    justify-content: center;
+}
+
+.cm-access-form__submit-btn {
+    width: 232px;
+    padding: 14px 16px;
+    font-size: 17px;
+}
