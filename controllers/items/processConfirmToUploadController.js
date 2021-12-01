@@ -5,11 +5,11 @@ const { readFileToPromise } = require('../../config/toPromise');
 const { getUserData } = require('../../config/userData');
 const { getMatchPassword } = require('../../config/matchPassword');
 
-module.exports.processConfirmToUpload = (req, res) => {
+module.exports.processConfirmToScope = (req, res) => {
     const { body } = req;
     const { nickName, password } = JSON.parse(JSON.stringify(body));
 
-    if (!nickName || !password) return res.redirect('/item/upload/confirm');
+    if (!nickName || !password) return res.redirect('/item/scope/confirm');
 
     readFileToPromise(userFilePath)
         .then(fileToUsers => {
@@ -22,9 +22,9 @@ module.exports.processConfirmToUpload = (req, res) => {
             if (equalPassword) {
                 const userId = v4();
 
-                res.redirect(`/item/upload/${userId}`);
+                res.redirect(`/item/scope/${userId}`);
             } else {
-                res.redirect('/item/upload/confirm');
+                res.redirect('/item/scope/confirm');
             }
         });
 }

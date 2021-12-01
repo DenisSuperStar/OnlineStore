@@ -4,14 +4,14 @@ const { v4 } = require('uuid');
 const itemFilePath = path.join(__dirname, '../../service/items.json');
 const { readFileToPromise } = require('../../config/toPromise');
 
-module.exports.processUpload = (req, res) => {
+module.exports.processScope = (req, res) => {
     const { body } = req;
     const { itemName, size, stuff, price } = JSON.parse(JSON.stringify(body));
 
     if (
         !itemName || !size ||
         !stuff || !price
-    ) return res.redirect('/item/upload');
+    ) return res.redirect(`/item/scope/${req.params.uId}`);
 
     readFileToPromise(itemFilePath)
         .then(fileToItems => {
@@ -29,6 +29,6 @@ module.exports.processUpload = (req, res) => {
             const convertItemsToFile = JSON.stringify(items, null, 4);
             fs.writeFileSync(itemFilePath, convertItemsToFile);
 
-            res.redirect(`/item/upload/${item._id}`);
+            res.redirect(`/item/scope/${item._id}`);
         });
 }
