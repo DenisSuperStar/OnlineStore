@@ -4,22 +4,14 @@
             <div class="container cm-page-body__grid-container">
                 <div class="row cm-page-body__grid-base">
                     <div class="col-4 cm-page-body__jumbotron-box">
-                        <div class="cm-jumbotron">
-                            <div class="alert alert-light cm-jumbotron__title-box">
-                                <div class="alert-heading fs-1 fw-bold text-primary cm-jumbotron__title">Платки</div>
-                            </div>
-                            <h2 class="alert alert-light text-break cm-jumbotron__text">
-                                Большой выбор женских платков по специальным ценам
-                            </h2>
-                        </div>
+                        <%- include("partials/jumbotron") %>
                     </div>
                     <div class="col-6 cm-page-body__access-form-box">
                         <form method="post" class="shadow rounded cm-access-form">
                             <div class="mb-3 cm-access-form__input-box">
                                 <input 
                                     type="text" 
-                                    class="form-control cm-access-form__input-text" 
-                                    id="formControlFirstName" 
+                                    class="form-control cm-access-form__input-text"
                                     placeholder="Введите ваше имя" 
                                     name="firstName"
                                     autocomplete="off"
@@ -28,8 +20,7 @@
                             <div class="mb-3 cm-access-form__input-box">
                                 <input 
                                     type="text" 
-                                    class="form-control cm-access-form__input-text" 
-                                    id="formControlLastName" 
+                                    class="form-control cm-access-form__input-text"
                                     placeholder="Введите вашу фамилию" 
                                     name="lastName"
                                     autocomplete="off"
@@ -39,7 +30,6 @@
                                 <input 
                                     type="text" 
                                     class="form-control cm-access-form__input-text" 
-                                    id="formControlNickName" 
                                     placeholder="Ваше имя на сайте"
                                     name="nickName"
                                     autocomplete="off"
@@ -49,7 +39,6 @@
                                 <input 
                                     type="password" 
                                     class="form-control cm-access-form__input-text" 
-                                    id="formControlPassword" 
                                     placeholder="Введите ваш пароль" 
                                     name="password"
                                     autocomplete="off"
