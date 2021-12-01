@@ -1,9 +1,15 @@
 <%- include("partials/metadata") %>
-    <body>
-        <main>
-            <%- include("partials/menu") %>
-            <div class="container">
-                <%- include("partials/actionForm") %>
+    <body class="cm-page-body">
+        <main class="cm-page-body__content-page">
+            <div class="container cm-page-body__grid-container">
+                <div class="row">
+                    <div class="col-4">
+                        <%- include("partials/jumbotron") %>
+                    </div>
+                    <div class="col-6">
+                        <%- include("partials/actionForm") %>
+                    </div>
+                </div>  
             </div>
         </main> 
     </body>
