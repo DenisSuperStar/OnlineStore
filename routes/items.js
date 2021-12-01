@@ -16,8 +16,8 @@ item.get('/:uId', renderCatalog);
 item.get('/upload/confirm', renderConfirm);
 item.post('/upload/confirm', processConfirmToUpload);
 
-item.get('/upload/:uId/:id', renderUpload);
-item.post('/upload/:uId/:id', processUpload);
+item.get('/upload/:uId/', renderUpload);
+item.post('/upload/:uId/', processUpload);
 
 item.get('/upload/:id', renderAttach);
 
