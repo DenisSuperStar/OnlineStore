@@ -1,70 +1,74 @@
-<%- include("partials/metadata") %>
-    <body class="cm-page-body">
-        <main class="cm-page-body__content-page">
-            <div class="container cm-page-body__grid-container">
-                <div class="row cm-page-body__grid-base">
-                    <div class="col-4 cm-page-body__jumbotron-box">
-                        <%- include('partials/jumbotron', {
-                            title: 'Платки',
-                            text: 'Большой выбор женских платков по специальным ценам'
-                        }) %>
-                    </div>
-                    <div class="col-6 cm-page-body__access-form-box">
-                        <form method="post" class="shadow rounded cm-access-form">
-                            <div class="mb-3 cm-access-form__input-box">
-                                <input 
-                                    type="text" 
-                                    class="form-control cm-access-form__input-text"
-                                    placeholder="Введите ваше имя" 
-                                    name="firstName"
-                                    autocomplete="off"
-                                >
-                            </div>
-                            <div class="mb-3 cm-access-form__input-box">
-                                <input 
-                                    type="text" 
-                                    class="form-control cm-access-form__input-text"
-                                    placeholder="Введите вашу фамилию" 
-                                    name="lastName"
-                                    autocomplete="off"
-                                >
-                            </div>
-                            <div class="mb-3 cm-access-form__input-box">
-                                <input 
-                                    type="text" 
-                                    class="form-control cm-access-form__input-text" 
-                                    placeholder="Ваше имя на сайте"
-                                    name="nickName"
-                                    autocomplete="off"
-                                >
-                            </div>
-                            <div class="mb-3 cm-access-form__input-box">
-                                <input 
-                                    type="password" 
-                                    class="form-control cm-access-form__input-text" 
-                                    placeholder="Введите ваш пароль" 
-                                    name="password"
-                                    autocomplete="off"
-                                > 
-                            </div>
-                            <div class="mb-3 cm-access-form__login-btn-box">
-                                <a 
-                                    class="btn btn-primary cm-access-form__login-btn" 
-                                    href="/user/auth"
-                                >Вход</a>
-                            </div>
-                            <div class="cm-access-form__underline"></div>
-                            <div class="cm-access-form__input-box cm-access-form__input-box--centered">
-                                <input 
-                                    type="submit" 
-                                    class="btn btn-success cm-access-form__submit-btn" 
-                                    value="Создать новый аккаунт"
-                                >
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </body>
+
+  <%- include("partials/metadata") %>
+  <body class="cm-page-body">
+    <main class="cm-page-body__content-page">
+      <div class="container cm-page-body__grid-container">
+        <div class="row cm-page-body__grid-base">
+          <div class="col-4 cm-page-body__jumbotron-box">
+            <%- include('partials/jumbotron', { title: 'Платки', text: 'Большой
+            выбор женских платков по специальным ценам' }) %>
+          </div>
+          <div class="col-6 cm-page-body__access-form-box">
+            <form method="post" class="shadow rounded cm-access-form">
+              <div class="mb-3 cm-access-form__input-box">
+                <input
+                  type="text"
+                  class="form-control cm-access-form__input-text"
+                  placeholder="Введите ваше имя"
+                  name="firstName"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <input
+                  type="text"
+                  class="form-control cm-access-form__input-text"
+                  placeholder="Введите вашу фамилию"
+                  name="lastName"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <input
+                  type="text"
+                  class="form-control cm-access-form__input-text"
+                  placeholder="Ваше имя на сайте"
+                  name="nickName"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <input
+                  type="password"
+                  class="form-control cm-access-form__input-text"
+                  placeholder="Введите ваш пароль"
+                  name="password"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="mb-3 cm-access-form__login-btn-box">
+                <a
+                  class="btn btn-primary cm-access-form__login-btn"
+                  href="/user/auth"
+                  >Вход</a
+                >
+              </div>
+              <div class="cm-access-form__underline"></div>
+              <div
+                class="
+                  cm-access-form__input-box cm-access-form__input-box--centered
+                "
+              >
+                <input
+                  type="submit"
+                  class="btn btn-success cm-access-form__submit-btn"
+                  value="Создать новый аккаунт"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

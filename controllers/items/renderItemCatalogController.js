@@ -1,5 +1,5 @@
 module.exports.renderCatalog = (req, res) => {
-    res.render('home', {
-        title: 'Каталог товаров.'
-    });
-}
+  res.render("home", {
+    title: "Каталог товаров.",
+  });
+};

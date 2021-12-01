@@ -1,0 +1,126 @@
+
+  <%- include("partials/metadata") %>
+  <body>
+    <main class="container">
+      <div class="p-md-5 mb-4 text-white rounded bg-primary">
+        <div class="col-md-6">
+          <h1 class="text-break">Управление товарами</h1>
+          <p class="lead my-3 text-break">
+            В данном разделе вы можете управлять своими товарами, добавлять и
+            удалять товары.
+          </p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <div class="row g-0 border rounded mb-4 shadow-sm">
+            <div class="col p-4">
+              <h3 class="mb-0 text-break">Featured post</h3>
+              <p class="card-text mb-auto text-break">
+                This is a wider card width supporting text below as a natural
+                lead-in to additional content.
+              </p>
+            </div>
+            <div class="col-auto">
+              <!-- -->
+              <svg
+                class="bd-placeholder-img"
+                width="200"
+                height="250"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c"></rect>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row g-0 border rounded mb-4 shadow-sm">
+            <div class="col p-4">
+              <h3 class="mb-0 text-break">Post title</h3>
+              <p class="card-text mb-auto text-break">
+                This is a wider card width supporting text below as a natural
+                lead-in to additional content.
+              </p>
+            </div>
+            <div class="col-auto">
+              <!-- -->
+              <svg
+                class="bd-placeholder-img"
+                width="200"
+                height="250"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c"></rect>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="col-4 cm-page-body__jumbotron-box">
+            <%- include('partials/jumbotron', { title: 'Загрузить товар', text:
+            'Начните добавлять товары прямо сейчас!' }) %>
+          </div>
+        </div>
+        <div class="col-6">
+          <form method="post">
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Введите название товаара"
+                name="itemName"
+              >
+              </textarea>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Укажите размер"
+                name="size"
+              >
+              </textarea>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Укажите материал"
+                name="stuff"
+              >
+              </textarea>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Укажите цену"
+                name="price"
+              >
+              </textarea>
+            </div>
+            <div class="mb-3">
+              <input type="submit" class="btn btn-light" value="Добавить" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="blog-footer">
+      <p class="lead text-break">
+        Разработано специально для распродажи женских платочков
+      </p>
+    </footer>
+  </body>
+</html>

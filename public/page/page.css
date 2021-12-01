@@ -1,13 +1,13 @@
 .cm-page-body__grid-container {
-    padding-top: 72px;
-    padding-bottom: 112px;
+  padding-top: 72px;
+  padding-bottom: 112px;
 }
 
 .cm-page-body__jumbotron-box {
-    padding: 112px 0 16px;
+  padding: 112px 0 16px;
 }
 
 .cm-page-body__access-form-box {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }

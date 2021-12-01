@@ -1,19 +1,18 @@
-<%- include("partials/metadata") %>
-    <body class="cm-page-body">
-        <main class="cm-page-body__content-page">
-            <div class="container cm-page-body__grid-container">
-                <div class="row cm-page-body__grid-base">
-                    <div class="col-4 cm-page-body__jumbotron-box">
-                        <%- include('partials/jumbotron', {
-                            title: 'Подтверждение личности',
-                            text: 'В целях защиты необходимо подтвердить вашу личность'
-                        }) %>
-                    </div>
-                    <div class="col-6 cm-page-body__access-form-box">
-                        <%- include('partials/actionForm') %>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </body>
+
+  <%- include("partials/metadata") %>
+  <body class="cm-page-body">
+    <main class="cm-page-body__content-page">
+      <div class="container cm-page-body__grid-container">
+        <div class="row cm-page-body__grid-base">
+          <div class="col-4 cm-page-body__jumbotron-box">
+            <%- include('partials/jumbotron', { title: 'Подтверждение личности',
+            text: 'В целях защиты необходимо подтвердить вашу личность' }) %>
+          </div>
+          <div class="col-6 cm-page-body__access-form-box">
+            <%- include('partials/actionForm') %>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
