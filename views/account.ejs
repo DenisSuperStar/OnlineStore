@@ -1,61 +1,77 @@
 <%- include("partials/metadata") %>
-    <body>
-        <main>
-            <%- include("partials/menu") %>
-            <div class="container">
-                <form method="post">
-                    <div class="mb-3">
-                        <label for="formControlFirstName" class="form-label">Имя</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="formControlFirstName" 
-                            placeholder="Введите ваше имя" 
-                            name="firstName"
-                            autocomplete="off"
-                        >
+    <body class="cm-page-body">
+        <main class="cm-page-body__content-page">
+            <div class="container cm-page-body__grid-container">
+                <div class="row cm-page-body__grid-base">
+                    <div class="col-4 cm-page-body__jumbotron-box">
+                        <div class="cm-jumbotron">
+                            <div class="alert alert-light cm-jumbotron__title-box">
+                                <div class="alert-heading fs-1 fw-bold text-primary cm-jumbotron__title">Платки</div>
+                            </div>
+                            <h2 class="alert alert-light text-break cm-jumbotron__text">
+                                Большой выбор женских платков по специальным ценам
+                            </h2>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="formControlLastName" class="form-label">Фамилия</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="formControlLastName" 
-                            placeholder="Введите вашу фамилию" 
-                            name="lastName"
-                            autocomplete="off"
-                        >
+                    <div class="col-6 cm-page-body__access-form-box">
+                        <form method="post" class="shadow rounded cm-access-form">
+                            <div class="mb-3 cm-access-form__input-box">
+                                <input 
+                                    type="text" 
+                                    class="form-control cm-access-form__input-text" 
+                                    id="formControlFirstName" 
+                                    placeholder="Введите ваше имя" 
+                                    name="firstName"
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <div class="mb-3 cm-access-form__input-box">
+                                <input 
+                                    type="text" 
+                                    class="form-control cm-access-form__input-text" 
+                                    id="formControlLastName" 
+                                    placeholder="Введите вашу фамилию" 
+                                    name="lastName"
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <div class="mb-3 cm-access-form__input-box">
+                                <input 
+                                    type="text" 
+                                    class="form-control cm-access-form__input-text" 
+                                    id="formControlNickName" 
+                                    placeholder="Ваше имя на сайте"
+                                    name="nickName"
+                                    autocomplete="off"
+                                >
+                            </div>
+                            <div class="mb-3 cm-access-form__input-box">
+                                <input 
+                                    type="password" 
+                                    class="form-control cm-access-form__input-text" 
+                                    id="formControlPassword" 
+                                    placeholder="Введите ваш пароль" 
+                                    name="password"
+                                    autocomplete="off"
+                                > 
+                            </div>
+                            <div class="mb-3 cm-access-form__login-btn-box">
+                                <a 
+                                    class="btn btn-primary cm-access-form__login-btn" 
+                                    href="/user/auth"
+                                >Вход</a>
+                            </div>
+                            <div class="cm-access-form__underline"></div>
+                            <div class="cm-access-form__input-box cm-access-form__input-box--centered">
+                                <input 
+                                    type="submit" 
+                                    class="btn btn-success cm-access-form__submit-btn" 
+                                    value="Создать новый аккаунт"
+                                >
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="formControlNickName" class="form-label">Ник</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="formControlNickName" 
-                            placeholder="Ваше имя на сайте"
-                            name="nickName"
-                            autocomplete="off"
-                        >
-                    </div>
-                    <div class="mb-3">
-                        <label for="formControlPassword" class="form-label">Пароль</label>
-                        <input 
-                            type="password" 
-                            class="form-control" 
-                            id="formControlPassword" 
-                            placeholder="Введите ваш пароль" 
-                            name="password"
-                            autocomplete="off"
-                        > 
-                    </div>
-                    <div class="mb-3">
-                        <input 
-                            type="submit" 
-                            class="btn btn-light" 
-                            value="Зарегистрироваться"
-                        >
-                    </div>
-                </form>
+                </div>
             </div>
         </main>
     </body>
