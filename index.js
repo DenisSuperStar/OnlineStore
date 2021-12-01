@@ -17,9 +17,12 @@ const app = express();
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(upload.single('attachFile'));
+app.use(express.static(__dirname + '/public'));
+
 app.use('/user', user);
 app.use('/item', item);
 
