@@ -1,31 +1,28 @@
-<form method="post">
-    <div class="mb-3">
-        <label for="formControlName" class="form-label">Ник</label>
+<form method="post" class="shadow rounded cm-access-form">
+    <div class="mb-3 cm-access-form__input-box">
         <input 
             type="text" 
-            class="form-control" 
-            id="formControlName" 
+            class="form-control cm-access-form__input-text"
             placeholder="Ваше имя на сайте" 
             name="nickName"
             autocomplete="off"
         >
     </div>
-    <div class="mb-3">
-        <label for="formControlPassword" class="form-label">Ваш пароль</label>
+    <div class="mb-3 cm-access-form__input-box">
         <input 
             type="password" 
-            class="form-control" 
-            id="formControlPassword" 
+            class="form-control cm-access-form__input-text"
             placeholder="Введите пароль пользователя" 
             name="password"
             autocomplete="off"
         >
     </div>
-    <div class="mb-3">
+    <div class="cm-access-form__underline"></div>
+    <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
         <input 
             type="submit" 
-            class="btn btn-light" 
-            value="Войти"
+            class="btn btn-success cm-access-form__submit-btn" 
+            value="Подтвердить"
         >
     </div>
 </form>
