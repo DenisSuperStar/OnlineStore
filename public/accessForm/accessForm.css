@@ -35,3 +35,5 @@
     padding: 14px 16px;
     font-size: 17px;
 }
+
+.cm-access-form__submit-btn--full-size { width: 100%; }
