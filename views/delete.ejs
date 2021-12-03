@@ -1,61 +1,35 @@
 <%- include("partials/metadata") %>
-<body>
-  <main>
-    <%- include("partials/menu") %>
-    <div class="container">
-      <form method="post">
-        <div class="mb-3">
-          <label class="form-label" for="showItemName"
-            >Наименование товара</label
-          >
-          <textarea
-            class="form-control"
-            id="showItemName"
-            placeholder="Введите название товаара"
-            name="itemName"
-            disabled
-          >
+
+  <body>
+    <main>
+      <%- include("partials/menu") %>
+        <div class="container">
+          <form method="post">
+            <div class="mb-3">
+              <label class="form-label" for="showItemName">Наименование товара</label>
+              <textarea class="form-control" id="showItemName" placeholder="Введите название товаара" name="itemName"
+                disabled>
           </textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="showControlSize">Размер</label>
-          <textarea
-            class="form-control"
-            id="showControlSize"
-            placeholder="Укажите размер"
-            name="size"
-            disabled
-          >
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="showControlSize">Размер</label>
+              <textarea class="form-control" id="showControlSize" placeholder="Укажите размер" name="size" disabled>
           </textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="showControlStuff"
-            >Название материала</label
-          >
-          <textarea
-            class="form-control"
-            id="showControlStuff"
-            placeholder="Укажите материал"
-            name="stuff"
-            disabled
-          >
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="showControlStuff">Название материала</label>
+              <textarea class="form-control" id="showControlStuff" placeholder="Укажите материал" name="stuff" disabled>
           </textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="showControlPrice">Цена товара</label>
-          <textarea
-            class="form-control"
-            id="showControlPrice"
-            placeholder="Укажите цену"
-            name="price"
-            disabled
-          >
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="showControlPrice">Цена товара</label>
+              <textarea class="form-control" id="showControlPrice" placeholder="Укажите цену" name="price" disabled>
           </textarea>
+            </div>
+            <div class="mb-3">
+              <input type="submit" class="btn btn-light" value="Добавить" />
+            </div>
+          </form>
         </div>
-        <div class="mb-3">
-          <input type="submit" class="btn btn-light" value="Добавить" />
-        </div>
-      </form>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
