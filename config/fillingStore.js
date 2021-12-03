@@ -1,0 +1,1 @@
+module.exports.storeFill = (item) => item ? 1 : 0;
