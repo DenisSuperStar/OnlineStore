@@ -1,7 +1,7 @@
 
   <%- include("partials/metadata") %>
-  <body>
-    <main class="container">
+  <body class="cm-page-body">
+    <main class="container cm-page-body__grid-container">
       <div class="p-md-5 mb-4 text-white rounded bg-primary">
         <div class="col-md-6">
           <h1 class="text-break">Управление товарами</h1>
@@ -70,50 +70,50 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4">
-          <div class="col-4 cm-page-body__jumbotron-box">
+        <div class="col-5">
+          <div class="cm-page-body__jumbotron-box">
             <%- include('partials/jumbotron', {
               title: 'Загрузить товар',
               text: 'Начните добавлять товары прямо сейчас!'
             }) %>
           </div>
         </div>
-        <div class="col-6">
-          <form method="post">
-            <div class="mb-3">
+        <div class="col-7 cm-page-body__access-form-box">
+          <form class="shadow rounded cm-access-form" method="post">
+            <div class="mb-3 cm-access-form__input-box">
               <textarea
-                class="form-control"
+                class="form-control cm-access-form__input-text"
                 placeholder="Введите название товаара"
                 name="itemName"
               >
               </textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 cm-access-form__input-box">
               <textarea
-                class="form-control"
+                class="form-control cm-access-form__input-text"
                 placeholder="Укажите размер"
                 name="size"
               >
               </textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 cm-access-form__input-box">
               <textarea
-                class="form-control"
+                class="form-control cm-access-form__input-text"
                 placeholder="Укажите материал"
                 name="stuff"
               >
               </textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 cm-access-form__input-box">
               <textarea
-                class="form-control"
+                class="form-control cm-access-form__input-text"
                 placeholder="Укажите цену"
                 name="price"
               >
               </textarea>
             </div>
-            <div class="mb-3">
-              <input type="submit" class="btn btn-light" value="Добавить" />
+            <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
+              <input type="submit" class="btn btn-primary cm-access-form__submit-btn cm-access-form__submit-btn--full-size" value="Добавить" />
             </div>
           </form>
         </div>
