@@ -25,7 +25,7 @@ module.exports.processScope = (req, res) => {
 
     const convertItemsToFile = JSON.stringify(items, null, 4);
     fs.writeFileSync(itemFilePath, convertItemsToFile);
-    
+
     res.redirect(`/item/upload/${req.params.uId}/${item._id}`);
   });
 };
