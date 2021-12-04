@@ -37,7 +37,7 @@ item.post("/scope/confirm", processConfirmToScope);
 item.get("/scope/:uId/", renderScope);
 item.post("/scope/:uId/", processScope);
 
-item.get("/scope/:id", renderAttach);
+item.get("/upload/:uId/:id", renderAttach);
 
 item.get("/delete/confirm", renderConfirm);
 item.post("/delete/confirm", processConfirmToDelete);
