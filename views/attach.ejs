@@ -5,7 +5,7 @@
       <%- include("partials/menu") %>
         <div class="container">
           <form action="/attach" enctype="multipart/form-data" method="post">
-            <input type="hidden" value="" name="itemId" />
+            <input type="hidden" value="<%=selfItem._id %>" name="itemId" />
             <div class="mb-3">
               <label class="form-label" for="formControlItemName">Наименование товара</label>
               <textarea class="form-control" id="formControlItemName" placeholder="Введите название товаара"
