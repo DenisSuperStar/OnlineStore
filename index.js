@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(multerConfig);
 app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + "/uploads"));
 
 app.use("/user", user);
 app.use("/item", item);
