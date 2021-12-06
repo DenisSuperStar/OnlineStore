@@ -1,4 +1,4 @@
-<% if(id) {%>
+<% if(confirm) {%>
   <form action="/item/delete/confirm" method="post" class="shadow rounded cm-access-form">
     <% }else {%>
       <form method="post" class="shadow rounded cm-access-form">
@@ -11,10 +11,10 @@
             <input type="password" class="form-control cm-access-form__input-text"
               placeholder="Введите пароль пользователя" name="password" autocomplete="off" />
           </div>
-          <% if(id) {%>
+          <% if(confirm) {%>
             <div class="mb-3 cm-access-form__input-box">
-              <input type="text" readonly class="form-control cm-access-form__input-text" value="<%=id %>"
-                name="itemId">
+              <input type="text" class="form-control cm-access-form__input-text" value="<%=keyCode %>" name="itemId"
+                readonly>
             </div>
             <div class="mb-3 cm-access-form__input-box">
               <input type="text" class="form-control cm-access-form__input-text" placeholder="Введите код подтверждения"
