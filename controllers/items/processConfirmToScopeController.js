@@ -1,9 +1,10 @@
 const { v4 } = require("uuid");
 const path = require("path");
-const userFilePath = path.join(__dirname, "../../service/users.json");
 const { readFileToPromise } = require("../../config/toPromise");
 const { getUserData } = require("../../config/userData");
 const { getMatchPassword } = require("../../config/matchPassword");
+
+const userFilePath = path.join(__dirname, "../../service/users.json");
 
 module.exports.processConfirmToScope = (req, res) => {
   const { body } = req;
