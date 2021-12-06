@@ -12,8 +12,6 @@ module.exports.processDeleteToConfirm = (req, res) => {
 
     if (itemId) {
       res.redirect(`/item/delete/confirm/${itemId}`);
-    } else {
-      /* 404 */
     }
   });
 };
