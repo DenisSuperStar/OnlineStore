@@ -1,15 +1,20 @@
-const { v4 } = require("uuid");
 const path = require("path");
-const userFilePath = path.join(__dirname, "../../service/users.json");
+const fs = require("fs");
 const { readFileToPromise } = require("../../config/toPromise");
 const { getUserData } = require("../../config/userData");
 const { getMatchPassword } = require("../../config/matchPassword");
 
+const userFilePath = path.join(__dirname, "../../service/users.json");
+const itemFilePath = path.join(__dirname, "../../service/items.json");
+
 module.exports.processConfirmToDelete = (req, res) => {
   const { body } = req;
-  const { nickName, password } = JSON.parse(JSON.stringify(body));
+  const { nickName, password, itemId, confirmCode } = JSON.parse(
+    JSON.stringify(body)
+  );
 
-  if (!nickName || !password) return res.redirect("/item/delete/confirm");
+  if (!nickName || !password)
+    return res.redirect(`/item/delete/confirm/${itemId}`);
 
   readFileToPromise(userFilePath)
     .then((fileToUsers) => {
@@ -20,11 +25,28 @@ module.exports.processConfirmToDelete = (req, res) => {
     })
     .then((equalPassword) => {
       if (equalPassword) {
-        const userId = v4();
+        const matchCodes = itemId.localeCompare(confirmCode);
 
-        res.redirect(`/item/delete/${userId}`);
+        return matchCodes;
       } else {
-        res.redirect("/item/delete/confirm");
+        return -1;
+      }
+    })
+    .then((dataConfirm) => {
+      if (dataConfirm == 0) {
+        readFileToPromise(itemFilePath).then((allItems) => {
+          const items = JSON.parse(allItems);
+          const item = items.find((item) => item._id == itemId);
+
+          const newItems = items.filter((anyItem) => anyItem._id != item._id);
+          const convertNewItems = JSON.stringify(newItems, null, 4);
+
+          fs.writeFileSync(itemFilePath, convertNewItems);
+        });
+
+        res.redirect("/user/account");
+      } else {
+        res.redirect(`/item/delete/confirm/${itemId}`);
       }
     });
 };
