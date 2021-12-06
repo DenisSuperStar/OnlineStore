@@ -1,17 +1,33 @@
-<form method="post" class="shadow rounded cm-access-form">
-  <div class="mb-3 cm-access-form__input-box">
-    <input type="text" class="form-control cm-access-form__input-text" placeholder="Ваше имя на сайте" name="nickName"
-      autocomplete="off" />
-  </div>
-  <div class="mb-3 cm-access-form__input-box">
-    <input type="password" class="form-control cm-access-form__input-text" placeholder="Введите пароль пользователя"
-      name="password" autocomplete="off" />
-  </div>
-  <div class="cm-access-form__underline"></div>
-  <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
-    <input type="submit" class="
-        btn btn-primary
-        cm-access-form__submit-btn cm-access-form__submit-btn--full-size
-      " value="Подтвердить" />
-  </div>
-</form>
+<% if(id) {%>
+  <form action="/item/delete/confirm" method="post" class="shadow rounded cm-access-form">
+    <% }else {%>
+      <form method="post" class="shadow rounded cm-access-form">
+        <%} %>
+          <div class="mb-3 cm-access-form__input-box">
+            <input type="text" class="form-control cm-access-form__input-text" placeholder="Ваше имя на сайте"
+              name="nickName" autocomplete="off" />
+          </div>
+          <div class="mb-3 cm-access-form__input-box">
+            <input type="password" class="form-control cm-access-form__input-text"
+              placeholder="Введите пароль пользователя" name="password" autocomplete="off" />
+          </div>
+          <% if(id) {%>
+            <div class="mb-3 cm-access-form__input-box">
+              <input type="text" readonly class="form-control cm-access-form__input-text" value="<%=id %>"
+                name="itemId">
+            </div>
+            <div class="mb-3 cm-access-form__input-box">
+              <input type="text" class="form-control cm-access-form__input-text" placeholder="Введите код подтверждения"
+                name="confirmCode" autocomplete="off">
+            </div>
+            <%} %>
+              <div class="cm-access-form__underline"></div>
+              <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
+                <input type="submit" class="
+                  btn 
+                  btn-primary 
+                  cm-access-form__submit-btn 
+                  cm-access-form__submit-btn--full-size
+                " value="Подтвердить" />
+              </div>
+      </form>
