@@ -1,5 +1,14 @@
 module.exports.renderConfirm = (req, res) => {
-  res.render("confirm", {
-    title: "Подтверждение учетной записи.",
-  });
+  const { id } = req.params;
+
+  if (id) {
+    res.render("confirm", {
+      title: "Подтверждение учетной записи.",
+      id,
+    });
+  } else {
+    res.render("confirm", {
+      title: "Подтверждение учетной записи.",
+    });
+  }
 };
