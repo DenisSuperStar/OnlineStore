@@ -14,22 +14,25 @@
         </div>
       </div>
       <div class="row">
-        <% if(isItemSome) {%>
-          <% for(let j=0; j<items.length;j++) {%>
+        <% if(isSomeItem) {%>
+          <% for(let j=0; j<someItems.length;j++) {%>
             <div class="col-3 cm-page-body__card-box">
               <div class="card cm-card-item" style="width: 300px;">
                 <div class="cm-card-item__img-box" style="display: flex; justify-content: center;">
-                  <img src="<%=items[j].imgPath %>" alt="Платочек">
+                  <img class="card-img-top" src="<%=someItems[j].imgPath %>" alt="Платочек">
                 </div>
                 <div class="card-body cm-card-item__card-body">
                   <p class="card-text text-break cm-card-item__item-price">
-                    <%=items[j].price %>
+                    <%=someItems[j].price %>
+                  </p>
+                  <p class="card-text text-break cm-card-item__item-size">
+                    <%=someItems[j].size %>
                   </p>
                   <h5 class="card-title text-break cm-card-item__item-name">
-                    <%=items[j].name %>
+                    <%=someItems[j].name %>
                   </h5>
-                  <a href="/item/detail/<%=items[j]._id %>"
-                    class="btn btn-success cm-card-item__description-link">Подробнее</a>
+                  <a href="/item/delete/<%=someItems[j]._id %>"
+                    class="btn btn-outline-warning text-break cm-card-item__description-link">Удалить</a>
                 </div>
               </div>
             </div>
