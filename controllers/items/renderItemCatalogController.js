@@ -1,18 +1,12 @@
-const path = require('path');
-const itemFilePath = path.join(__dirname, '../../service/items.json');
-const { readFileToPromise } = require('../../config/toPromise');
-const { storeFill } = require('../../config/fillingStore');
+const path = require("path");
+const { readFileToPromise } = require("../../config/toPromise");
+const { storeFill } = require("../../config/fillingStore");
+const { showItemCatalog } = require("../../config/showCatalog");
+
+const itemFilePath = path.join(__dirname, "../../service/items.json");
 
 module.exports.renderCatalog = (req, res) => {
-  readFileToPromise(itemFilePath)
-    .then(fileToItems => {
-      const items = JSON.parse(fileToItems);
-      const isItemSome = items.some(storeFill);
-
-      res.render('home', {
-        title: 'Каталог товаров',
-        items,
-        isItemSome 
-      });
-    });
+  readFileToPromise(itemFilePath).then((fileToItems) => {
+    showItemCatalog(res, fileToItems, storeFill, "home", "Каталог товаров.");
+  });
 };
