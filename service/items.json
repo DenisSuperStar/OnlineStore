@@ -62,5 +62,29 @@
         "stuff": "100% шелк",
         "price": "1200",
         "imgPath": "../../persianplatok-resized.jpg"
+    },
+    {
+        "_id": "5c00e0b4-fa3b-4d8b-8deb-a284c52989f0",
+        "name": "Платок буйство красок",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../muchcolors-resized.jpg"
+    },
+    {
+        "_id": "cb1ed2c2-fc64-4e6e-9032-478fc9b71e31",
+        "name": "Пурпурно-бирюзовый арабский платок",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../purpleTurquoise-resized.jpg"
+    },
+    {
+        "_id": "8326a1b2-3d4d-411c-b4c2-681c45a83c38",
+        "name": "Бирюзовый платок с васильками",
+        "size": "90x90",
+        "stuff": "100% iшелк",
+        "price": "1200",
+        "imgPath": "../../turquoiseMuchFlowers-resized.jpg"
     }
 ]
