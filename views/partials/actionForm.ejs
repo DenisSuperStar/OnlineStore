@@ -4,21 +4,30 @@
       <form method="post" class="shadow rounded cm-access-form">
         <%} %>
           <div class="mb-3 cm-access-form__input-box">
-            <input type="text" class="form-control cm-access-form__input-text" placeholder="Ваше имя на сайте"
-              name="nickName" autocomplete="off" />
+            <div class="form-floating">
+              <input type="text" class="form-control cm-access-form__input-text" id="nickName" name="nickName" autocomplete="off" />
+              <label for="nickName">Ваше имя на сайте</label>
+            </div>
           </div>
           <div class="mb-3 cm-access-form__input-box">
-            <input type="password" class="form-control cm-access-form__input-text"
-              placeholder="Введите пароль пользователя" name="password" autocomplete="off" />
+            <div class="form-floating">
+              <input type="password" class="form-control cm-access-form__input-text" id="password" name="password" autocomplete="off" />
+              <label for="password">Введите пароль пользователя</label>
+            </div>
           </div>
           <% if(confirm) {%>
             <div class="mb-3 cm-access-form__input-box">
-              <input type="text" class="form-control cm-access-form__input-text" value="<%=keyCode %>" name="itemId"
-                readonly>
+              <div class="form-floating">
+                <input type="text" class="form-control cm-access-form__input-text" id="confirmCode" name="itemId"
+                  disabled>
+                <label for="confirmCode"><%=keyCode %></label>
+              </div>
             </div>
             <div class="mb-3 cm-access-form__input-box">
-              <input type="text" class="form-control cm-access-form__input-text" placeholder="Введите код подтверждения"
-                name="confirmCode" autocomplete="off">
+              <div class="form-floating">
+                <input type="text" class="form-control cm-access-form__input-text" id="repeatConfirmCode" name="confirmCode" autocomplete="off">
+                <label for="repeatConfirmCode">Введите код подтверждения</label>
+              </div>
             </div>
             <%} %>
               <div class="cm-access-form__underline"></div>
