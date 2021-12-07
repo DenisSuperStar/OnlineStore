@@ -1,10 +1,10 @@
 [
     {
-        "_id": "8e7d81ec-9b35-4c95-9241-b07d1092fc09",
-        "name": "                Платок шелк\r\n              ",
-        "size": "               90x90\r\n              ",
-        "stuff": "                100% шелк\r\n              ",
-        "price": "               1200\r\n              ",
-        "imgPath": "../../platok.jpg"
+        "_id": "a1f9e846-ec29-45c0-8d35-6e815837e337",
+        "name": "Платок шелк",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../platok-resized.jpg"
     }
 ]
