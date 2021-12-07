@@ -1,10 +1,66 @@
 [
     {
-        "_id": "a1f9e846-ec29-45c0-8d35-6e815837e337",
-        "name": "Платок шелк",
+        "_id": "7eed7340-547f-492a-b03b-3ff077667d0a",
+        "name": "Фиолетовый платок с цветами",
         "size": "90x90",
         "stuff": "100% шелк",
         "price": "1200",
         "imgPath": "../../platok-resized.jpg"
+    },
+    {
+        "_id": "36891ac3-039b-4e39-a43f-ebdd2c57aaf6",
+        "name": "Небесно-голубой платок с цветами",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../pnature-resized.jpg"
+    },
+    {
+        "_id": "8d277c43-1f8c-4b6b-8309-8fe6ee52f62a",
+        "name": "Пурпурный платок с розами",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../rousespurple-resized.jpg"
+    },
+    {
+        "_id": "54d463e1-d04d-41b3-ad84-dfd262b572f2",
+        "name": "Оранжевый платок с розами",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../orangerouses-resized.jpg"
+    },
+    {
+        "_id": "72c2ad36-9783-47c0-88c2-c4621d21495d",
+        "name": "Леопадовый платок",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../lepplatok-resized.jpg"
+    },
+    {
+        "_id": "b35d37e3-013f-4841-81b5-d1e97a052f10",
+        "name": "Леопардовый платок с розами",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../leorousesplatok-resized.jpg"
+    },
+    {
+        "_id": "ea4737ff-3b5a-472a-a113-c4e776105299",
+        "name": "Яркий пурпурный платок",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../brightpurple-resized.jpg"
+    },
+    {
+        "_id": "ac400f78-5efc-45e9-9215-e4cf273921b4",
+        "name": "Платок в персидском стиле",
+        "size": "90x90",
+        "stuff": "100% шелк",
+        "price": "1200",
+        "imgPath": "../../persianplatok-resized.jpg"
     }
 ]
