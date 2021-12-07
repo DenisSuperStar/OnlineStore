@@ -1,12 +1,12 @@
 module.exports.getUserData = (dataUser, userNick) => {
-    const users = JSON.parse(dataUser);
-    let searchedUser;
+  const users = JSON.parse(dataUser);
+  let searchedUser;
 
-    users.forEach(user => {
-        if (userNick == user.nickName) {
-            searchedUser = user.nickName;
-        }
-    });
+  users.forEach((user) => {
+    if (userNick == user.nickName) {
+      searchedUser = user.nickName;
+    }
+  });
 
-    return { userNick: searchedUser, users }
-}
+  return { userNick: searchedUser, users };
+};
