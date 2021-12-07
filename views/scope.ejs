@@ -17,22 +17,33 @@
         <% if(isSomeItem) {%>
           <% for(let j=0; j<someItems.length;j++) {%>
             <div class="col-3 cm-page-body__card-box">
-              <div class="card cm-card-item" style="width: 300px;">
-                <div class="cm-card-item__img-box" style="display: flex; justify-content: center;">
-                  <img class="card-img-top" src="<%=someItems[j].imgPath %>" alt="Платочек">
-                </div>
-                <div class="card-body cm-card-item__card-body">
-                  <p class="card-text text-break cm-card-item__item-price">
-                    <%=someItems[j].price %>
-                  </p>
-                  <p class="card-text text-break cm-card-item__item-size">
-                    <%=someItems[j].size %>
-                  </p>
-                  <h5 class="card-title text-break cm-card-item__item-name">
-                    <%=someItems[j].name %>
-                  </h5>
-                  <a href="/item/delete/<%=someItems[j]._id %>"
-                    class="btn btn-outline-danger text-break cm-card-item__description-link">Удалить</a>
+              <div class="card cm-card-item">
+                <div class="container cm-card-item__item-box">
+                  <div class="row cm-card-item__item-grid">
+                    <div class="col-7 cm-card-item__img-place">
+                      <div class="pt-3 pb-3 cm-card-item__img-box">
+                        <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
+                          alt="Платочек">
+                      </div>
+                    </div>
+                    <div class="col-5 cm-card-item__item-data">
+                      <div class="card-body cm-card-item__card-body">
+                        <p class="card-text text-break text-dark cm-card-item__item-price">
+                          <%=someItems[j].price %>
+                        </p>
+                        <p class="card-text text-break text-secondary cm-card-item__item-size">
+                          <%=someItems[j].size %>
+                        </p>
+                        <h5 class="card-title text-break text-secondary cm-card-item__item-name">
+                          <%=someItems[j].name %>
+                        </h5>
+                        <a href="/item/delete/<%=someItems[j]._id %>"
+                          class="btn btn-outline-danger text-break cm-card-item__description-link">
+                          Удалить
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,29 +64,45 @@
         <div class="col-7 cm-page-body__access-form-box">
           <form class="shadow rounded cm-access-form" method="post">
             <div class="mb-3 cm-access-form__input-box">
-              <textarea class="form-control cm-access-form__input-text" name="itemName">
-                Введите название товара
-              </textarea>
+              <div class="form-floating">
+                <textarea class="form-control text-break cm-access-form__input-text" id="itemName" name="itemName">
+                </textarea>
+                <label class="text-break" for="itemName">Введите название товара</label>
+              </div>
             </div>
             <div class="mb-3 cm-access-form__input-box">
-              <textarea class="form-control cm-access-form__input-text" name="size">
-                Укажите размер
-              </textarea>
+              <div class="form-floating">
+                <textarea class="form-control text-break cm-access-form__input-text" id="size" name="size">
+                </textarea>
+                <label class="text-break" for="size">Укажите размер</label>
+              </div>
             </div>
             <div class="mb-3 cm-access-form__input-box">
-              <textarea class="form-control cm-access-form__input-text" name="stuff">
-                Укажите материал
-              </textarea>
+              <div class="form-floating">
+                <textarea class="form-control text-break cm-access-form__input-text" id="stuff" name="stuff">
+                </textarea>
+                <label class="text-break" for="stuff">Укажите материал</label>
+              </div>
             </div>
             <div class="mb-3 cm-access-form__input-box">
-              <textarea class="form-control cm-access-form__input-text" name="price">
-                Укажите цену
-              </textarea>
+              <div class="form-floating">
+                <textarea class="form-control text-break cm-access-form__input-text" id="price" name="price">
+                </textarea>
+                <label class="text-break" for="price">Укажите цену</label>
+              </div>
             </div>
             <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
-              <input type="submit"
-                class="btn btn-primary cm-access-form__submit-btn cm-access-form__submit-btn--full-size"
-                value="Добавить" />
+              <input 
+                type="submit"
+                class="
+                  btn
+                  btn-primary
+                  text-break
+                  cm-access-form__submit-btn
+                  cm-access-form__submit-btn--full-size
+                "
+                value="Добавить"
+              >
             </div>
           </form>
         </div>

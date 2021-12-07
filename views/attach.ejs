@@ -27,37 +27,41 @@
               <input type="hidden" value="<%=selfItem._id %>" name="itemId" />
               <div class="p-3 mt-3">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Введите название товаара" id="itemName" name="itemName" readonly>
+                  <textarea class="form-control text-break" id="itemName" name="itemName" readonly>
+                    <%=selfItem.name %>
                   </textarea>
-                  <label for="itemName"><%=selfItem.name %></label>
+                  <label class="text-break" for="itemName">Введите название товара</label>
                 </div>
               </div>
               <div class="p-3">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Укажите размер" id="size" name="size" readonly>
+                  <textarea class="form-control text-break" placeholder="Укажите размер" id="size" name="size" readonly>
+                    <%=selfItem.size %>
                   </textarea>
-                  <label for="size"><%=selfItem.size %></label>
+                  <label class="text-break" for="size">Укажите размер</label>
                 </div>
               </div>
               <div class="p-3">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Укажите материал" id="stuff" name="stuff" readonly>
+                  <textarea class="form-control text-break" id="stuff" name="stuff" readonly>
+                    <%=selfItem.stuff %>
                   </textarea>
-                  <label for="stuff"><%=selfItem.stuff %></label>
+                  <label class="text-break" for="stuff">Укажите материал</label>
                 </div>
               </div>
               <div class="p-3">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Укажите цену" id="price" name="price" readonly>
+                  <textarea class="form-control text-break" id="price" name="price" readonly>
+                    <%=selfItem.price %>
                   </textarea>
-                  <label for="price"><%=selfItem.price %></label>
+                  <label class="text-break" for="price">Укажите цену</label>
                 </div>
               </div>
               <div class="p-3">
                 <input type="file" class="form-control form-control-lg" name="attachFile" />
               </div>
               <div class="mb-3 p-3">
-                <input type="submit" class="btn btn-primary w-100 p-3" value="Прикрепить файл" />
+                <input type="submit" class="btn btn-primary w-100 p-3 text-break" value="Прикрепить файл" />
               </div>
             </form>
           </div>

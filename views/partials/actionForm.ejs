@@ -5,28 +5,28 @@
         <%} %>
           <div class="mb-3 cm-access-form__input-box">
             <div class="form-floating">
-              <input type="text" class="form-control cm-access-form__input-text" id="nickName" name="nickName" autocomplete="off" />
-              <label for="nickName">Ваше имя на сайте</label>
+              <input type="text" class="form-control text-break cm-access-form__input-text" id="nickName" name="nickName" autocomplete="off" />
+              <label class="text-break" for="nickName">Ваше имя на сайте</label>
             </div>
           </div>
           <div class="mb-3 cm-access-form__input-box">
             <div class="form-floating">
-              <input type="password" class="form-control cm-access-form__input-text" id="password" name="password" autocomplete="off" />
-              <label for="password">Введите пароль пользователя</label>
+              <input type="password" class="form-control text-break cm-access-form__input-text" id="password" name="password" autocomplete="off" />
+              <label class="text-break" for="password">Введите пароль пользователя</label>
             </div>
           </div>
           <% if(confirm) {%>
             <div class="mb-3 cm-access-form__input-box">
               <div class="form-floating">
-                <input type="text" class="form-control cm-access-form__input-text" id="confirmCode" name="itemId"
+                <input type="text" class="form-control text-break cm-access-form__input-text" id="confirmCode" name="itemId"
                   disabled>
-                <label for="confirmCode"><%=keyCode %></label>
+                <label class="text-break" for="confirmCode"><%=keyCode %></label>
               </div>
             </div>
             <div class="mb-3 cm-access-form__input-box">
               <div class="form-floating">
-                <input type="text" class="form-control cm-access-form__input-text" id="repeatConfirmCode" name="confirmCode" autocomplete="off">
-                <label for="repeatConfirmCode">Введите код подтверждения</label>
+                <input type="text" class="form-control text-break cm-access-form__input-text" id="repeatConfirmCode" name="confirmCode" autocomplete="off">
+                <label class="text-break" for="repeatConfirmCode">Введите код подтверждения</label>
               </div>
             </div>
             <%} %>
@@ -34,7 +34,8 @@
               <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
                 <input type="submit" class="
                   btn 
-                  btn-primary 
+                  btn-primary
+                  text-break 
                   cm-access-form__submit-btn 
                   cm-access-form__submit-btn--full-size
                 " value="Подтвердить" />
