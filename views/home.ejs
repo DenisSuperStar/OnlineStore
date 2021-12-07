@@ -3,11 +3,15 @@
   <body class="cm-page-body">
     <main class="cm-page-body__content-page">
       <%- include("partials/menu") %>
-        <div class="container cm-page-body__grid-container">
+        <div class="container-fluid cm-page-body__grid-container">
           <div class="row cm-page-body__grid-base">
             <% if(isSomeItem) {%>
               <% for(let j=0; j<someItems.length;j++) {%>
-                <div class="col-3 cm-page-body__card-box">
+                <% if(j > 3) {%>
+                  <div class="col-3 cm-page-body__card-box">
+                <% }else {%>
+                  <div class="col-3 cm-page-body__card-box mb-3">
+                <%} %>
                   <div class="card cm-card-item">
                     <div class="container cm-card-item__item-box">
                       <div class="row cm-card-item__item-grid">
