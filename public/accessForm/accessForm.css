@@ -12,6 +12,7 @@
 .cm-access-form__input-text {
   padding: 14px 16px;
   font-size: 17px;
+  resize: none;
 }
 
 .cm-access-form__login-btn {
