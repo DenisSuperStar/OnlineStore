@@ -10,7 +10,8 @@
 }
 
 .cm-access-form__input-text {
-  padding: 14px 16px;
+  height: 65px;
+  padding: 14px 16px !important;
   font-size: 17px;
   resize: none;
 }
