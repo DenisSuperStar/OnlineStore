@@ -19,6 +19,11 @@
   font-weight: 700;
 }
 
+.cm-card-item__item-price::after {
+  content: '\f158';
+  font-family: 'Font Awesome 5 Pro';
+}
+
 .cm-card-item__item-size {
   font-size: 12px;
 }
