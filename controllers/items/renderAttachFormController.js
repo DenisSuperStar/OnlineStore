@@ -1,13 +1,14 @@
-const path = require("path");
-const { validate } = require("uuid");
-const { ReasonPhrases } = require("http-status-codes");
+import path from "path";
+import { validate } from "uuid";
+import { ReasonPhrases } from "http-status-codes";
 
-const { readFileToPromise } = require("../../config/toPromise");
-const { findItem } = require("../../config/findItemById");
+import { readFileToPromise } from "../../functions/toPromise";
+import { findItem } from "../../functions/findItemById";
 
-const itemFilePath = path.join(__dirname, "../../service/items.json");
+const __dirname = path.resolve();
+const itemFilePath = path.join(__dirname, "/service/items.json");
 
-module.exports.renderAttach = (req, res) => {
+export const renderAttach = (req, res) => {
   const { uId, id } = req.params;
   const isUserId = validate(uId);
 
@@ -18,4 +19,4 @@ module.exports.renderAttach = (req, res) => {
   } else {
     res.send(ReasonPhrases.NOT_FOUND);
   }
-};
+}

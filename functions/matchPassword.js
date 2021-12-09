@@ -1,12 +1,12 @@
-const bcrypt = require("bcrypt");
+import { compare } from "bcrypt";
 
-module.exports.getMatchPassword = (userInfo, selfPassword) => {
+export const getMatchPassword = (userInfo, selfPassword) => {
   const { userNick, users } = userInfo;
   let matchPassword;
 
   users.forEach((user) => {
     if (userNick == user.nickName) {
-      matchPassword = bcrypt.compare(selfPassword, user.password);
+      matchPassword = compare(selfPassword, user.password);
     }
   });
 

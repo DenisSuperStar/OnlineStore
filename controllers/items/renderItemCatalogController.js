@@ -1,14 +1,15 @@
-const path = require("path");
-const { validate } = require("uuid");
-const { ReasonPhrases } = require("http-status-codes");
+import path from "path";
+import { validate } from "uuid";
+import { ReasonPhrases } from "http-status-codes";
 
-const { readFileToPromise } = require("../../config/toPromise");
-const { storeFill } = require("../../config/fillingStore");
-const { showItemCatalog } = require("../../config/showCatalog");
+import { readFileToPromise } from "../../functions/toPromise";
+import { storeFill } from "../../functions/fillingStore";
+import { showItemCatalog } from "../../functions/showCatalog";
 
-const itemFilePath = path.join(__dirname, "../../service/items.json");
+const __dirname = path.resolve();
+const itemFilePath = path.join(__dirname, "/service/items.json");
 
-module.exports.renderCatalog = (req, res) => {
+export const renderCatalog = (req, res) => {
   const { uId } = req.params;
   const isUserId = validate(uId);
 

@@ -1,37 +1,17 @@
-const { Router } = require("express");
+import { Router } from "express";
+
+import { processConfirmToDelete } from "../controllers/items/processConfirmToDeleteController";
+import { processConfirmToScope } from "../controllers/items/processConfirmToScopeController";
+import { processDeleteToConfirm } from "../controllers/items/processDeleteToConfirmController";
+import { processScope } from "../controllers/items/processScopeDataController";
+import { renderAttach } from "../controllers/items/renderAttachFormController";
+import { renderConfirm } from "../controllers/items/renderConfirmFormController";
+import { renderDelete } from "../controllers/items/renderDeleteFormController";
+import { renderCatalog } from "../controllers/items/renderItemCatalogController";
+import { renderScope } from "../controllers/items/renderScopeFormController";
+import { renderValidate } from "../controllers/items/renderValidateController";
+
 const item = Router();
-
-const {
-  renderCatalog,
-} = require("../controllers/items/renderItemCatalogController.js");
-const {
-  renderConfirm,
-} = require("../controllers/items/renderConfirmFormController.js");
-const {
-  processConfirmToScope,
-} = require("../controllers/items/processConfirmToScopeController.js");
-const {
-  processConfirmToDelete,
-} = require("../controllers/items/processConfirmToDeleteController.js");
-const {
-  renderScope,
-} = require("../controllers/items/renderScopeFormController.js");
-const {
-  processScope,
-} = require("../controllers/items/processScopeDataController.js");
-const {
-  renderDelete,
-} = require("../controllers/items/renderDeleteFormController.js");
-const {
-  processDeleteToConfirm,
-} = require("../controllers/items/processDeleteToConfirmController");
-const {
-  renderAttach,
-} = require("../controllers/items/renderAttachFormController.js");
-
-const {
-  renderValidate,
-} = require("../controllers/items/renderValidateController");
 
 item.get("/:uId", renderCatalog);
 
@@ -49,4 +29,4 @@ item.post("/delete/:id", processDeleteToConfirm);
 item.get("/delete/confirm/:id", renderValidate);
 item.post("/delete/confirm", processConfirmToDelete);
 
-module.exports = item;
+export default item;

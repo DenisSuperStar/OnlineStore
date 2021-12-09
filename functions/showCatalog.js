@@ -1,4 +1,4 @@
-module.exports.showItemCatalog = (
+export const showItemCatalog = (
   res,
   items,
   isItemFill,

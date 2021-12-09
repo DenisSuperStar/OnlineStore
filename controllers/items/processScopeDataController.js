@@ -1,10 +1,13 @@
-const fs = require("fs");
-const path = require("path");
-const { v4 } = require("uuid");
-const itemFilePath = path.join(__dirname, "../../service/items.json");
-const { readFileToPromise } = require("../../config/toPromise");
+import { writeFileSync } from "fs";
+import path from "path";
+import { v4 } from "uuid";
 
-module.exports.processScope = (req, res) => {
+import { readFileToPromise } from "../../functions/toPromise";
+
+const __dirname = path.resolve();
+const itemFilePath = path.join(__dirname, "/service/items.json");
+
+export const processScope = (req, res) => {
   const { body } = req;
   const { itemName, size, stuff, price } = JSON.parse(JSON.stringify(body));
 
@@ -24,7 +27,7 @@ module.exports.processScope = (req, res) => {
     items.push(item);
 
     const convertItemsToFile = JSON.stringify(items, null, 4);
-    fs.writeFileSync(itemFilePath, convertItemsToFile);
+    writeFileSync(itemFilePath, convertItemsToFile);
 
     res.redirect(`/item/upload/${req.params.uId}/${item._id}`);
   });

@@ -1,4 +1,4 @@
-module.exports.getUserData = (dataUser, userNick) => {
+export const getUserData = (dataUser, userNick) => {
   const users = JSON.parse(dataUser);
   let searchedUser;
 

@@ -1,9 +1,10 @@
-const path = require("path");
-const { readFileToPromise } = require("../../config/toPromise");
+import path from "path";
+import { readFileToPromise } from "../../functions/toPromise";
 
-const itemFilePath = path.join(__dirname, "../../service/items.json");
+const __dirname = path.resolve();
+const itemFilePath = path.join(__dirname, "/service/items.json");
 
-module.exports.processDeleteToConfirm = (req, res) => {
+export const processDeleteToConfirm = (req, res) => {
   const { id } = req.params;
 
   readFileToPromise(itemFilePath).then((fileToItems) => {

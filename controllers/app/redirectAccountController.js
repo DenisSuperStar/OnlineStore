@@ -1,3 +1,3 @@
-module.exports.redirectAccount = (req, res) => {
+export const redirectAccount = (req, res) => {
   res.redirect("/user/account");
 };

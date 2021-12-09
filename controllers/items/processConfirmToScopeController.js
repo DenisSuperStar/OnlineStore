@@ -1,12 +1,14 @@
-const { v4 } = require("uuid");
-const path = require("path");
-const { readFileToPromise } = require("../../config/toPromise");
-const { getUserData } = require("../../config/userData");
-const { getMatchPassword } = require("../../config/matchPassword");
+import { v4 } from "uuid";
+import path from "path";
 
-const userFilePath = path.join(__dirname, "../../service/users.json");
+import { readFileToPromise } from "../../functions/toPromise";
+import { getUserData } from "../../functions/userData";
+import { getMatchPassword } from "../../functions/matchPassword";
 
-module.exports.processConfirmToScope = (req, res) => {
+const __dirname = path.resolve();
+const userFilePath = path.join(__dirname, "/service/users.json");
+
+export const processConfirmToScope = (req, res) => {
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 

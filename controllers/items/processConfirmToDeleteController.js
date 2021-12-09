@@ -1,13 +1,15 @@
-const path = require("path");
-const fs = require("fs");
-const { readFileToPromise } = require("../../config/toPromise");
-const { getUserData } = require("../../config/userData");
-const { getMatchPassword } = require("../../config/matchPassword");
+import path from "path";
+import { writeFileSync } from "fs";
 
-const userFilePath = path.join(__dirname, "../../service/users.json");
-const itemFilePath = path.join(__dirname, "../../service/items.json");
+import { readFileToPromise } from "../../functions/toPromise";
+import { getUserData } from "../../functions/userData";
+import { getMatchPassword } from "../../functions/matchPassword";
 
-module.exports.processConfirmToDelete = (req, res) => {
+const __dirname = path.resolve();
+const userFilePath = path.join(__dirname, "/service/users.json");
+const itemFilePath = path.join(__dirname, "/service/items.json");
+
+export const processConfirmToDelete = (req, res) => {
   const { body } = req;
   const { nickName, password, itemId, confirmCode } = JSON.parse(
     JSON.stringify(body)
@@ -41,7 +43,7 @@ module.exports.processConfirmToDelete = (req, res) => {
           const newItems = items.filter((anyItem) => anyItem._id != item._id);
           const convertNewItems = JSON.stringify(newItems, null, 4);
 
-          fs.writeFileSync(itemFilePath, convertNewItems);
+          writeFileSync(itemFilePath, convertNewItems);
         });
 
         res.redirect("/user/account");

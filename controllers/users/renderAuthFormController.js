@@ -1,4 +1,4 @@
-module.exports.renderAuth = (req, res) => {
+export const renderAuth = (req, res) => {
   res.render("auth", {
     title: "Необходимо авторизоваться.",
   });

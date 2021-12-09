@@ -1,18 +1,11 @@
-const { Router } = require("express");
-const user = Router();
+import { Router } from "express";
 
-const {
-  renderAccount,
-} = require("../controllers/users/renderAccountFormController.js");
-const {
-  processAccount,
-} = require("../controllers/users/processUserAccountDataController.js");
-const {
-  renderAuth,
-} = require("../controllers/users/renderAuthFormController.js");
-const {
-  processAuth,
-} = require("../controllers/users/processAuthDataController");
+import { renderAccount } from "../controllers/users/renderAccountFormController";
+import { processAccount } from "../controllers/users/processUserAccountDataController";
+import { renderAuth } from "../controllers/users/renderAuthFormController";
+import { processAuth } from "../controllers/users/processAuthDataController";
+
+const user = Router();
 
 user.get("/account", renderAccount);
 user.post("/account", processAccount);
@@ -20,4 +13,4 @@ user.post("/account", processAccount);
 user.get("/auth", renderAuth);
 user.post("/auth", processAuth);
 
-module.exports = user;
+export default user;

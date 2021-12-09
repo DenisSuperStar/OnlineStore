@@ -1,10 +1,12 @@
-const path = require("path");
-const { readFileToPromise } = require("../../config/toPromise");
-const { findItem } = require("../../config/findItemById");
+import path from "path";
 
-const itemFilePath = path.join(__dirname, "../../service/items.json");
+import { readFileToPromise } from "../../functions/toPromise";
+import { findItem } from "../../functions/findItemById";
 
-module.exports.renderDelete = (req, res) => {
+const __dirname = path.resolve();
+const itemFilePath = path.join(__dirname, "/service/items.json");
+
+export const renderDelete = (req, res) => {
   const { id } = req.params;
 
   readFileToPromise(itemFilePath).then((itemData) => {

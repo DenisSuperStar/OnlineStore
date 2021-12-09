@@ -1,11 +1,13 @@
-const path = require("path");
-const fs = require("fs");
-const sharp = require("sharp");
-const { readFileToPromise } = require("../../config/toPromise");
+import path from "path";
+import { writeFileSync } from "fs";
+import sharp from "sharp";
 
+import { readFileToPromise } from "../../functions/toPromise";
+
+const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "../../service/items.json");
 
-module.exports.processAttach = (req, res) => {
+export const processAttach = (req, res) => {
   const { file, body } = req;
   const { itemId } = JSON.parse(JSON.stringify(body));
   const { mimetype } = file;
@@ -18,12 +20,12 @@ module.exports.processAttach = (req, res) => {
     const { name, ext } = path.parse(file.path);
 
     try {
-      sharp(path.join(__dirname, `/../../${file.path}`))
+      sharp(join(__dirname, `/../../${file.path}`))
         .resize({
           width: 200,
           height: 200,
         })
-        .toFile(path.join(__dirname, `../../resize/${name}-resized${ext}`));
+        .toFile(join(__dirname, `../../resize/${name}-resized${ext}`));
     } catch {
       res.send("Файл не загрузился, либо указан неверный путь!");
     }
@@ -35,7 +37,7 @@ module.exports.processAttach = (req, res) => {
       item.imgPath = `../../${name}-resized${ext}`;
 
       const convertItemsToFile = JSON.stringify(items, null, 4);
-      fs.writeFileSync(itemFilePath, convertItemsToFile);
+      writeFileSync(itemFilePath, convertItemsToFile);
     });
 
     res.redirect("/");
