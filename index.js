@@ -1,19 +1,19 @@
-const path = require("path");
-const express = require("express");
-const multer = require("multer");
+import path from "path";
+import express from "express";
+import multer from "multer";
 
-const user = require("./routes/users");
-const item = require("./routes/items");
+import user from "./routes/users";
+import item from "./routes/items";
 
-const { start } = require("./config/startServer");
-const { PORT } = require("./config/appConfig");
+import { start } from "./functions/startServer";
+import settings from "./config/appConfig";
 
-const {
-  redirectAccount,
-} = require("./controllers/app/redirectAccountController");
-const { processAttach } = require("./controllers/app/processAttachFile");
+import { redirectAccount } from "./controllers/app/redirectAccountController";
+import { processAttach } from "./controllers/app/processAttachFile";
 
-const { storage } = require("./config/storageConfig");
+import { storage } from "./functions/storageConfig";
+
+const __dirname = path.resolve();
 const multerConfig = multer({ storage }).single("attachFile");
 
 const app = express();
@@ -35,4 +35,4 @@ app.get("/", redirectAccount);
 
 app.post("/attach", processAttach);
 
-start(app, PORT);
+start(app, settings.PORT);
