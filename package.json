@@ -1,12 +1,13 @@
 {
   "name": "testlib",
   "version": "1.0.0",
+  "type": "module",
   "description": "check new functions of express framework",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node --experimental-modules --es-module-specifier-resolution=node index",
+    "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node index"
   },
   "author": "Den",
   "license": "ISC",
