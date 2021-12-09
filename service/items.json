@@ -86,5 +86,21 @@
         "stuff": "100% iшелк",
         "price": "1200",
         "imgPath": "../../turquoiseMuchFlowers-resized.jpg"
+    },
+    {
+        "_id": "e68a3db4-cb58-412a-b95f-9483f0a76a04",
+        "name": "Шарф небесный закат",
+        "size": "70x175",
+        "stuff": "100% шелк",
+        "price": "2500",
+        "imgPath": "../../skyundersun-resized.jpg"
+    },
+    {
+        "_id": "26b8cc92-804a-40d6-96ce-6a00d9829ca7",
+        "name": "Шарф буйство красок",
+        "size": "70x175",
+        "stuff": "100% шелк",
+        "price": "2500",
+        "imgPath": "../../skyandflowers-resized.jpg"
     }
 ]

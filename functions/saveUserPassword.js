@@ -10,7 +10,6 @@ export const savePassword = async (
 ) => {
   await bcrypt.hash(pass, mix).then((hash) => {
     let searchUser = userDb.find((user) => user._id == someUserId);
-    console.log(searchUser);
 
     searchUser.password = hash;
 
