@@ -12,22 +12,24 @@ export const processAuth = (req, res) => {
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
-  if (!nickName || !password) return res.redirect("/user/auth");
+  if (nickName && password) {
+    readFileToPromise(userFilePath)
+      .then((fileToUsers) => {
+        return getUserData(fileToUsers, nickName);
+      })
+      .then((dataUser) => {
+        return getMatchPassword(dataUser, password);
+      })
+      .then((equalPassword) => {
+        if (equalPassword) {
+          const uniqCode = v4();
 
-  readFileToPromise(userFilePath)
-    .then((fileToUsers) => {
-      return getUserData(fileToUsers, nickName);
-    })
-    .then((dataUser) => {
-      return getMatchPassword(dataUser, password);
-    })
-    .then((equalPassword) => {
-      if (equalPassword) {
-        const userId = v4();
-
-        res.redirect(`/item/${userId}`);
-      } else {
-        res.redirect("/user/account");
-      }
-    });
+          res.redirect(`/item/${uniqCode}`);
+        } else {
+          res.redirect("/user/account");
+        }
+      });
+  } else {
+    res.redirect("/user/account");
+  }
 };

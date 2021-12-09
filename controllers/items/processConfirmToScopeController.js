@@ -23,9 +23,9 @@ export const processConfirmToScope = (req, res) => {
     })
     .then((equalPassword) => {
       if (equalPassword) {
-        const userId = v4();
+        const uniqCode = v4();
 
-        res.redirect(`/item/scope/${userId}`);
+        res.redirect(`/item/scope/${uniqCode}`);
       } else {
         res.redirect("/item/scope/confirm");
       }

@@ -11,8 +11,9 @@ const itemFilePath = path.join(__dirname, "/service/items.json");
 export const renderAttach = (req, res) => {
   const { uId, id } = req.params;
   const isUserId = validate(uId);
+  const isId = (id && validate(id)) ? true : false;
 
-  if (isUserId) {
+  if (isUserId && isId) {
     readFileToPromise(itemFilePath).then((itemData) => {
       findItem(res, id, itemData, "attach", "Прикрепить изображение.");
     });

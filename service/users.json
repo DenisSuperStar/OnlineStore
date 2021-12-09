@@ -5,5 +5,19 @@
         "firstName": "Денис",
         "lastName": "Шклярский",
         "nickName": "Денисик"
+    },
+    {
+        "password": "$2b$10$Wu.EfGPWcCME3yeqEhSDZOrVM469UNzNQ6lir0x92QYRpLONtNIPm",
+        "_id": "13857a49-5fc7-4757-9b48-6f02297b3af1",
+        "firstName": "Юлия",
+        "lastName": "Майдан",
+        "nickName": "Юлианна"
+    },
+    {
+        "_id": "42205303-b06d-4818-8f00-933cf680b817",
+        "firstName": "Данил",
+        "lastName": "Шклярский",
+        "nickName": "Балтушкин",
+        "password": "$2b$10$Gx5qo7Nw.bxYG8chQ8B3iOV5kPmXJzlo7VOyaoqvcuojbumL8YOD."
     }
 ]

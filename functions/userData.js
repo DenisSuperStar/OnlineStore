@@ -1,12 +1,6 @@
 export const getUserData = (dataUser, userNick) => {
   const users = JSON.parse(dataUser);
-  let searchedUser;
+  let searchUser = users.find((user) => user.nickName == userNick);
 
-  users.forEach((user) => {
-    if (userNick == user.nickName) {
-      searchedUser = user.nickName;
-    }
-  });
-
-  return { userNick: searchedUser, users };
+  return { userNick: searchUser.nickName, users };
 };

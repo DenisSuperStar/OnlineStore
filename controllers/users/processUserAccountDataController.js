@@ -1,8 +1,10 @@
 import path from "path";
 import { v4 } from "uuid";
-import { hash } from "bcrypt";
 
 import { readFileToPromise } from "../../functions/toPromise";
+import { checkAccount } from "../../functions/checkUserAccount";
+import { saveUser } from "../../functions/saveUserAccount";
+import { savePassword } from "../../functions/saveUserPassword";
 
 const salt = 10;
 const __dirname = path.resolve();
@@ -10,40 +12,26 @@ const userFilePath = path.join(__dirname, "/service/users.json");
 
 export const processAccount = async (req, res) => {
   const { body } = req;
-  const { firstName, lastName, nickName, password } = JSON.parse(
-    JSON.stringify(body)
-  );
 
-  if (!firstName || !lastName || !nickName || !password)
-    return res.redirect("/user/account");
+  if (checkAccount(body)) {
+    readFileToPromise(userFilePath).then((fileToUsers) => {
+      const users = JSON.parse(fileToUsers);
+      const currentUser = users.find(user => user.firstName == body.firstName && user.lastName == body.lastName);
+      console.log(currentUser);
 
-  const user = new Object();
+      if (!currentUser) {
+        const currentUser = new Object();
+        const uniqCode = v4();
 
-  await hash(password, salt).then((hash) => (user.password = hash));
+        saveUser(body, currentUser, uniqCode, users, userFilePath);
+        savePassword(currentUser._id, body.password, salt, users, userFilePath);
 
-  readFileToPromise(userFilePath).then((fileToUsers) => {
-    const users = JSON.parse(fileToUsers);
-    let currentUser;
-
-    users.forEach((user) => {
-      currentUser =
-        firstName == user.firstName && lastName == user.lastName ? true : false;
+        res.redirect(`/item/${uniqCode}`);
+      } else {
+        res.redirect("/user/auth");
+      }
     });
-
-    if (!currentUser) {
-      user._id = v4();
-      user.firstName = firstName;
-      user.lastName = lastName;
-      user.nickName = nickName;
-
-      users.push(user);
-
-      const convertUsersToFile = JSON.stringify(users, null, 4);
-      fs.writeFileSync(userFilePath, convertUsersToFile);
-
-      res.redirect(`/item/${user._id}`);
-    } else {
-      res.redirect("/user/auth");
-    }
-  });
+  } else {
+    res.redirect("/user/account");
+  }
 };
