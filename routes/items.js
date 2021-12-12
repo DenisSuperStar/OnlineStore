@@ -27,6 +27,6 @@ item.get("/delete/:id", renderDelete);
 item.post("/delete/:id", processDeleteToConfirm);
 
 item.get("/delete/confirm/:id", renderValidate);
-item.post("/delete/confirm", processConfirmToDelete);
+item.post("/delete/confirm/:id", processConfirmToDelete);
 
 export default item;
