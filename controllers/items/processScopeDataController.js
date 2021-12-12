@@ -1,6 +1,7 @@
 import path from "path";
 
 import { readFileToPromise } from "../../functions/toPromise";
+import { isSaveItem } from "../../functions/checkSaveItem";
 import { saveItem } from "../../functions/saveItem";
 
 const __dirname = path.resolve();
@@ -10,12 +11,16 @@ export const processScope = (req, res) => {
   const { body } = req;
   const { uId } = req.params;
 
-  readFileToPromise(itemFilePath).then((fileToItems) => {
-    const items = JSON.parse(fileToItems);
-    const item = new Object();
-    
-    saveItem(body, item, items, itemFilePath);
+  if (isSaveItem(body)) {
+    readFileToPromise(itemFilePath).then((fileToItems) => {
+      const items = JSON.parse(fileToItems);
+      const item = new Object();
 
-    res.redirect(`/item/upload/${uId}/${item._id}`);
-  });
+      saveItem(body, item, items, itemFilePath);
+
+      res.redirect(`/item/upload/${uId}/${item._id}`);
+    });
+  } else {
+    res.redirect("/item/scope/confirm");
+  }
 };
