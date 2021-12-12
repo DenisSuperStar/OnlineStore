@@ -14,7 +14,6 @@ export const renderAttach = (req, res) => {
   const isId = (id && validate(id)) ? true : false;
 
   if (isUserId && isId) {
-    console.log(isId);
     readFileToPromise(itemFilePath).then((itemData) => {
       findItem(res, id, itemData, "attach", "Прикрепить изображение.");
     });
