@@ -1,36 +1,65 @@
 <%- include("partials/metadata") %>
 
-  <body>
-    <main>
-      <%- include("partials/menu") %>
-        <div class="container">
-          <form method="post">
-            <div class="mb-3">
-              <textarea class="form-control" id="showItemName" placeholder="Введите название товаара" name="itemName"
-                readonly>
-                <%=selfItem.name %>
-              </textarea>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" id="showControlSize" placeholder="Укажите размер" name="size" readonly>
-                <%=selfItem.size %>
-              </textarea>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" id="showControlStuff" placeholder="Укажите материал" name="stuff" readonly>
-                <%=selfItem.stuff %>
-              </textarea>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" id="showControlPrice" placeholder="Укажите цену" name="price" readonly>
-                <%=selfItem.price %>
-              </textarea>
-            </div>
-            <div class="mb-3">
-              <input type="submit" class="btn btn-light" value="Удалить" />
-            </div>
-          </form>
+  <body class="cm-page-body">
+    <main class="cm-page-body__content-page">
+      <div class="container cm-page-body__grid-container">
+        <div class="row cm-page-body__grid-base">
+          <div class="col-5 cm-page-body__jumbotron-box">
+            <%- include('partials/jumbotron', { title: "Удалить этот товар" ,
+              text: 'После удаления товара ничего изменить будет нельзя' }) %>
+          </div>
+          <div class="col-7 cm-page-body__access-form-box">
+            <form class="shadow rounded cm-access-form" method="post">
+              <div class="mb-3 cm-access-form__input-box">
+                <div class="form-floating">
+                  <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="readItemName"
+                    placeholder="Введите название товара" name="itemName" readonly>
+                </textarea>
+                  <label class="text-break" for="readItemName">
+                    <%=selfItem.name %>
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <div class="form-floating">
+                  <textarea class="form-control text-break text-secondary cm-access-form__input-text"
+                    id="readControlSize" placeholder="Укажите размер" name="size" readonly>
+                </textarea>
+                  <label class="text-break" for="readControlSize">
+                    <%=selfItem.size %>
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <div class="form-floating">
+                  <textarea class="form-control text-break text-secondary cm-access-form__input-text"
+                    id="readControlStuff" placeholder="Укажите материал" name="stuff" readonly>
+                </textarea>
+                  <label class="text-break" for="readControlStuff">
+                    <%=selfItem.stuff %>
+                  </label>
+                </div>
+              </div>
+              <div class="mb-3 cm-access-form__input-box">
+                <div class="form-floating">
+                  <textarea class="form-control text-break text-secondary cm-access-form__input-text"
+                    id="readControlPrice" placeholder="Укажите цену" name="price" readonly>
+                </textarea>
+                  <label class="text-break" for="readControlPrice">
+                    <%=selfItem.price %>
+                  </label>
+                </div>
+              </div>
+              <div class="cm-access-form__underline"></div>
+              <div class="mb-3 cm-access-form__input-box">
+                <input type="submit"
+                  class="btn btn-outline-danger text-break cm-access-form__submit-btn cm-access-form__submit-btn--full-size"
+                  value="Удалить" />
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </main>
   </body>
 
