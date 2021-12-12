@@ -1,5 +1,5 @@
 import path from "path";
-import { writeFileSync } from "fs";
+import fs from "fs";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { getUserData } from "../../functions/userData";
@@ -10,13 +10,11 @@ const userFilePath = path.join(__dirname, "/service/users.json");
 const itemFilePath = path.join(__dirname, "/service/items.json");
 
 export const processConfirmToDelete = (req, res) => {
+  const { id } = req.params;
   const { body } = req;
-  const { nickName, password, itemId, confirmCode } = JSON.parse(
+  const { nickName, password, confirmCode, repeatConfirmCode } = JSON.parse(
     JSON.stringify(body)
   );
-
-  if (!nickName || !password)
-    return res.redirect(`/item/delete/confirm/${itemId}`);
 
   readFileToPromise(userFilePath)
     .then((fileToUsers) => {
@@ -26,29 +24,25 @@ export const processConfirmToDelete = (req, res) => {
       return getMatchPassword(dataUser, password);
     })
     .then((equalPassword) => {
-      if (equalPassword) {
-        const matchCodes = itemId.localeCompare(confirmCode);
-
-        return matchCodes;
-      } else {
-        return -1;
-      }
+      return equalPassword ? confirmCode.localeCompare(repeatConfirmCode) : 0;
     })
     .then((dataConfirm) => {
-      if (dataConfirm == 0) {
+      const isConfirm = dataConfirm == 0 ? true : false;
+
+      if (isConfirm) {
         readFileToPromise(itemFilePath).then((allItems) => {
           const items = JSON.parse(allItems);
-          const item = items.find((item) => item._id == itemId);
+          const item = items.find((value) => value._id == id);
 
-          const newItems = items.filter((anyItem) => anyItem._id != item._id);
+          const newItems = items.filter((someItem) => someItem._id != item._id);
           const convertNewItems = JSON.stringify(newItems, null, 4);
 
-          writeFileSync(itemFilePath, convertNewItems);
+          fs.writeFileSync(itemFilePath, convertNewItems);
         });
 
         res.redirect("/user/account");
       } else {
-        res.redirect(`/item/delete/confirm/${itemId}`);
+        res.redirect(`/item/delete/confirm/${id}`);
       }
     });
 };

@@ -9,10 +9,10 @@ export const processDeleteToConfirm = (req, res) => {
 
   readFileToPromise(itemFilePath).then((fileToItems) => {
     const items = JSON.parse(fileToItems);
-    const itemId = items.findIndex((item) => item._id == id);
+    const checkItem = items.findIndex((item) => item._id == id);
 
-    if (itemId) {
-      res.redirect(`/item/delete/confirm/${itemId}`);
+    if (checkItem) {
+      res.redirect(`/item/delete/confirm/${id}`);
     }
   });
 };
