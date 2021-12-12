@@ -1,7 +1,7 @@
 import path from "path";
 
 import { readFileToPromise } from "../../functions/toPromise";
-import { isSaveItem } from "../../functions/checkSaveItem";
+import { readySaveItem } from "../../functions/maySaveItem";
 import { saveItem } from "../../functions/saveItem";
 
 const __dirname = path.resolve();
@@ -11,7 +11,7 @@ export const processScope = (req, res) => {
   const { body } = req;
   const { uId } = req.params;
 
-  if (isSaveItem(body)) {
+  if (readySaveItem(body)) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const items = JSON.parse(fileToItems);
       const item = new Object();
