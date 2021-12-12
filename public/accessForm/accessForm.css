@@ -16,9 +16,16 @@
   resize: none;
 }
 
+.cm-access-form__plain-text:focus {
+  outline: 0;
+  border: 1px solid #198754;
+  box-shadow: 0 0 0 0.25rem rgb(25, 135, 84, 0.25);
+  border-radius: 3px;
+}
+
 .cm-access-form__login-btn {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px 16px; 
   font-size: 20px;
 }
 
