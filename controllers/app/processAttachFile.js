@@ -7,7 +7,7 @@ import { readFileToPromise } from "../../functions/toPromise";
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
 
-export const processAttach = (req, res) => {
+export const processAttach = async (req, res) => {
   const { file, body } = req;
   const { itemId } = JSON.parse(JSON.stringify(body));
   const { mimetype } = file;
@@ -20,12 +20,12 @@ export const processAttach = (req, res) => {
     const { name, ext } = path.parse(file.path);
     
     try {
-      sharp(path.join(__dirname, file.path))
+      await sharp(path.join(__dirname, file.path))
         .resize({
           width: 200,
           height: 200,
         })
-        .toFile(path.join(__dirname, `/resize/${name}-resized${ext}`))
+        .toFile(path.join(__dirname, `/resize/${name}-resized${ext}`));
     } catch {
       res.send("Файл не загрузился, либо указан неверный путь!");
     }
