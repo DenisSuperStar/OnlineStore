@@ -17,7 +17,6 @@ export const processAccount = async (req, res) => {
     readFileToPromise(userFilePath).then((fileToUsers) => {
       const users = JSON.parse(fileToUsers);
       const currentUser = users.find(user => user.firstName == body.firstName && user.lastName == body.lastName);
-      console.log(currentUser);
 
       if (!currentUser) {
         const currentUser = new Object();
