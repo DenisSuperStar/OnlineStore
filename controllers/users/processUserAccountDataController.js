@@ -20,8 +20,10 @@ export const processAccount = async (req, res) => {
 
       if (!currentUser) {
         const currentUser = new Object();
-        const uniqCode = v4();
+        const uniqCode = v4(); 
 
+        // немного подправить сохранение данных пользователя в базу
+        // чтобы вызывалась только одна функция
         saveUser(body, currentUser, uniqCode, users, userFilePath);
         savePassword(currentUser._id, body.password, salt, users, userFilePath);
 
