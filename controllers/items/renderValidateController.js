@@ -5,16 +5,15 @@ import { createHmac } from "crypto";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { getPublicIp } from "../../functions/getPublicIp";
-
-import settings from "../../config/appConfig";
+import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { AdminIp, CustomerIp } = settings;
+const { ADMIN_IP, CUSTOMER_IP } = getParsedEnv();
 
 export const renderValidate = (req, res) => {
   const publicIp = getPublicIp();
-  if (publicIp == AdminIp || publicIp == CustomerIp) {
+  if (publicIp == ADMIN_IP || publicIp == CUSTOMER_IP) {
     const { id } = req.params;
     const isId = validate(id);
 

@@ -1,16 +1,14 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import path from "path";
 import express from "express";
 import multer from "multer";
 import { ReasonPhrases } from "http-status-codes";
+import { getParsedEnv } from "./config/envConfig";
+
 
 import user from "./routes/users";
 import item from "./routes/items";
 
 import { start } from "./functions/startServer";
-import settings from "./config/appConfig";
 
 import { redirectAccount } from "./controllers/app/redirectAccountController";
 import { processAttach } from "./controllers/app/processAttachFile";
@@ -19,6 +17,7 @@ import { storage } from "./functions/storageConfig";
 
 const __dirname = path.resolve();
 const multerConfig = multer({ storage }).single("attachFile");
+const { APP_PORT } = getParsedEnv();
 
 const app = express();
 
@@ -44,4 +43,4 @@ app.use((req, res, next) => {
   next();
 });
 
-start(app, settings.PORT);
+start(app, APP_PORT);
