@@ -2,7 +2,7 @@
   "name": "testlib",
   "version": "1.0.0",
   "type": "module",
-  "description": "check new functions of express framework",
+  "description": "Online store of girls clothes",
   "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
   "author": "Den",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.14"
   },
   "dependencies": {
