@@ -24,7 +24,7 @@ export const processConfirmToDelete = (req, res) => {
       return getMatchPassword(dataUser, password);
     })
     .then((equalPassword) => {
-      return equalPassword ? confirmCode.localeCompare(repeatConfirmCode) : 0;
+      return equalPassword ? confirmCode.localeCompare(repeatConfirmCode) : -1;
     })
     .then((dataConfirm) => {
       const isConfirm = dataConfirm == 0 ? true : false;
