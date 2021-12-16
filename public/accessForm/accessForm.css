@@ -4,6 +4,12 @@
   margin-top: 40px;
 }
 
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cm-access-form {
+    box-shadow: none !important;
+  }
+}
+
 .cm-access-form__input-box,
 .cm-access-form__login-btn-box {
   padding: 0 16px;
@@ -16,6 +22,13 @@
   resize: none;
 }
 
+@media screen and (min-width: 768px) {
+.cm-access-form__input-text:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(229, 53, 69, 0.25);
+  }
+}
+
 .cm-access-form__plain-text:focus {
   outline: 0;
   border: 1px solid #198754;
@@ -25,7 +38,7 @@
 
 .cm-access-form__login-btn {
   width: 100%;
-  padding: 14px 16px; 
+  padding: 14px 16px;
   font-size: 20px;
 }
 
