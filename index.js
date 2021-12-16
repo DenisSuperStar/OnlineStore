@@ -1,6 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import path from "path";
 import express from "express";
 import multer from "multer";
+import { ReasonPhrases } from "http-status-codes";
 
 import user from "./routes/users";
 import item from "./routes/items";
@@ -34,5 +38,10 @@ app.use("/item", item);
 app.get("/", redirectAccount);
 
 app.post("/attach", processAttach);
+
+app.use((req, res, next) => {
+  res.send(ReasonPhrases.NOT_FOUND);
+  next();
+});
 
 start(app, settings.PORT);
