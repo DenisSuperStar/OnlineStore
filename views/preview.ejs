@@ -23,13 +23,13 @@
         <div class="container cm-header__header-content">
             <ul class="nav cm-header__menu cm-header__menu--simple">
                 <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-white" style="font-size: 16px;">
+                    <span class="nav-link text-white cm-header__text-item">
                         <span class="text-break cm-header__lang">Ru</span>
                         <span class="cm-header__flug-icon"></span>
                     </span>
                 </li>
                 <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-break text-white" style="font-size: 16px;">
+                    <span class="nav-link text-break text-white cm-header__text-item">
                         <span class="cm-header__map-marker fas fa-map-marker-alt"></span>
                         <span class="cm-header__city-name">
                             <%=city %>
@@ -37,7 +37,7 @@
                     </span>
                 </li>
                 <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-break text-white" style="font-size: 16px; opacity: 0.6;">
+                    <span class="nav-link text-break text-white cm-header__text-item cm-header__text-item--special">
                         <span class="cm-header__phone-icon fas fa-phone-volume"></span>
                         <span class="cm-header__phone-number">+7 (905) 529-31-14</span>
                     </span>
@@ -50,9 +50,9 @@
                     text-break 
                     text-white 
                     cm-header__text-item 
-                    cm-header__text-item--confirmed" style="display: flex; text-align: left; padding: 8px 16px; text-decoration: none;">
-                        <span class="cm-header__user-icon fas fa-user-check" style="font-size: 16px; opacity: 0.6;"></span>
-                        <span class="cm-header__text-link" style="font-size: 16px; opacity: 0.6;">Войти</span>
+                    cm-header__text-item--confirmed">
+                        <span class="cm-header__user-icon fas fa-user-check"></span>
+                        <span class="cm-header__text-link">Войти</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -61,9 +61,9 @@
                     text-break 
                     text-white 
                     cm-header__text-item 
-                    cm-header__text-item--confirmed" style="display: flex; text-align: left; padding: 8px 16px; text-decoration: none;">
-                        <span class="cm-header__user-unlock-icon fas fa-user-lock" style="font-size: 16px; opacity: 0.6;"></span>
-                        <span class="cm-header__text-link" style="font-size: 16px; opacity: 0.6;">Зарегистрироваться</span>
+                    cm-header__text-item--confirmed">
+                        <span class="cm-header__user-unlock-icon fas fa-user-lock"></span>
+                        <span class="cm-header__text-link">Зарегистрироваться</span>
                     </a>
                 </li>
             </ul>
@@ -74,59 +74,59 @@
                 <div class="cm-header__menu-item cm-header__menu-item--2"></div>
                 <div class="cm-header__menu-item cm-header__menu-item--3"></div>
             </div>
-            <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
-                <div class="offcanvas-body cm-header__sidebar-body">
-                    <ul class="list-group cm-header__sidebar-list">
-                        <li class="list-group-item cm-header__sidebar-item">
-                            <span class="nav-link text-dark cm-header__sidebar-text-item">
-                                <span class="text-break cm-header__lang">Ru</span>
-                                <span class="cm-header__flug-icon"></span>
+        </div>
+        <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
+            <div class="offcanvas-body cm-header__sidebar-body">
+                <ul class="list-group cm-header__sidebar-list">
+                    <li class="list-group-item cm-header__sidebar-item">
+                        <span class="nav-link text-dark cm-header__sidebar-text-item">
+                            <span class="text-break cm-header__lang">Ru</span>
+                            <span class="cm-header__flug-icon"></span>
+                        </span>
+                    </li>
+                    <li class="list-group-item cm-header__sidebar-item">
+                        <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
+                            <span class="cm-header__map-marker fas fa-map-marker-alt"></span>
+                            <span class="cm-header__city-name">
+                                <%=city %>
                             </span>
-                        </li>
-                        <li class="list-group-item cm-header__sidebar-item">
-                            <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
-                                <span class="cm-header__map-marker fas fa-map-marker-alt"></span>
-                                <span class="cm-header__city-name">
-                                    <%=city %>
-                                </span>
-                            </span>
-                        </li>
-                        <li class="list-group-item cm-header__sidebar-item">
-                            <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
-                                <span class="cm-header__user-phone-icon fas fa-phone-volume"></span>
-                                <span class="cm-header__user-phone-number">+7 (905) 529-31-14</span>
-                            </span>
-                        </li>
-                        <li class="list-group-item cm-header__sidebar-item">
-                            <a 
-                                href="/user/auth"
-                                class="
-                                    text-break
-                                    text-dark
-                                    cm-header__sidebar-link
-                                    cm-header__sidebar-link--confirmed
-                                "
-                            >
-                                <span class="cm-header__user-icon fas fa-user-check"></span>
-                                <span class="cm-header__sidebar-text-link">Войти</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item cm-header__sidebar-item">
-                            <a 
-                                href="/user/account"
-                                class="
-                                    text-break
-                                    text-dark
-                                    cm-header__sidebar-link
-                                    cm-header__sidebar-link--confirmed
-                                "
-                            >
-                                <span class="cm-header__user-unlock-icon fas fa-user-lock"></span>
-                                <span class="cm-header__sidebar-text-link">Зарегистрироваться</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                        </span>
+                    </li>
+                    <li class="list-group-item cm-header__sidebar-item">
+                        <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
+                            <span class="cm-header__user-phone-icon fas fa-phone-volume"></span>
+                            <span class="cm-header__user-phone-number">+7 (905) 529-31-14</span>
+                        </span>
+                    </li>
+                    <li class="list-group-item cm-header__sidebar-item">
+                        <a 
+                            href="/user/auth"
+                            class="
+                                text-break
+                                text-dark
+                                cm-header__sidebar-link
+                                cm-header__sidebar-link--confirmed
+                            "
+                        >
+                            <span class="cm-header__user-icon fas fa-user-check"></span>
+                            <span class="cm-header__sidebar-text-link">Войти</span>
+                        </a>
+                    </li>
+                    <li class="list-group-item cm-header__sidebar-item">
+                        <a 
+                            href="/user/account"
+                            class="
+                                text-break
+                                text-dark
+                                cm-header__sidebar-link
+                                cm-header__sidebar-link--confirmed
+                            "
+                        >
+                            <span class="cm-header__user-unlock-icon fas fa-user-lock"></span>
+                            <span class="cm-header__sidebar-text-link">Зарегистрироваться</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
