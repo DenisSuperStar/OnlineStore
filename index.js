@@ -10,7 +10,7 @@ import item from "./routes/items";
 
 import { start } from "./functions/startServer";
 
-import { redirectAccount } from "./controllers/app/redirectAccountController";
+import { renderPreview } from "./controllers/app/renderPreviewController";
 import { processAttach } from "./controllers/app/processAttachFile";
 
 import { storage } from "./functions/storageConfig";
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, "/resize")));
 app.use("/user", user);
 app.use("/item", item);
 
-app.get("/", redirectAccount);
+app.get("/", renderPreview);
 
 app.post("/attach", processAttach);
 
