@@ -69,15 +69,12 @@
             </ul>
         </div>
         <div class="container cm-header__header-content cm-header__header-content--mobile">
-            <div class="cm-header__menu-humburger">
+            <div class="cm-header__menu-humburger" id="humburger">
                 <div class="cm-header__menu-item cm-header__menu-item--1"></div>
                 <div class="cm-header__menu-item cm-header__menu-item--2"></div>
                 <div class="cm-header__menu-item cm-header__menu-item--3"></div>
             </div>
-            <div class="offcanvas offcanvas-start cm-header__sidebar-nav">
-                <div class="offcanvas-header cm-header__sidebar-header">
-                    <button class="btn-close text-reset cm-header__sidebar-btn-close"></button>
-                </div>
+            <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
                 <div class="offcanvas-body cm-header__sidebar-body">
                     <ul class="list-group cm-header__sidebar-list">
                         <li class="list-group-item cm-header__sidebar-item">
@@ -147,6 +144,22 @@
             </div>
         </div>
     </main>
+    <script>
+        const humburger = document.querySelector('#humburger');
+        console.log(humburger);
+        const hideSidebar = document.querySelector('#hide-sidebar');
+        console.log(hideSidebar);
+
+        humburger.addEventListener('click', () => {
+            console.log('был клик!');
+            if (hideSidebar.classList.contains('is-close-sidebar')) {
+                console.log(hideSidebar.classList.contains('is-close-sidebar'));
+                hideSidebar.classList.remove('is-close-sidebar');
+            } else {
+                hideSidebar.classList.add('is-close-sidebar');
+            }
+        });
+    </script>
 </body>
 
 </html>
