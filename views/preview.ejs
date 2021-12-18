@@ -144,22 +144,7 @@
             </div>
         </div>
     </main>
-    <script>
-        const humburger = document.querySelector('#humburger');
-        console.log(humburger);
-        const hideSidebar = document.querySelector('#hide-sidebar');
-        console.log(hideSidebar);
-
-        humburger.addEventListener('click', () => {
-            console.log('был клик!');
-            if (hideSidebar.classList.contains('is-close-sidebar')) {
-                console.log(hideSidebar.classList.contains('is-close-sidebar'));
-                hideSidebar.classList.remove('is-close-sidebar');
-            } else {
-                hideSidebar.classList.add('is-close-sidebar');
-            }
-        });
-    </script>
+    <script src="/../extended/openSidebar.js"></script>
 </body>
 
 </html>
