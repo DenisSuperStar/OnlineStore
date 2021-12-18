@@ -1,4 +1,4 @@
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .cm-jumbotron__title-box {
     border-radius: 0;
     width: 100%;
@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .cm-jumbotron__title-box,
   .cm-jumbotron__text {
     border-radius: 65px;
@@ -40,7 +40,11 @@
   width: 550px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 991px) {
+  .cm-jumbotron__title {
+    width: 100%;
+    border-radius: 0;
+  }
   .cm-jumbotron__text {
     width: 100%;
     border-radius: 0;

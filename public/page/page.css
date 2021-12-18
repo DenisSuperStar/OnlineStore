@@ -7,10 +7,20 @@
   background: #fff;
 }
 
+.cm-page-body__account-content {
+  background: transparent;
+}
+
 @media screen and (max-width: 991px) {
   .cm-page-body__content-page {
     margin-top: 168px;
     padding-top: 22px;
+  }
+
+  .cm-page-body__content-page--discard {
+    margin: 0;
+    padding: 0;
+    background: transparent;
   }
 }
 
@@ -26,7 +36,7 @@
   padding-bottom: 112px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .cm-page-body__grid-container {
     padding-top: 0;
     padding-bottom: 22px;
@@ -42,7 +52,7 @@
   padding: 112px 0 16px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .cm-page-body__jumbotron-box {
     padding: 0;
   }
