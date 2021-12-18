@@ -3,13 +3,20 @@
   text-align: center;
 }
 
+.cm-jumbotron__text {
+  width: 550px;
+}
+
 @media screen and (max-width: 991px) {
   .cm-page-body__jumbotron-self {
     padding-top: 24px;
   }
 
   .cm-jumbotron__title-box {
-    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     width: 100%;
     margin-bottom: 0;
     background: #dc3545;
@@ -20,8 +27,14 @@
   }
 
   .cm-jumbotron__text {
+    width: 100%;
     background: #dc3545;
     border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 0;
   }
 }
 
@@ -37,25 +50,5 @@
 
   .cm-jumbotron__text {
     background: linear-gradient(-90deg, #dc3545, #ffc107);
-  }
-}
-
-.cm-jumbotron__title {
-  width: 100%;
-}
-
-.cm-jumbotron__text {
-  width: 550px;
-}
-
-@media screen and (max-width: 991px) {
-  .cm-jumbotron__title {
-    width: 100%;
-    border-radius: 0;
-  }
-  .cm-jumbotron__text {
-    width: 100%;
-    border-radius: 0;
-    margin-bottom: 0;
   }
 }
