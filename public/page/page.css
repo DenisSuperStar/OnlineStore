@@ -1,11 +1,16 @@
-@media screen and (min-width: 768px) {
-  .cm-page-body {
-    background: #dc3545;
-  }
+
+.cm-page-body {
+  background: linear-gradient(90deg, #dc3545, #0d6efd);
 }
 
 .cm-page-body__content-page {
   background: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .cm-page-body__content-page {
+    padding-top: 22px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -25,6 +30,11 @@
     padding-top: 0;
     padding-bottom: 22px;
   }
+}
+
+.cm-page-body__preview-card-box {
+  display: flex;
+  justify-content: center;
 }
 
 .cm-page-body__jumbotron-box {
