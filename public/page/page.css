@@ -7,13 +7,14 @@
   background: #fff;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .cm-page-body__content-page {
+    margin-top: 168px;
     padding-top: 22px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .cm-page-body__content-page {
     margin-top: 50px;
     border-radius: 30px;
@@ -25,7 +26,7 @@
   padding-bottom: 112px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 991px) {
   .cm-page-body__grid-container {
     padding-top: 0;
     padding-bottom: 22px;
@@ -41,7 +42,7 @@
   padding: 112px 0 16px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 991px) {
   .cm-page-body__jumbotron-box {
     padding: 0;
   }
