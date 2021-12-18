@@ -72,7 +72,6 @@
 
 .cm-header__menu-humburger {
   display: inline-block;
-  cursor: pointer;
 }
 
 .cm-header__menu-item--1,
@@ -99,13 +98,30 @@
 }
 
 .cm-header__sidebar-nav {
-  width: 220px;
+  width: 100%;
+  border: none;
 }
 
 @media screen and (max-width: 576px) {
   .cm-header__sidebar-nav {
-    transform: none;
+    margin-top: 168px;
+    transform: translateX(0);
     visibility: visible;
+    transition: 0.3s;
+  }
+
+  .cm-header__sidebar-nav.is-close-sidebar {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .cm-header__sidebar-body {
+    margin: 76px 0;
+  }
+
+  .cm-header__sidebar-item {
+    border-radius: 0;
+    background: transparent;
   }
 }
 
