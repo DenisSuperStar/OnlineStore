@@ -1,4 +1,13 @@
+.cm-jumbotron__title-box,
+.cm-jumbotron__text {
+  text-align: center;
+}
+
 @media screen and (max-width: 991px) {
+  .cm-page-body__jumbotron-self {
+    padding-top: 24px;
+  }
+
   .cm-jumbotron__title-box {
     border-radius: 0;
     width: 100%;
@@ -20,7 +29,6 @@
   .cm-jumbotron__title-box,
   .cm-jumbotron__text {
     border-radius: 65px;
-    text-align: center;
   }
 
   .cm-jumbotron__title-box {
