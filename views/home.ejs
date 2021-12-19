@@ -1,31 +1,52 @@
-<%- include("partials/metadata") %>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%=title %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/../../page/page.css" />
+  <link rel="stylesheet" href="/../../navbar/navbar.css">
+  <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+  <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
+  <link rel="stylesheet" href="/../../textHelper/helper.css">
+  <link rel="stylesheet" href="/../../card/card.css">
+</head>
   <body class="cm-page-body">
-    <main class="cm-page-body__content-page">
+    <header>
       <%- include("partials/menu") %>
+    </header>
+    <main class="cm-page-body__content-page">
         <div class="container cm-page-body__grid-container">
           <div class="row cm-page-body__grid-base">
             <% if(isSomeItem) {%>
               <% for(let j=0; j<someItems.length;j++) {%>
-                <div class="col-4 cm-page-body__card-box mb-4">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 cm-page-body__card-box mb-4">
                   <div class="card cm-card-item">
                     <div class="container cm-card-item__item-box">
                       <div class="row cm-card-item__item-grid">
-                        <div class="col-7 cm-card-item__img-place">
-                          <div class="pt-3 pb-3 cm-card-item__img-box">
+                        <div class="col-12 cm-card-item__img-place">
+                          <div class="cm-card-item__img-box">
                             <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
                               alt="Платочек">
                           </div>
                         </div>
-                        <div class="col-5 cm-card-item__item-data">
+                        <div class="col-12 cm-card-item__item-content">
                           <div class="card-body cm-card-item__card-body">
-                            <p class="card-text text-break text-dark cm-card-item__item-price">
+                            <p class="card-text text-break text-white cm-card-item__item-price">
                               <%=someItems[j].price %>
                             </p>
-                            <p class="card-text text-break text-secondary cm-card-item__item-size">
+                            <p class="card-text text-break text-white cm-card-item__item-size">
                               <%=someItems[j].size %>
                             </p>
-                            <h5 class="card-title text-break text-secondary cm-card-item__item-name">
+                            <h5 class="card-title text-break text-white cm-card-item__item-name">
                               <%=someItems[j].name %>
                             </h5>
                           </div>
