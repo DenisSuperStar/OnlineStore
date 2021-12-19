@@ -1,7 +1,7 @@
 import fs from "fs";
 import bcrypt from "bcrypt";
 
-export const saveUser = (body, someUser, someUserId, userDb, userDbPath) => {
+export const saveUser = async (body, someUser, someUserId, userDb, userDbPath) => {
   const { firstName, lastName, nickName, password } = JSON.parse(
     JSON.stringify(body)
   );
