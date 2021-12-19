@@ -4,37 +4,11 @@
   height: 168px;
 }
 
-@media screen and (max-width: 991px) {
-  .cm-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #dc3545, #0d6efd);
-    z-index: 9999;
-  }
-}
-
 .cm-header__header-content {
   display: flex;
   justify-content: space-between;
   height: 108px;
   padding: 0 32px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 991px) {
-  .cm-header__header-content {
-    display: none;
-  }
-
-  .cm-header__header-content--mobile {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .cm-header__header-content--mobile {
-    display: none;
-  }
 }
 
 .cm-header__text-item {
@@ -62,6 +36,10 @@
   border-radius: 25px;
 }
 
+.cm-header__menu--simple > .cm-header__menu-item {
+  margin-right: 32px;
+}
+
 .cm-header__auth-menu {
   display: flex;
   align-items: flex-end;
@@ -73,72 +51,9 @@
   margin-bottom: 4px;
 }
 
-@media screen and (max-width: 767px) {
-  .cm-header__user-icon,
-  .cm-header__user-unlock-icon {
-    font-size: 16px;
-  }
-}
-
-.cm-header__menu-humburger {
-  display: inline-block;
-}
-
-.cm-header__menu-item--1,
-.cm-header__menu-item--2,
-.cm-header__menu-item--3 {
-  width: 24px;
-  height: 3px;
-  background: #fff;
-  border-radius: 5px;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.cm-header__menu-humburger:hover .cm-header__menu-item--1 {
-  transform: rotate(-45deg) translate(-10px, 4px);
-}
-
-.cm-header__menu-humburger:hover .cm-header__menu-item--2 {
-  opacity: 0;
-}
-
-.cm-header__menu-humburger:hover .cm-header__menu-item--3 {
-  transform: rotate(45deg) translate(-9px, -3px);
-}
-
 .cm-header__sidebar-nav {
   width: 100%;
   border: none;
-}
-
-@media screen and (max-width: 991px) {
-  .cm-header__sidebar-nav {
-    margin-top: 168px;
-    transform: translateX(0);
-    visibility: visible;
-    transition: 0.3s;
-  }
-
-  .cm-header__sidebar-nav.is-close-sidebar {
-    transform: translateX(-100%);
-    visibility: hidden;
-  }
-
-  .cm-header__sidebar-body {
-    margin: 76px 0;
-  }
-
-  .cm-header__sidebar-item {
-    border-radius: 0;
-    background: transparent;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .cm-header__sidebar-nav {
-    pointer-events: none;
-  }
 }
 
 .cm-header__sidebar-item {
@@ -163,4 +78,92 @@
   padding: 8px 16px;
   text-decoration: none;
   opacity: 0.6;
+}
+
+@media screen and (min-width: 992px) {
+  .cm-header__header-content--mobile {
+    display: none;
+  }
+
+  .cm-header__sidebar-nav {
+    pointer-events: none;
+  }
+
+  .cm-header__text-item--linked {
+    background: linear-gradient(-85deg, #0d6efd, #dc3545);
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cm-header__menu-humburger {
+    display: inline-block;
+  }
+
+  .cm-header__menu-item--1,
+  .cm-header__menu-item--2,
+  .cm-header__menu-item--3 {
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .cm-header__menu-humburger:hover .cm-header__menu-item--1 {
+    transform: rotate(-45deg) translate(-10px, 4px);
+  }
+
+  .cm-header__menu-humburger:hover .cm-header__menu-item--2 {
+    opacity: 0;
+  }
+
+  .cm-header__menu-humburger:hover .cm-header__menu-item--3 {
+    transform: rotate(45deg) translate(-9px, -3px);
+  }
+
+  .cm-header__header-content {
+    display: none;
+  }
+
+  .cm-header__header-content--mobile {
+    display: block;
+  }
+
+  .cm-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #dc3545, #0d6efd);
+    z-index: 9999;
+  }
+
+  .cm-header__sidebar-nav {
+    margin-top: 168px;
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.3s;
+  }
+
+  .cm-header__sidebar-nav.is-close-sidebar {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .cm-header__sidebar-body {
+    margin: 76px 0;
+  }
+
+  .cm-header__sidebar-item {
+    border-radius: 0;
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cm-header__user-icon,
+  .cm-header__user-unlock-icon {
+    font-size: 16px;
+  }
 }
