@@ -1,3 +1,29 @@
+@media screen and (min-width: 992px) {
+  .cm-jumbotron {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cm-jumbotron__title-box,
+  .cm-jumbotron__text {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+  }
+
+  .cm-jumbotron__title-box {
+    margin-right: 12px;
+    background: linear-gradient(90deg, #dc3545, #ffc107);
+  }
+
+  .cm-jumbotron__text {
+    margin-left: 12px;
+    background: linear-gradient(-90deg, #dc3545, #ffc107);
+  }
+}
+
 .cm-jumbotron__title-box,
 .cm-jumbotron__text {
   text-align: center;
@@ -8,10 +34,6 @@
 }
 
 @media screen and (max-width: 991px) {
-  .cm-page-body__jumbotron-self {
-    padding-top: 24px;
-  }
-
   .cm-jumbotron__title-box {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -35,20 +57,5 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-bottom: 0;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .cm-jumbotron__title-box,
-  .cm-jumbotron__text {
-    border-radius: 65px;
-  }
-
-  .cm-jumbotron__title-box {
-    background: linear-gradient(90deg, #dc3545, #ffc107);
-  }
-
-  .cm-jumbotron__text {
-    background: linear-gradient(-90deg, #dc3545, #ffc107);
   }
 }
