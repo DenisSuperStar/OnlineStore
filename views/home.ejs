@@ -13,16 +13,83 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="/../../page/page.css" />
-  <link rel="stylesheet" href="/../../navbar/navbar.css">
+  <link rel="stylesheet" href="/../../header/header.css">
   <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
   <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   <link rel="stylesheet" href="/../../textHelper/helper.css">
   <link rel="stylesheet" href="/../../card/card.css">
 </head>
   <body class="cm-page-body">
-    <header>
-      <%- include("partials/menu") %>
-    </header>
+    <header class="cm-header">
+      <div class="container cm-header__header-content">
+          <ul class="nav cm-header__menu cm-header__menu--simple">
+              <li class="nav-item cm-header__menu-item">
+                  <span class="nav-link text-white cm-header__text-item">
+                      <span class="text-break cm-header__lang">Ru</span>
+                      <span class="cm-header__flug-icon"></span>
+                  </span>
+              </li>
+              <li class="nav-item cm-header__menu-item">
+                  <span class="nav-link text-break text-white cm-header__text-item cm-header__text-item--special">
+                      <span class="cm-header__phone-icon fas fa-phone-volume"></span>
+                      <span class="cm-header__phone-number">+7 (905) 529-31-14</span>
+                  </span>
+              </li>
+              <li class="nav-item cm-header__menu-item">
+                <a 
+                  href="/item/scope/confirm"
+                  class="
+                    nav-link
+                    text-break
+                    text-white
+                    cm-header__text-item
+                    cm-header__text-item--linked
+                  "
+                >
+                  Возможности
+                </a>
+              </li>
+          </ul>
+      </div>
+      <div class="container cm-header__header-content cm-header__header-content--mobile">
+          <div class="cm-header__menu-humburger" id="humburger">
+              <div class="cm-header__menu-item cm-header__menu-item--1"></div>
+              <div class="cm-header__menu-item cm-header__menu-item--2"></div>
+              <div class="cm-header__menu-item cm-header__menu-item--3"></div>
+          </div>
+      </div>
+      <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
+          <div class="offcanvas-body cm-header__sidebar-body">
+              <ul class="list-group cm-header__sidebar-list">
+                  <li class="list-group-item cm-header__sidebar-item">
+                      <span class="nav-link text-dark cm-header__sidebar-text-item">
+                          <span class="text-break cm-header__lang">Ru</span>
+                          <span class="cm-header__flug-icon"></span>
+                      </span>
+                  </li>
+                  <li class="list-group-item cm-header__sidebar-item">
+                      <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
+                          <span class="cm-header__user-phone-icon fas fa-phone-volume"></span>
+                          <span class="cm-header__user-phone-number">+7 (905) 529-31-14</span>
+                      </span>
+                  </li>
+                  <li class="list-group-item cm-header__sidebar-item">
+                    <a 
+                      href="/item/scope/confirm"
+                      class="
+                        nav-link
+                        text-break
+                        text-dark
+                        cm-header__sidebar-text-item
+                      " 
+                    >
+                      Возможности
+                    </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </header>
     <main class="cm-page-body__content-page">
         <div class="container cm-page-body__grid-container">
           <div class="row cm-page-body__grid-base">
@@ -65,6 +132,7 @@
           </div>
         </div>
     </main>
+    <script src="/../extended/openSidebar.js"></script>
   </body>
 
   </html>
