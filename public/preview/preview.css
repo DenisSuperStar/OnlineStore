@@ -1,15 +1,10 @@
 .cm-preview-card {
-    width: 336px;
-    border-radius: 25px;
-    border: none;
-}
-
-@media screen and (min-width: 320px) and (max-width: 376px) { /*исправить размеры изображений при загрузке файлов, зачем код, который сжимает изображение??*/
-    .cm-preview-card {
-        width: 100%;
-    }
+  /* необходимо заново загрузить все товары */
+  width: 336px;
+  border-radius: 25px;
+  border: none;
 }
 
 .cm-preview-card__img-card {
-    border-radius: 25px;
+  border-radius: 25px;
 }
