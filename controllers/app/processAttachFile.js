@@ -22,8 +22,8 @@ export const processAttach = async (req, res) => {
     try {
       await sharp(path.join(__dirname, file.path))
         .resize({
-          width: 200,
-          height: 200,
+          width: 336,
+          height: 336,
         })
         .toFile(path.join(__dirname, `/resize/${name}-resized${ext}`));
     } catch {
