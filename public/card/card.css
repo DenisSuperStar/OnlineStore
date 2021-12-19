@@ -59,6 +59,19 @@
   }
 }*/
 
+@media screen and (min-width: 992px) {
+  .cm-card-item__item-img {
+    transition: all 0.5s;
+  }
+
+  .cm-card-item__item-img:hover {
+    filter: brightness(80%);
+    transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .cm-card-item {
     width: 100%;
