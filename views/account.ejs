@@ -1,62 +1,126 @@
-<%- include('partials/metadata') %>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/../../page/page.css" />
+    <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+    <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
+    <link rel="stylesheet" href="/../../banner/banner.css" />
+    <link rel="stylesheet" href="/../../card/card.css" />
+  </head>
   <body class="cm-page-body">
-    <main class="
-        cm-page-body__content-page
-        cm-page-body__content-page--discard
-      ">
+    <main
+      class="cm-page-body__content-page cm-page-body__content-page--discard"
+    >
       <div class="container cm-page-body__grid-container">
         <div class="row cm-page-body__grid-base">
-          <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12 cm-page-body__jumbotron-box">
+          <div
+            class="
+              col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12
+              cm-page-body__jumbotron-box
+            "
+          >
             <div class="cm-page-body__jumbotron-self">
-              <%- include('partials/jumbotron', { title: 'Платки' ,
-              text: 'Большой выбор женских платков по специальным ценам' }) %>
+              <%- include('partials/jumbotron', { title: 'Платки' , text:
+              'Большой выбор женских платков по специальным ценам' }) %>
             </div>
           </div>
-          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 cm-page-body__access-form-box">
+          <div
+            class="
+              col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12
+              cm-page-body__access-form-box
+            "
+          >
             <form method="post" class="shadow rounded cm-access-form">
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
-                  <input type="text" class="form-control text-break cm-access-form__input-text" id="firstName"
-                    name="firstName" autocomplete="off" />
-                  <label class="text-break" for="firstName">Введите ваше имя</label>
+                  <input
+                    type="text"
+                    class="form-control text-break cm-access-form__input-text"
+                    id="firstName"
+                    name="firstName"
+                    autocomplete="off"
+                  />
+                  <label class="text-break" for="firstName"
+                    >Введите ваше имя</label
+                  >
                 </div>
               </div>
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
-                  <input type="text" class="form-control text-break cm-access-form__input-text" id="lastName"
-                    name="lastName" autocomplete="off" />
-                  <label class="text-break" for="lastName">Введите вашу фамилию</label>
+                  <input
+                    type="text"
+                    class="form-control text-break cm-access-form__input-text"
+                    id="lastName"
+                    name="lastName"
+                    autocomplete="off"
+                  />
+                  <label class="text-break" for="lastName"
+                    >Введите вашу фамилию</label
+                  >
                 </div>
               </div>
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
-                  <input type="text" class="form-control text-break cm-access-form__input-text" id="nickName"
-                    name="nickName" autocomplete="off" />
-                  <label class="text-break" for="nickName">Ваше имя на сайте</label>
+                  <input
+                    type="text"
+                    class="form-control text-break cm-access-form__input-text"
+                    id="nickName"
+                    name="nickName"
+                    autocomplete="off"
+                  />
+                  <label class="text-break" for="nickName"
+                    >Ваше имя на сайте</label
+                  >
                 </div>
               </div>
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
-                  <input type="password" class="form-control text-break cm-access-form__input-text" id="password"
-                    name="password" autocomplete="off" />
-                  <label class="text-break" for="password">Введите ваш пароль</label>
+                  <input
+                    type="password"
+                    class="form-control text-break cm-access-form__input-text"
+                    id="password"
+                    name="password"
+                    autocomplete="off"
+                  />
+                  <label class="text-break" for="password"
+                    >Введите ваш пароль</label
+                  >
                 </div>
               </div>
               <div class="mb-3 cm-access-form__login-btn-box">
-                <a class="btn btn-danger text-break cm-access-form__login-btn" href="/user/auth">Вход</a>
+                <a
+                  class="btn btn-danger text-break cm-access-form__login-btn"
+                  href="/user/auth"
+                  >Вход</a
+                >
               </div>
               <div class="cm-access-form__underline"></div>
-              <div class="
-                cm-access-form__input-box
-                cm-access-form__input-box--centered
-              ">
-                <input type="submit" class="
-                    btn
-                    btn-dark
-                    text-break
-                    cm-access-form__submit-btn
-                  " value="Создать новый аккаунт">
+              <div
+                class="
+                  cm-access-form__input-box cm-access-form__input-box--centered
+                "
+              >
+                <input
+                  type="submit"
+                  class="btn btn-dark text-break cm-access-form__submit-btn"
+                  value="Создать новый аккаунт"
+                />
               </div>
             </form>
           </div>
@@ -64,5 +128,4 @@
       </div>
     </main>
   </body>
-
-  </html>
+</html>
