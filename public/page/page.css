@@ -2,6 +2,10 @@
   background: linear-gradient(90deg, #dc3545, #0d6efd);
 }
 
+.cm-page-body--strict {
+  background: linear-gradient(-45deg, #0d6efd 20%, #f8f9fa 40%);
+}
+
 .cm-page-body__content-page {
   background: #fff;
 }

@@ -1,9 +1,12 @@
 .cm-access-form {
   width: 396px;
-  padding: 10px 0 24px;
+  padding: 24px 0;
   margin-top: 40px;
+  border-radius: 16px;
 }
-
+.cm-access-form--strict {
+  background: linear-gradient(-45deg, #6c757d 20%, #f8f9fa 40%);
+}
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .cm-access-form {
     box-shadow: none !important;
@@ -20,10 +23,11 @@
   padding: 14px 16px !important;
   font-size: 17px;
   resize: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
-.cm-access-form__input-text:focus {
+  .cm-access-form__input-text:focus {
     border-color: #dc3545;
     box-shadow: 0 0 0 0.25rem rgba(229, 53, 69, 0.25);
   }
@@ -60,4 +64,15 @@
 
 .cm-access-form__submit-btn--full-size {
   width: 100%;
+}
+
+.cm-access-form__submit-btn--colored {
+  background: linear-gradient(-45deg, #ffc107 15%, #dc3545 50%);
+  border: none;
+}
+
+.cm-access-form__submit-btn--colored:focus {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
 }

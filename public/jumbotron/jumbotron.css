@@ -1,3 +1,29 @@
+.cm-jumbotron.is-marked {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+}
+.cm-jumbotron.is-marked > .cm-jumbotron__title-box {
+  width: 416px;
+  height: 150px;
+  margin: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  background: linear-gradient(-90deg,  #dc3545 15%, #ffc107 50%);
+}
+
+.cm-jumbotron.is-marked > .cm-jumbotron__text {
+  width: 416px;
+  height: 150px;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: none;
+  background: linear-gradient(-90deg, #dc3545 15%, #ffc107 50%);
+}
+
 @media screen and (min-width: 992px) {
   .cm-jumbotron {
     display: flex;

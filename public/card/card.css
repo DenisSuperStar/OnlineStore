@@ -4,6 +4,12 @@
   border: none;
   border-radius: 16px;
 }
+.cm-card-item--strict {
+  background: linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%);
+}
+.сm-card-item--most-wide {
+  width: 100%;
+}
 .cm-card-item__img-place {
   display: flex;
   justify-content: center;
@@ -46,6 +52,7 @@
   right: 0;
   bottom: 0;
   margin-bottom: 18px;
+  transition: all .5s;
 }
 @media screen and (max-width: 575px) {
   .cm-card-item__item-content {
