@@ -9,7 +9,6 @@ const itemFilePath = path.join(__dirname, "/service/items.json");
 
 export const processScope = (req, res) => {
   const { body } = req;
-  const { uId } = req.params;
 
   if (readySaveItem(body)) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
@@ -18,9 +17,9 @@ export const processScope = (req, res) => {
 
       saveItem(body, item, items, itemFilePath);
 
-      res.redirect(`/item/upload/${uId}/${item._id}`);
+      res.redirect(`/item/upload/${item._id}`);
     });
   } else {
-    res.redirect("/item/scope/confirm");
+    res.redirect("/item/access/private");
   }
 };
