@@ -126,10 +126,9 @@
                 </div>
                 <%} %>
                   <% }else {%>
-                    <div class="alert alert-primary cm-text-helper">
-                      <h3 class="alert-heading text-break cm-text-helper__title">Не было загружено ни одного товара...
-                      </h3>
-                    </div>
+                    <%- include('partials/textHelper.ejs', {
+                      textContent: "Не было загружено ни одного товара..."
+                    }) %>
                     <%} %>
           </div>
         </div>
