@@ -16,7 +16,7 @@ item.get("/public/:uId", renderCatalog);
 item.get('/access/private', renderScope);
 item.post('/access/private', processScope);
 
-item.get("/upload/:uId/:id", renderAttach); /*(!!!)*/
+item.get("/upload/:id", renderAttach);
 
 item.get("/delete/:id", renderDelete);
 item.post("/delete/:id", processDeleteToConfirm);
