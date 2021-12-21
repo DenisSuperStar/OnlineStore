@@ -3,7 +3,8 @@ export const showItemCatalog = (
   items,
   isItemFill,
   viewName,
-  pageTitle
+  pageTitle,
+  isPrivateAccess
 ) => {
   const someItems = JSON.parse(items);
   const isSomeItem = someItems.some(isItemFill);
@@ -12,5 +13,6 @@ export const showItemCatalog = (
     title: pageTitle,
     someItems,
     isSomeItem,
+    isPrivateAccess
   });
 };

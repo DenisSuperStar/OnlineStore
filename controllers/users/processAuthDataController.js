@@ -24,7 +24,7 @@ export const processAuth = (req, res) => {
         if (equalPassword) {
           const uniqCode = v4();
 
-          res.redirect(`/item/${uniqCode}`);
+          res.redirect(`/item/public/${uniqCode}`);
         } else {
           res.redirect("/user/account");
         }

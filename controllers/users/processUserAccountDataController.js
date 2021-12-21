@@ -25,7 +25,7 @@ export const processAccount = async (req, res) => {
 
         saveUser(body, currentUser, uniqCode, users, userFilePath);
 
-        res.redirect(`/item/${uniqCode}`);
+        res.redirect(`/item/public/${uniqCode}`);
       } else {
         res.redirect("/user/auth");
       }

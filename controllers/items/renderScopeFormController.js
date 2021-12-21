@@ -1,29 +1,31 @@
 import path from "path";
-import { validate } from "uuid";
 import { ReasonPhrases } from "http-status-codes";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { storeFill } from "../../functions/fillingStore";
 import { showItemCatalog } from "../../functions/showCatalog";
+import { getPublicIp } from "../../functions/getPublicIp";
+import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
+const { ADMIN_IP, CUSTOMER_IP } = getParsedEnv();
 
-export const renderScope = (req, res) => {
-  const { uId } = req.params;
-  const isUserId = validate(uId);
+export const renderScope = async (req, res) => {
+  const publicIp = await getPublicIp();
 
-  if (isUserId) {
+  if (publicIp == ADMIN_IP || publicIp == CUSTOMER_IP) {
     readFileToPromise(itemFilePath).then((dataAllItems) => {
       showItemCatalog(
         res,
         dataAllItems,
         storeFill,
         "scope",
-        "Управление товарами."
+        "Управление товарами.",
+        false
       );
     });
   } else {
-    res.send(ReasonPhrases.NOT_FOUND);
+    res.send(ReasonPhrases.FORBIDDEN);
   }
 };

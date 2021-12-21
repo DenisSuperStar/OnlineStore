@@ -35,20 +35,22 @@
                       <span class="cm-header__phone-number">+7 (905) 529-31-14</span>
                   </span>
               </li>
-              <li class="nav-item cm-header__menu-item">
-                <a 
-                  href="/item/scope/confirm"
-                  class="
-                    nav-link
-                    text-break
-                    text-white
-                    cm-header__text-item
-                    cm-header__text-item--linked
-                  "
-                >
-                  Возможности
-                </a>
-              </li>
+              <% if(isPrivateAccess) {%>
+                <li class="nav-item cm-header__menu-item">
+                  <a 
+                    href="/item/access/private"
+                    class="
+                      nav-link
+                      text-break
+                      text-white
+                      cm-header__text-item
+                      cm-header__text-item--linked
+                    "
+                  >
+                    Возможности
+                  </a>
+                </li>
+              <%} %>
           </ul>
       </div>
       <div class="container cm-header__header-content cm-header__header-content--mobile">
@@ -75,7 +77,7 @@
                   </li>
                   <li class="list-group-item cm-header__sidebar-item">
                     <a 
-                      href="/item/scope/confirm"
+                      href="/item/access/private"
                       class="
                         nav-link
                         text-break
