@@ -90,6 +90,11 @@
   position: relative;
   height: max-content;
 }
+
+.cm-jumbotron__text.is-normal {
+  text-align: left;
+}
+
 .cm-imposition {
   position: absolute;
   left: 0;
@@ -103,6 +108,10 @@
   margin-bottom: 16px;
   opacity: 1;
   transition: all 0.4s;
+}
+
+.cm-imposition.is-danger {
+  border: 1px solid #dc3545;
 }
 
 .cm-imposition:hover {
