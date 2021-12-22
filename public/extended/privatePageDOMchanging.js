@@ -2,7 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
   addClassToJumbotronParent();
   insertNodeBeforeJumbotron();
   selectedIcon();
+  addClassToAnimatedBlock();
 });
+
+function addClassToAnimatedBlock() {
+  const anyUrl = document.location.pathname;
+  const pathParts = anyUrl.split("/");
+
+  const animateImposition = document.querySelector(".cm-imposition");
+  const jumbotronText = document.querySelector(".cm-jumbotron__text");
+
+  pathParts.forEach((value) => {
+    if (value == "delete") {
+      animateImposition.classList.add("is-danger");
+      jumbotronText.classList.add('is-normal');
+    }
+  });
+}
 
 function selectedIcon() {
   const anyUrl = document.location.pathname;
