@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="/../../page/page.css" />
+  <link rel="stylesheet" href="/../../animatedBlock/imposition.css">
   <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
   <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   <link rel="stylesheet" href="/../../textHelper/helper.css">
@@ -39,7 +40,7 @@
         <div class="row">
           <% if(isSomeItem) {%>
             <% for(let j=0; j<someItems.length;j++) {%>
-              <div class="col-4 cm-page-body__card-box">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 cm-page-body__card-box cm-page-body__card-box--private">
                 <div class="card cm-card-item cm-card-item--strict сm-card-item--most-wide mb-4">
                   <div class="container cm-card-item__item-box">
                     <div class="row cm-card-item__item-grid">
@@ -88,7 +89,7 @@
               }) %>
             </div>
           </div>
-          <div class="col-7 cm-page-body__access-form-box">
+          <div class="col-7 cm-page-body__access-form-box cm-page-body__access-form-box--private">
             <form class="shadow cm-access-form cm-access-form--strict" method="post">
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">

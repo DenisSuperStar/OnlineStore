@@ -11,3 +11,18 @@
 .cm-banner__text {
   font-size: 32px;
 }
+
+
+@media screen and (max-width: 991px) {
+  .cm-banner__banner-content {
+    width: 100%;
+  }
+  
+  .cm-banner__title {
+    font-size: 31px;
+  }
+
+  .cm-banner__text {
+    font-size: 25px;
+  }
+}
