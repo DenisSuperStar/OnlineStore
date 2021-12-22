@@ -11,6 +11,7 @@
   margin-bottom: 16px;
   opacity: 1;
   transition: all 0.4s;
+  cursor: pointer;
 }
 
 .cm-imposition.is-danger {
