@@ -1,8 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   addClassToJumbotronParent();
   insertNodeBeforeJumbotron();
-  insertIconInImposition();
+  selectedIcon();
 });
+
+function selectedIcon() {
+  const anyUrl = document.location.pathname;
+  const pathParts = anyUrl.split("/");
+
+  pathParts.forEach((value) => {
+    if (value == "private") {
+      insertIconInNode(
+        ".cm-imposition",
+        "fas",
+        "fa-file-upload",
+        "cm-imposition__icon"
+      );
+    } else if (value == "delete") {
+      insertIconInNode(
+        ".cm-imposition",
+        "fas",
+        "fa-file-times",
+        "cm-imposition__icon"
+      );
+    } else {
+    }
+  });
+}
 
 function addClassToJumbotronParent() {
   const jumbotron = document.querySelector(".cm-jumbotron");
@@ -18,10 +42,10 @@ function insertNodeBeforeJumbotron() {
   marked.before(createImposition);
 }
 
-function insertIconInImposition() {
-  const imposition = document.querySelector('.cm-imposition');
-  const createIcon = document.createElement('span');
+function insertIconInNode(parentSelectorName, ...iconClasses) {
+  const parent = document.querySelector(parentSelectorName);
+  const createIcon = document.createElement("span");
 
-  createIcon.classList.add('fas', 'fa-file-upload', 'cm-imposition__icon');
-  imposition.prepend(createIcon);
+  createIcon.classList.add(iconClasses[0], iconClasses[1], iconClasses[2]);
+  parent.prepend(createIcon);
 }
