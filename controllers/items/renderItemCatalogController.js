@@ -7,14 +7,17 @@ import { storeFill } from "../../functions/fillingStore";
 import { showItemCatalog } from "../../functions/showCatalog";
 import { getPublicIp } from "../../functions/getPublicIp";
 import { getParsedEnv } from "../../config/envConfig";
+import geoip from "geoip-lite";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_IP, CUSTOMER_IP } = getParsedEnv();
+const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
 
 export const renderCatalog = async (req, res) => {
   const publicIp = await getPublicIp();
-  const isPrivateAccess = ((publicIp == ADMIN_IP) || (publicIp == CUSTOMER_IP)) ? true : false;
+  const location = geoip.lookup(publicIp);
+  const { city } = location;
+  const isPrivateAccess = ((city == ADMIN_LOCATION) || (city == CUSTOMER_LOCATION)) ? true : false;
 
   const { uId } = req.params;
   const isUserId = validate(uId);

@@ -2,6 +2,7 @@ import path from "path";
 import { validate } from "uuid";
 import { ReasonPhrases } from "http-status-codes";
 import { createHmac } from "crypto";
+import geoip from "geoip-lite";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { getPublicIp } from "../../functions/getPublicIp";
@@ -9,14 +10,17 @@ import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_IP, CUSTOMER_IP } = getParsedEnv();
+const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
 
-export const renderValidate = (req, res) => {
-  const publicIp = getPublicIp();
-  if (publicIp == ADMIN_IP || publicIp == CUSTOMER_IP) {
-    const { id } = req.params;
-    const isId = validate(id);
+export const renderValidate = async (req, res) => {
+  const { id } = req.params;
+  const { isId } = validate(id);
 
+  const publicIp = await getPublicIp();
+  const location = geoip.lookup(publicIp);
+  const { city } = location;
+
+  if (city == ADMIN_LOCATION || city == CUSTOMER_LOCATION) {
     if (isId) {
       readFileToPromise(itemFilePath).then((fileToItems) => {
         const items = JSON.parse(fileToItems);

@@ -1,5 +1,6 @@
 import path from "path";
 import { ReasonPhrases } from "http-status-codes";
+import geoip from "geoip-lite";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { storeFill } from "../../functions/fillingStore";
@@ -9,12 +10,14 @@ import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_IP, CUSTOMER_IP } = getParsedEnv();
+const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
 
 export const renderScope = async (req, res) => {
   const publicIp = await getPublicIp();
+  const location = geoip.lookup(publicIp);
+  const { city } = location;
 
-  if (publicIp == ADMIN_IP || publicIp == CUSTOMER_IP) {
+  if (city == ADMIN_LOCATION || city == CUSTOMER_LOCATION) {
     readFileToPromise(itemFilePath).then((dataAllItems) => {
       showItemCatalog(
         res,
