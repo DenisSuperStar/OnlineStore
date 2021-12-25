@@ -14,129 +14,109 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="/../../page/page.css" />
     <link rel="stylesheet" href="/../../header/header.css">
-    <link rel="stylesheet" href="/../../navbar/navbar.css">
+    <link rel="stylesheet" href="/../../humburger/humburger.css">
+    <link rel="stylesheet" href="/../../sidebar/sidebar.css">
+    <link rel="stylesheet" href="/../../previewCardList/previewCardList.css">
     <link rel="stylesheet" href="/../../preview/preview.css">
 </head>
 
 <body class="cm-page-body">
-    <header class="cm-header">
-        <div class="container cm-header__header-content">
-            <ul class="nav cm-header__menu cm-header__menu--simple">
-                <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-white cm-header__text-item">
-                        <span class="text-break cm-header__lang">Ru</span>
-                        <span class="cm-header__flug-icon"></span>
+    <header class="cm-header" id="header">
+        <div class="container header-content" id="headerContent">
+            <ul class="nav">
+                <li class="nav-item" id="menuItem">
+                    <span class="nav-link text-white" id="textItem">
+                        <span class="text-break" id="fontIcon">Ru</span>
+                        <span class="flug-icon" id="flugIcon"></span>
                     </span>
                 </li>
-                <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-break text-white cm-header__text-item">
-                        <span class="cm-header__map-marker fas fa-map-marker-alt"></span>
-                        <span class="cm-header__city-name">
+                <li class="nav-item" id="menuItem">
+                    <span class="nav-link text-break text-white" id="textItem">
+                        <span class="fas fa-map-marker-alt" id="fontIcon"></span>
+                        <span id="cityName">
                             <%=city %>
                         </span>
                     </span>
                 </li>
-                <li class="nav-item cm-header__menu-item">
-                    <span class="nav-link text-break text-white cm-header__text-item cm-header__text-item--special">
-                        <span class="cm-header__phone-icon fas fa-phone-volume"></span>
-                        <span class="cm-header__phone-number">+7 (905) 529-31-14</span>
+                <li class="nav-item" id="menuItem">
+                    <span class="nav-link text-break text-white" id="specialItem">
+                        <span class="fas fa-phone-volume" id="phoneIcon"></span>
+                        <span id="phoneNumber">+7 (905) 529-31-14</span>
                     </span>
                 </li>
             </ul>
-            <ul class="nav cm-header__auth-menu">
-                <li class="nav-item cm-header__menu-item">
-                    <a href="/user/auth" class="
-                    nav-link 
-                    text-break 
-                    text-white 
-                    cm-header__text-item 
-                    cm-header__text-item--confirmed">
-                        <span class="cm-header__user-icon fas fa-user-check"></span>
-                        <span class="cm-header__text-link">Войти</span>
+            <ul class="nav" id="authMenu">
+                <li class="nav-item">
+                    <a href="/user/auth" class="nav-link text-break text-white" id="confirmLink">
+                        <span class="fas fa-user-check" id="userAuth"></span>
+                        <span id="authLink">Войти</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/user/account" class="
-                    nav-link 
-                    text-break 
-                    text-white 
-                    cm-header__text-item 
-                    cm-header__text-item--confirmed">
-                        <span class="cm-header__user-unlock-icon fas fa-user-lock"></span>
-                        <span class="cm-header__text-link">Зарегистрироваться</span>
+                    <a href="/user/account" class="nav-link text-break text-white" id="confirmLink">
+                        <span class="fas fa-user-lock" id="userAuth"></span>
+                        <span id="authLink">Зарегистрироваться</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="container cm-header__header-content cm-header__header-content--mobile">
-            <div class="cm-header__menu-humburger" id="humburger">
-                <div class="cm-header__menu-item cm-header__menu-item--1"></div>
-                <div class="cm-header__menu-item cm-header__menu-item--2"></div>
-                <div class="cm-header__menu-item cm-header__menu-item--3"></div>
+        <div class="container btn-humburger" id="menuButton">
+            <div class="menu-humburger is-active" id="humburger">
+                <div class="humburger-item-1" id="humburgerItem"></div>
+                <div class="humburger-item-2" id="humburgerItem"></div>
+                <div class="humburger-item-3" id="humburgerItem"></div>
             </div>
         </div>
-        <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
-            <div class="offcanvas-body cm-header__sidebar-body">
-                <ul class="list-group cm-header__sidebar-list">
-                    <li class="list-group-item cm-header__sidebar-item">
-                        <span class="nav-link text-dark cm-header__sidebar-text-item">
-                            <span class="text-break cm-header__lang">Ru</span>
-                            <span class="cm-header__flug-icon"></span>
+        <div class="offcanvas offcanvas-start sidebar is-close-sidebar" id="hide-sidebar">
+            <div class="offcanvas-body sidebar-body">
+                <ul class="list-group">
+                    <li class="list-group-item sidebar-item">
+                        <span class="nav-link text-dark">
+                            <span class="text-break icon-lang">Ru</span>
+                            <span class="icon-flag"></span>
                         </span>
                     </li>
-                    <li class="list-group-item cm-header__sidebar-item">
-                        <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
-                            <span class="cm-header__map-marker fas fa-map-marker-alt"></span>
-                            <span class="cm-header__city-name">
+                    <li class="list-group-item sidebar-item">
+                        <span class="nav-link text-break text-dark">
+                            <span class="fas fa-map-marker-alt font-icon"></span>
+                            <span class="font-icon icon-city">
                                 <%=city %>
                             </span>
                         </span>
                     </li>
-                    <li class="list-group-item cm-header__sidebar-item">
-                        <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
-                            <span class="cm-header__user-phone-icon fas fa-phone-volume"></span>
-                            <span class="cm-header__user-phone-number">+7 (905) 529-31-14</span>
+                    <li class="list-group-item sidebar-item">
+                        <span class="nav-link text-break text-dark">
+                            <span class="fas fa-phone-volume font-icon"></span>
+                            <span class="font-icon font-phone-number">+7 (905) 529-31-14</span>
                         </span>
                     </li>
-                    <li class="list-group-item cm-header__sidebar-item">
-                        <a 
-                            href="/user/auth"
-                            class="
-                                text-break
-                                text-dark
-                                cm-header__sidebar-link
-                                cm-header__sidebar-link--confirmed
-                            "
-                        >
-                            <span class="cm-header__user-icon fas fa-user-check"></span>
-                            <span class="cm-header__sidebar-text-link">Войти</span>
+                    <li class="list-group-item sidebar-item">
+                        <a href="/user/auth" class="text-break text-dark link-confirm">
+                            <span class="user-icon fas fa-user-check"></span>
+                            <span class="sidebar-link">Войти</span>
                         </a>
                     </li>
-                    <li class="list-group-item cm-header__sidebar-item">
-                        <a 
-                            href="/user/account"
-                            class="
+                    <li class="list-group-item sidebar-item">
+                        <a href="/user/account" class="
                                 text-break
                                 text-dark
-                                cm-header__sidebar-link
-                                cm-header__sidebar-link--confirmed
-                            "
-                        >
-                            <span class="cm-header__user-unlock-icon fas fa-user-lock"></span>
-                            <span class="cm-header__sidebar-text-link">Зарегистрироваться</span>
+                                link-confirm
+                            ">
+                            <span class="user-icon fas fa-user-lock"></span>
+                            <span class="sidebar-link">Зарегистрироваться</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-    <main class="cm-page-body__content-page">
-        <div class="container-fluid mt-4 cm-page-body__grid-container">
-            <div class="row cm-page-body__grid-base">
+    <main class="preview-card-list" id="cardList">
+        <div class="container-fluid mt-4 fluid-card-list" id="fluidList">
+            <div class="row">
                 <% for(let j=0; j<thumbnails.length;j++) {%>
-                    <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 cm-page-body__preview-card-box">
-                        <div class="card cm-preview-card">
-                            <img src="<%=thumbnails[j].imgPath %>" class="card-img-top cm-preview-card__img-card"
+                    <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 preview-card-grid" id="cardGrid">
+                        <div class="card" id="previewCard">
+                            <img src="<%=thumbnails[j].imgPath %>" class="card-img-top preview-card-img" id="cardImg"
                                 alt="<%=thumbnails[j].name %>">
                         </div>
                     </div>
@@ -144,7 +124,15 @@
             </div>
         </div>
     </main>
+    <script>
+
+    </script>
+    <script src="/../../header/header.js" type="module"></script>
+    <script src="/../../humburger/humburger.js" type="module"></script>
+    <script src="/../../previewCardList/previewCardList.js" type="module"></script>
+    <script src="/../../preview/preview.js" type="module"></script>
     <script src="/../extended/openSidebar.js"></script>
+    <script src="/../../extended/transformMenu.js"></script>
 </body>
 
 </html>

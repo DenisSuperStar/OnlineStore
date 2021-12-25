@@ -1,0 +1,17 @@
+@media screen and (max-width: 575px) {
+  .preview-card-grid {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .preview-card-list {
+    margin-top: 168px;
+    padding-top: 22px;
+  }
+
+  .fluid-card-list {
+    padding-top: 0;
+    padding-bottom: 22px;
+  }
+}
