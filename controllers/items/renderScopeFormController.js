@@ -10,14 +10,24 @@ import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
+const {
+  ADMIN_LOCATION,
+  CUSTOMER_LOCATION,
+  SYSTEM_DEFINE_LOCATION,
+  CURRENT_LOCATION,
+} = getParsedEnv();
 
 export const renderScope = async (req, res) => {
   const publicIp = await getPublicIp();
   const location = geoip.lookup(publicIp);
   const { city } = location;
 
-  if (city == ADMIN_LOCATION || city == CUSTOMER_LOCATION) {
+  if (
+    city == ADMIN_LOCATION ||
+    city == CUSTOMER_LOCATION ||
+    city == SYSTEM_DEFINE_LOCATION ||
+    city == CURRENT_LOCATION
+  ) {
     readFileToPromise(itemFilePath).then((dataAllItems) => {
       showItemCatalog(
         res,

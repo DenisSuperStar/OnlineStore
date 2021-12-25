@@ -10,7 +10,12 @@ import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
+const {
+  ADMIN_LOCATION,
+  CUSTOMER_LOCATION,
+  SYSTEM_DEFINE_LOCATION,
+  CURRENT_LOCATION,
+} = getParsedEnv();
 
 export const renderAttach = async (req, res) => {
   const { id } = req.params;
@@ -20,7 +25,12 @@ export const renderAttach = async (req, res) => {
   const location = geoip.lookup(publicIp);
   const { city } = location;
 
-  if (city == ADMIN_LOCATION || city == CUSTOMER_LOCATION) {
+  if (
+    city == ADMIN_LOCATION ||
+    city == CUSTOMER_LOCATION ||
+    city == SYSTEM_DEFINE_LOCATION ||
+    city == CURRENT_LOCATION
+  ) {
     if (isId) {
       readFileToPromise(itemFilePath).then((itemData) => {
         findItem(res, id, itemData, "attach", "Прикрепить изображение.");

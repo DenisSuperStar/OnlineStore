@@ -11,20 +11,38 @@ import geoip from "geoip-lite";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
+const {
+  ADMIN_LOCATION,
+  CUSTOMER_LOCATION,
+  SYSTEM_DEFINE_LOCATION,
+  CURRENT_LOCATION,
+} = getParsedEnv();
 
 export const renderCatalog = async (req, res) => {
   const publicIp = await getPublicIp();
   const location = geoip.lookup(publicIp);
   const { city } = location;
-  const isPrivateAccess = ((city == ADMIN_LOCATION) || (city == CUSTOMER_LOCATION)) ? true : false;
 
+  const isPrivateAccess =
+    city == ADMIN_LOCATION ||
+    city == CUSTOMER_LOCATION ||
+    city == SYSTEM_DEFINE_LOCATION ||
+    city == CURRENT_LOCATION
+      ? true
+      : false;
   const { uId } = req.params;
   const isUserId = validate(uId);
 
   if (isUserId) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
-      showItemCatalog(res, fileToItems, storeFill, "home", "Каталог товаров.", isPrivateAccess);
+      showItemCatalog(
+        res,
+        fileToItems,
+        storeFill,
+        "home",
+        "Каталог товаров.",
+        isPrivateAccess
+      );
     });
   } else {
     res.send(ReasonPhrases.NOT_FOUND);

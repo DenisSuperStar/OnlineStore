@@ -10,7 +10,7 @@ import { getParsedEnv } from "../../config/envConfig";
 
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
-const { ADMIN_LOCATION, CUSTOMER_LOCATION } = getParsedEnv();
+const { ADMIN_LOCATION, CUSTOMER_LOCATION, SYSTEM_DEFINE_LOCATION, CURRENT_LOCATION } = getParsedEnv();
 
 export const renderValidate = async (req, res) => {
   const { id } = req.params;
