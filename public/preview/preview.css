@@ -1,20 +1,9 @@
-.cm-preview-card {
-  /* необходимо заново загрузить все товары */
-  width: 336px;
-  border-radius: 25px;
-  border: none;
-}
-
-.cm-preview-card__img-card {
-  border-radius: 25px;
-}
-
 @media screen and (min-width: 992px) {
-  .cm-preview-card__img-card {
+  .preview-card-img {
     transition: all .5s;
   }
 
-  .cm-preview-card__img-card:hover {
+  .preview-card-img:hover {
     filter: brightness(80%);
     transform: scale(1.02); 
     -ms-transform: scale(1.02);
