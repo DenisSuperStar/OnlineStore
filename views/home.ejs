@@ -14,130 +14,127 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="/../../page/page.css" />
   <link rel="stylesheet" href="/../../header/header.css">
+  <link rel="stylesheet" href="/../../fieldSearch/fieldSearch.css">
   <link rel="stylesheet" href="/../../humburger/humburger.css">
   <link rel="stylesheet" href="/../../sidebar/sidebar.css">
   <link rel="stylesheet" href="/../../cardListInfo/cardListInfo.css">
   <link rel="stylesheet" href="/../../card/card.css">
   <link rel="stylesheet" href="/../../textHelper/helper.css">
 </head>
-  <body class="cm-page-body">
-    <header id="header">
-      <div class="container header-content" id="headerContent">
-          <ul class="nav">
-              <li class="nav-item" id="menuItem">
-                  <span class="nav-link text-white" id="textItem">
-                      <span class="text-break" id="fontIcon">Ru</span>
-                      <span class="flug-icon" id="flugIcon"></span>
-                  </span>
-              </li>
-              <li class="nav-item" id="menuItem">
-                  <span class="nav-link text-break text-white" id="specialItem">
-                      <span class="fas fa-phone-volume"></span>
-                      <span>+7 (905) 529-31-14</span>
-                  </span>
-              </li>
-              <% if(isPrivateAccess) {%>
-                <li class="nav-item">
-                  <a 
-                    href="/item/access/private"
-                    class="
+
+<body class="cm-page-body">
+  <header id="header">
+    <div class="container header-content" id="headerContent">
+      <ul class="nav">
+        <li class="nav-item" id="menuItem">
+          <span class="nav-link text-white" id="textItem">
+            <span class="text-break" id="fontIcon">Ru</span>
+            <span class="flug-icon" id="flugIcon"></span>
+          </span>
+        </li>
+        <li class="nav-item" id="menuItem">
+          <span class="nav-link text-break text-white" id="specialItem">
+            <span class="fas fa-phone-volume"></span>
+            <span>+7 (905) 529-31-14</span>
+          </span>
+        </li>
+        <% if(isPrivateAccess) {%>
+          <li class="nav-item">
+            <a href="/item/access/private" class="
                       nav-link
                       text-break
                       text-white
                       link-colored
-                    "
-                  >
-                    Возможности
-                  </a>
-                </li>
-              <%} %>
-          </ul>
+                    ">
+              Возможности
+            </a>
+          </li>
+          <%} %>
+      </ul>
+      <input type="text" class="search form-control" placeholder="Введите название или цену товара..." id="search">
+    </div>
+    <div class="container btn-humburger" id="menuButton">
+      <div class="menu-humburger is-active" id="humburger">
+        <div class="humburger-item-1" id="humburgerItem"></div>
+        <div class="humburger-item-2" id="humburgerItem"></div>
+        <div class="humburger-item-3" id="humburgerItem"></div>
       </div>
-      <div class="container btn-humburger" id="menuButton">
-          <div class="menu-humburger is-active" id="humburger">
-              <div class="humburger-item-1" id="humburgerItem"></div>
-              <div class="humburger-item-2" id="humburgerItem"></div>
-              <div class="humburger-item-3" id="humburgerItem"></div>
-          </div>
-      </div>
-      <div class="offcanvas offcanvas-start sidebar is-close-sidebar" id="hide-sidebar">
-          <div class="offcanvas-body sidebar-body">
-              <ul class="list-group">
-                  <li class="list-group-item sidebar-item">
-                      <span class="nav-link text-dark">
-                          <span class="text-break icon-lang">Ru</span>
-                          <span class="icon-flag"></span>
-                      </span>
-                  </li>
-                  <li class="list-group-item sidebar-item">
-                      <span class="nav-link text-break text-dark">
-                          <span class="fas fa-phone-volume font-icon"></span>
-                          <span class="font-icon font-phone-number">+7 (905) 529-31-14</span>
-                      </span>
-                  </li>
-                  <li class="list-group-item sidebar-item">
-                    <a 
-                      href="/item/access/private"
-                      class="
+    </div>
+    <div class="offcanvas offcanvas-start sidebar is-close-sidebar" id="hide-sidebar">
+      <div class="offcanvas-body sidebar-body">
+        <ul class="list-group">
+          <li class="list-group-item sidebar-item">
+            <span class="nav-link text-dark">
+              <span class="text-break icon-lang">Ru</span>
+              <span class="icon-flag"></span>
+            </span>
+          </li>
+          <li class="list-group-item sidebar-item">
+            <span class="nav-link text-break text-dark">
+              <span class="fas fa-phone-volume font-icon"></span>
+              <span class="font-icon font-phone-number">+7 (905) 529-31-14</span>
+            </span>
+          </li>
+          <li class="list-group-item sidebar-item">
+            <a href="/item/access/private" class="
                         nav-link
                         text-break
                         text-dark
                         link-confirm
-                      " 
-                    >
-                      <span class="sidebar-link">Возможности</span>
-                    </a>
-                  </li>
-              </ul>
-          </div>
+                      ">
+              <span class="sidebar-link">Возможности</span>
+            </a>
+          </li>
+        </ul>
       </div>
+    </div>
   </header>
-    <main class="card-list" id="cardListInfo">
-        <div class="container">
-          <div class="row card-list-base">
-            <% if(isSomeItem) {%>
-              <% for(let j=0; j<someItems.length;j++) {%>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 card-list-box mb-4">
-                  <div class="card cm-card-item">
-                    <div class="container cm-card-item__item-box">
-                      <div class="row cm-card-item__item-grid">
-                        <div class="col-12 cm-card-item__img-place">
-                          <div class="cm-card-item__img-box">
-                            <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
-                              alt="Платочек">
-                          </div>
-                        </div>
-                        <div class="col-12 cm-card-item__item-content">
-                          <div class="card-body cm-card-item__card-body">
-                            <p class="card-text text-break text-white cm-card-item__item-price">
-                              <%=someItems[j].price %>
-                            </p>
-                            <p class="card-text text-break text-white cm-card-item__item-size">
-                              <%=someItems[j].size %>
-                            </p>
-                            <h5 class="card-title text-break text-white cm-card-item__item-name">
-                              <%=someItems[j].name %>
-                            </h5>
-                          </div>
-                        </div>
+  <main class="card-list" id="cardListInfo">
+    <div class="container">
+      <div class="row card-list-base">
+        <% if(isSomeItem) {%>
+          <% for(let j=0; j<someItems.length;j++) {%>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 card-list-box mb-4">
+              <div class="card cm-card-item" id="card">
+                <div class="container cm-card-item__item-box">
+                  <div class="row cm-card-item__item-grid">
+                    <div class="col-12 cm-card-item__img-place">
+                      <div class="cm-card-item__img-box">
+                        <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
+                          alt="Платочек">
+                      </div>
+                    </div>
+                    <div class="col-12 cm-card-item__item-content">
+                      <div class="card-body cm-card-item__card-body">
+                        <p class="card-text text-break text-white cm-card-item__item-price" id="itemPrice">
+                          <%=someItems[j].price %>
+                        </p>
+                        <p class="card-text text-break text-white cm-card-item__item-size">
+                          <%=someItems[j].size %>
+                        </p>
+                        <h5 class="card-title text-break text-white cm-card-item__item-name" id="itemName">
+                          <%=someItems[j].name %>
+                        </h5>
                       </div>
                     </div>
                   </div>
                 </div>
-                <%} %>
-                  <% }else {%>
-                    <%- include('partials/textHelper.ejs', {
-                      textContent: "Не было загружено ни одного товара..."
-                    }) %>
-                    <%} %>
-          </div>
-        </div>
-    </main>
-    <script src="/../../header/header.js" type="module"></script>
-    <script src="/../../humburger/humburger.js" type="module"></script>
-    <script src="/../../cardListInfo/cardListInfo.js" type="module"></script>
-    <script src="/../extended/openSidebar.js"></script>
-    <script src="/../../extended/transformMenu.js"></script>
-  </body>
+              </div>
+            </div>
+            <%} %>
+              <% }else {%>
+                <%- include('partials/textHelper.ejs', { textContent: "Не было загружено ни одного товара..." }) %>
+                  <%} %>
+      </div>
+    </div>
+  </main>
+  <script src="/../../header/header.js" type="module"></script>
+  <script src="/../../fieldSearch/fieldSearch.js" type="module"></script>
+  <script src="/../../humburger/humburger.js" type="module"></script>
+  <script src="/../../cardListInfo/cardListInfo.js" type="module"></script>
+  <script src="/../extended/openSidebar.js"></script>
+  <script src="/../../extended/transformMenu.js"></script>
+  <script src="/../../extended/searchItem.js"></script>
+</body>
 
-  </html>
+</html>

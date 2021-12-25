@@ -1,16 +1,6 @@
 @media screen and (max-width: 991px) {
-  .sm_0 {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #dc3545, #0d6efd);
-    z-index: 9999;
-  }
-  .sm_1.header-content {
-    display: none;
-  }
-  .sm_11.btn-humburger {
-    display: block;
+  .btn-humburger {
+    display: block !important;
     padding-left: 36px;
   }
   .menu-humburger.is-active:hover > .humburger-item-1 {
@@ -23,5 +13,11 @@
 
   .menu-humburger.is-active:hover > .humburger-item-3 {
     transform: rotate(45deg) translate(-9px, -3px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .btn-humburger {
+    display: block;
   }
 }
