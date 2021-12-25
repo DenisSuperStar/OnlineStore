@@ -11,16 +11,23 @@ const previewCardStyles = styleModule({
   },
 });
 
-const previewCard = document.getElementById("previewCard");
-const cardImg = document.getElementById("cardImg");
+const previewCards = document.querySelectorAll("#previewCard");
+console.log(previewCards);
+const cardImges = document.querySelectorAll("#cardImg");
+console.log(cardImges);
 
 document.addEventListener("DOMContentLoaded", () => {
-  previewCardStylish(previewCardStyles, previewCard, cardImg);
+  previewCardStylish(previewCardStyles, previewCards, cardImges);
 });
 
 function previewCardStylish(previewStyles, ...previewCardSelectors) {
   const { selfCardPreview, previewCardImg } = previewStyles;
 
-  previewCardSelectors[0].classList.add(selfCardPreview);
-  previewCardSelectors[1].classList.add(previewCardImg);
+  previewCardSelectors[0].forEach((value) => {
+    value.classList.add(selfCardPreview);
+  });
+
+  previewCardSelectors[1].forEach((value) => {
+    value.classList.add(previewCardImg);
+  });
 }

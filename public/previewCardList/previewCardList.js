@@ -17,10 +17,10 @@ const previewCardList = styleModule({
 
 const previewList = document.getElementById("cardList");
 const fluidList = document.getElementById("fluidList");
-const cardGrid = document.getElementById("cardGrid");
+const cardGrids = document.querySelectorAll("#cardGrid");
 
 document.addEventListener("DOMContentLoaded", () => {
-  cardListStylish(previewCardList, previewList, fluidList, cardGrid);
+  cardListStylish(previewCardList, previewList, fluidList, cardGrids);
 });
 
 function cardListStylish(previewCardStyles, ...cardListSelectors) {
@@ -28,5 +28,7 @@ function cardListStylish(previewCardStyles, ...cardListSelectors) {
 
   cardListSelectors[0].classList.add(cardList);
   cardListSelectors[1].classList.add(fluidBox);
-  cardListSelectors[2].classList.add(previewCardGrid);
+  cardListSelectors[2].forEach(value => {
+    value.classList.add(previewCardGrid);
+  });
 }
