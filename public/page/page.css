@@ -6,10 +6,6 @@
   background: linear-gradient(-45deg, #0d6efd 20%, #f8f9fa 40%);
 }
 
-.cm-page-body__content-page {
-  background: #fff;
-}
-
 .cm-page-body__account-content {
   background: transparent;
 }
@@ -30,9 +26,6 @@
     margin: 0;
     padding: 0;
     background: transparent;
-  }
-  .cm-page-body__card-box {
-    width: 50%;
   }
 
   .cm-page-body__card-box--private {

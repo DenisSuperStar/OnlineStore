@@ -27,11 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function humburgerStylish(humburgerStyles, ...humburgerSelectors) {
   const { humburgerBtn, humburgerMenu, humburgerItem } = humburgerStyles;
-
-  humburgerSelectors[0].classList.add(humburgerBtn);
-  humburgerSelectors[1].classList.add(humburgerMenu);
-
-  humburgerSelectors[2].forEach((item) => {
-    item.classList.add(humburgerItem);
-  });
+  try {
+    humburgerSelectors[0].classList.add(humburgerBtn);
+  } catch {}
+  try {
+    humburgerSelectors[1].classList.add(humburgerMenu);
+  } catch {}
+  try {
+    humburgerSelectors[2].forEach((item) => {
+      item.classList.add(humburgerItem);
+    });
+  } catch {}
 }

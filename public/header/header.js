@@ -92,28 +92,49 @@ function headerStylish(headerStyles, ...headerSelectors) {
     authLink,
   } = headerStyles;
 
-  headerSelectors[0].classList.add(header);
-  headerSelectors[1].classList.add(headerContent);
-  headerSelectors[4].classList.add(specialItem);
-  headerSelectors[6].classList.add(cityName);
-  headerSelectors[7].classList.add(authMenu);
-
-  headerSelectors[2].forEach((item) => {
-    item.classList.add(menuItem);
-  });
-  headerSelectors[3].forEach((item) => {
-    item.classList.add(textItem);
-  });
-  headerSelectors[5].forEach((icon) => {
-    icon.classList.add(fontIcon);
-  });
-  headerSelectors[8].forEach((link) => {
-    link.classList.add(confirmLink);
-  });
-  headerSelectors[9].forEach((user) => {
-    user.classList.add(userAuth);
-  });
-  headerSelectors[10].forEach((link) => {
-    link.classList.add(authLink);
-  });
+  try {
+    headerSelectors[0].classList.add(header);
+  } catch {}
+  try {
+    headerSelectors[1].classList.add(headerContent);
+  } catch {}
+  try {
+    headerSelectors[4].classList.add(specialItem);
+  } catch {}
+  try {
+    headerSelectors[6].classList.add(cityName);
+  } catch {}
+  try {
+    headerSelectors[7].classList.add(authMenu);
+  } catch {}
+  try {
+    headerSelectors[2].forEach((item) => {
+      item.classList.add(menuItem);
+    });
+  } catch {}
+  try {
+    headerSelectors[3].forEach((item) => {
+      item.classList.add(textItem);
+    });
+  } catch {}
+  try {
+    headerSelectors[5].forEach((icon) => {
+      icon.classList.add(fontIcon);
+    });
+  } catch {}
+  try {
+    headerSelectors[8].forEach((link) => {
+      link.classList.add(confirmLink);
+    });
+  } catch {}
+  try {
+    headerSelectors[9].forEach((user) => {
+      user.classList.add(userAuth);
+    });
+  } catch {}
+  try {
+    headerSelectors[10].forEach((link) => {
+      link.classList.add(authLink);
+    });
+  } catch {}
 }

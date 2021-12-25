@@ -26,9 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function cardListStylish(previewCardStyles, ...cardListSelectors) {
   const { cardList, fluidBox, previewCardGrid } = previewCardStyles;
 
-  cardListSelectors[0].classList.add(cardList);
-  cardListSelectors[1].classList.add(fluidBox);
-  cardListSelectors[2].forEach(value => {
-    value.classList.add(previewCardGrid);
-  });
+  try {
+    cardListSelectors[0].classList.add(cardList);
+  } catch {}
+  try {
+    cardListSelectors[1].classList.add(fluidBox);
+  } catch {}
+  try {
+    cardListSelectors[2].forEach((value) => {
+      value.classList.add(previewCardGrid);
+    });
+  } catch {}
 }

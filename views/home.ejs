@@ -14,37 +14,37 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="/../../page/page.css" />
   <link rel="stylesheet" href="/../../header/header.css">
-  <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
-  <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
-  <link rel="stylesheet" href="/../../textHelper/helper.css">
+  <link rel="stylesheet" href="/../../humburger/humburger.css">
+  <link rel="stylesheet" href="/../../sidebar/sidebar.css">
+  <link rel="stylesheet" href="/../../cardListInfo/cardListInfo.css">
   <link rel="stylesheet" href="/../../card/card.css">
+  <link rel="stylesheet" href="/../../textHelper/helper.css">
 </head>
   <body class="cm-page-body">
-    <header class="cm-header">
-      <div class="container cm-header__header-content">
-          <ul class="nav cm-header__menu cm-header__menu--simple">
-              <li class="nav-item cm-header__menu-item">
-                  <span class="nav-link text-white cm-header__text-item">
-                      <span class="text-break cm-header__lang">Ru</span>
-                      <span class="cm-header__flug-icon"></span>
+    <header id="header">
+      <div class="container header-content" id="headerContent">
+          <ul class="nav">
+              <li class="nav-item" id="menuItem">
+                  <span class="nav-link text-white" id="textItem">
+                      <span class="text-break" id="fontIcon">Ru</span>
+                      <span class="flug-icon" id="flugIcon"></span>
                   </span>
               </li>
-              <li class="nav-item cm-header__menu-item">
-                  <span class="nav-link text-break text-white cm-header__text-item cm-header__text-item--special">
-                      <span class="cm-header__phone-icon fas fa-phone-volume"></span>
-                      <span class="cm-header__phone-number">+7 (905) 529-31-14</span>
+              <li class="nav-item" id="menuItem">
+                  <span class="nav-link text-break text-white" id="specialItem">
+                      <span class="fas fa-phone-volume"></span>
+                      <span>+7 (905) 529-31-14</span>
                   </span>
               </li>
               <% if(isPrivateAccess) {%>
-                <li class="nav-item cm-header__menu-item">
+                <li class="nav-item">
                   <a 
                     href="/item/access/private"
                     class="
                       nav-link
                       text-break
                       text-white
-                      cm-header__text-item
-                      cm-header__text-item--linked
+                      link-colored
                     "
                   >
                     Возможности
@@ -53,51 +53,51 @@
               <%} %>
           </ul>
       </div>
-      <div class="container cm-header__header-content cm-header__header-content--mobile">
-          <div class="cm-header__menu-humburger" id="humburger">
-              <div class="cm-header__menu-item cm-header__menu-item--1"></div>
-              <div class="cm-header__menu-item cm-header__menu-item--2"></div>
-              <div class="cm-header__menu-item cm-header__menu-item--3"></div>
+      <div class="container btn-humburger" id="menuButton">
+          <div class="menu-humburger is-active" id="humburger">
+              <div class="humburger-item-1" id="humburgerItem"></div>
+              <div class="humburger-item-2" id="humburgerItem"></div>
+              <div class="humburger-item-3" id="humburgerItem"></div>
           </div>
       </div>
-      <div class="offcanvas offcanvas-start cm-header__sidebar-nav is-close-sidebar" id="hide-sidebar">
-          <div class="offcanvas-body cm-header__sidebar-body">
-              <ul class="list-group cm-header__sidebar-list">
-                  <li class="list-group-item cm-header__sidebar-item">
-                      <span class="nav-link text-dark cm-header__sidebar-text-item">
-                          <span class="text-break cm-header__lang">Ru</span>
-                          <span class="cm-header__flug-icon"></span>
+      <div class="offcanvas offcanvas-start sidebar is-close-sidebar" id="hide-sidebar">
+          <div class="offcanvas-body sidebar-body">
+              <ul class="list-group">
+                  <li class="list-group-item sidebar-item">
+                      <span class="nav-link text-dark">
+                          <span class="text-break icon-lang">Ru</span>
+                          <span class="icon-flag"></span>
                       </span>
                   </li>
-                  <li class="list-group-item cm-header__sidebar-item">
-                      <span class="nav-link text-break text-dark cm-header__sidebar-text-item">
-                          <span class="cm-header__user-phone-icon fas fa-phone-volume"></span>
-                          <span class="cm-header__user-phone-number">+7 (905) 529-31-14</span>
+                  <li class="list-group-item sidebar-item">
+                      <span class="nav-link text-break text-dark">
+                          <span class="fas fa-phone-volume font-icon"></span>
+                          <span class="font-icon font-phone-number">+7 (905) 529-31-14</span>
                       </span>
                   </li>
-                  <li class="list-group-item cm-header__sidebar-item">
+                  <li class="list-group-item sidebar-item">
                     <a 
                       href="/item/access/private"
                       class="
                         nav-link
                         text-break
                         text-dark
-                        cm-header__sidebar-text-item
+                        link-confirm
                       " 
                     >
-                      Возможности
+                      <span class="sidebar-link">Возможности</span>
                     </a>
                   </li>
               </ul>
           </div>
       </div>
   </header>
-    <main class="cm-page-body__content-page">
-        <div class="container cm-page-body__grid-container">
-          <div class="row cm-page-body__grid-base">
+    <main class="card-list" id="cardListInfo">
+        <div class="container">
+          <div class="row card-list-base">
             <% if(isSomeItem) {%>
               <% for(let j=0; j<someItems.length;j++) {%>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 cm-page-body__card-box mb-4">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 card-list-box mb-4">
                   <div class="card cm-card-item">
                     <div class="container cm-card-item__item-box">
                       <div class="row cm-card-item__item-grid">
@@ -133,7 +133,11 @@
           </div>
         </div>
     </main>
+    <script src="/../../header/header.js" type="module"></script>
+    <script src="/../../humburger/humburger.js" type="module"></script>
+    <script src="/../../cardListInfo/cardListInfo.js" type="module"></script>
     <script src="/../extended/openSidebar.js"></script>
+    <script src="/../../extended/transformMenu.js"></script>
   </body>
 
   </html>

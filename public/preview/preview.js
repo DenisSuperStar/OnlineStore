@@ -23,11 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function previewCardStylish(previewStyles, ...previewCardSelectors) {
   const { selfCardPreview, previewCardImg } = previewStyles;
 
-  previewCardSelectors[0].forEach((value) => {
-    value.classList.add(selfCardPreview);
-  });
+  try {
+    previewCardSelectors[0].forEach((value) => {
+      value.classList.add(selfCardPreview);
+    });
+  } catch {}
 
-  previewCardSelectors[1].forEach((value) => {
-    value.classList.add(previewCardImg);
-  });
+  try {
+    previewCardSelectors[1].forEach((value) => {
+      value.classList.add(previewCardImg);
+    });
+  } catch {}
 }

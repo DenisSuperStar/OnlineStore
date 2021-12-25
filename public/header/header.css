@@ -1,5 +1,5 @@
 @media screen and (min-width: 992px) {
-  .cm-header__text-item--linked {
+  .link-colored {
     background: linear-gradient(-85deg, #0d6efd, #dc3545);
     border-radius: 25px;
   }
