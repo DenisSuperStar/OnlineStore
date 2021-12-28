@@ -12,13 +12,9 @@ const previewCardStyles = styleModule({
 });
 
 const previewCards = document.querySelectorAll("#previewCard");
-console.log(previewCards);
 const cardImges = document.querySelectorAll("#cardImg");
-console.log(cardImges);
 
-document.addEventListener("DOMContentLoaded", () => {
-  previewCardStylish(previewCardStyles, previewCards, cardImges);
-});
+previewCardStylish(previewCardStyles, previewCards, cardImges);
 
 function previewCardStylish(previewStyles, ...previewCardSelectors) {
   const { selfCardPreview, previewCardImg } = previewStyles;

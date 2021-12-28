@@ -1,7 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const textareas = Array.from(document.querySelectorAll("textarea"));
+const textareas = Array.from(document.querySelectorAll("textarea"));
 
-  textareas.forEach((textarea) => {
-    textarea.value = "";
-  });
+textareas.forEach((textarea) => {
+  textarea.value = "";
 });

@@ -1,12 +1,36 @@
-<%-include('partials/metadata') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/../../page/page.css" />
+
+    <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+    <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
+  </head>
 
   <body class="cm-page-body">
     <main class="cm-page-body__content-page">
       <div class="container cm-page-body__grid-container">
         <div class="row cm-page-body__grid-base">
           <div class="col-5 cm-page-body__jumbotron-box">
-            <%-include('partials/jumbotron', { title: 'Действие не может быть отменено' ,
-              text: 'После удаления, информацию нельзя будет восстановить!' }) %>
+            <%-include('partials/jumbotron', { title: 'Действие не может быть
+            отменено' , text: 'После удаления, информацию нельзя будет
+            восстановить!' }) %>
           </div>
           <div class="col-7 cm-page-body__access-form-box">
             <%- include('partials/actionForm', { confirm: true }) %>
@@ -15,5 +39,4 @@
       </div>
     </main>
   </body>
-
-  </html>
+</html>

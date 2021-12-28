@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+result();
+
+function result() {
   addClassToJumbotronParent();
   insertNodeBeforeJumbotron();
   selectedIcon();
   addClassToAnimatedBlock();
-});
+}
 
 function addClassToAnimatedBlock() {
   const anyUrl = document.location.pathname;

@@ -21,9 +21,7 @@ const btnMenu = document.getElementById("menuButton");
 const selfMenu = document.getElementById("humburger");
 const itemsMenu = btnMenu.querySelectorAll("#humburgerItem");
 
-document.addEventListener("DOMContentLoaded", () => {
-  humburgerStylish(humburgerMenuStyles, btnMenu, selfMenu, itemsMenu);
-});
+humburgerStylish(humburgerMenuStyles, btnMenu, selfMenu, itemsMenu);
 
 function humburgerStylish(humburgerStyles, ...humburgerSelectors) {
   const { humburgerBtn, humburgerMenu, humburgerItem } = humburgerStyles;

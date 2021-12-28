@@ -2,6 +2,7 @@
   width: 396px;
   padding: 24px 0;
   border-radius: 16px;
+  border: 1px solid #fff;
 }
 .cm-access-form--strict {
   background: linear-gradient(-45deg, #6c757d 20%, #f8f9fa 40%);
@@ -62,6 +63,12 @@
   border: none;
   background-color: transparent;
   box-shadow: none;
+}
+
+.light-beautiful-form {
+  background: linear-gradient(-45deg, #6c757d 20%, #f8f9fa 40%);
+  border: 1px solid #dc3545;
+  border-radius: 16px;
 }
 
 @media screen and (min-width: 992px) {

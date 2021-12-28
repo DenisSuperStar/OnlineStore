@@ -21,6 +21,19 @@
   justify-content: flex-end;
 }
 
+.page-remove-background {
+  background: linear-gradient(-225deg, #6c757d 20%, #f8f9fa 40%);
+}
+
+.page-remove-content {
+  background: linear-gradient(-52deg, #0d6efd 20%, #f8f9fa 40%);
+  border: 1px solid #dc3545;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 @media screen and (max-width: 991px) {
   .cm-page-body__content-page--discarded {
     margin: 0;

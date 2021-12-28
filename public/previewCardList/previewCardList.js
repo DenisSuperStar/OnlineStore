@@ -19,9 +19,7 @@ const previewList = document.getElementById("cardList");
 const fluidList = document.getElementById("fluidList");
 const cardGrids = document.querySelectorAll("#cardGrid");
 
-document.addEventListener("DOMContentLoaded", () => {
-  cardListStylish(previewCardList, previewList, fluidList, cardGrids);
-});
+cardListStylish(previewCardList, previewList, fluidList, cardGrids);
 
 function cardListStylish(previewCardStyles, ...cardListSelectors) {
   const { cardList, fluidBox, previewCardGrid } = previewCardStyles;

@@ -60,22 +60,20 @@ const confirmLinks = header.querySelectorAll("#confirmLink");
 const usersAuth = header.querySelectorAll("#userAuth");
 const authLinks = header.querySelectorAll("#authLink");
 
-document.addEventListener("DOMContentLoaded", () => {
-  headerStylish(
-    headerStyles,
-    header,
-    headerContent,
-    menuItems,
-    textItems,
-    specialItem,
-    fontIcons,
-    cityName,
-    authMenu,
-    confirmLinks,
-    usersAuth,
-    authLinks
-  );
-});
+headerStylish(
+  headerStyles,
+  header,
+  headerContent,
+  menuItems,
+  textItems,
+  specialItem,
+  fontIcons,
+  cityName,
+  authMenu,
+  confirmLinks,
+  usersAuth,
+  authLinks
+);
 
 function headerStylish(headerStyles, ...headerSelectors) {
   const {
