@@ -1,3 +1,42 @@
+.grid-container {
+  margin: 300px auto;
+}
+
+.text-data {
+  width: 47%;
+  display: flex;
+  align-items: center;
+}
+
+.entire-form {
+  width: 53%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .text-data { padding: 0; }
+}
+
+@media screen and (max-width: 991px) {
+  .grid-container {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .grid-base {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-data,
+  .entire-form {
+    width: 100%;
+  }
+}
+
 .cm-jumbotron.is-marked {
   width: max-content;
   display: flex;
@@ -29,6 +68,7 @@
 .cm-jumbotron__title-box,
 .cm-jumbotron__text {
   text-align: center;
+  border: none;
 }
 
 .cm-jumbotron__text {
@@ -52,7 +92,7 @@
     border-bottom-right-radius: 0;
     width: 100%;
     margin-bottom: 0;
-    background: #dc3545;
+    background: linear-gradient(90deg, #0d6efd, #dc3545);
     border-top: none;
     border-left: none;
     border-right: none;
@@ -61,7 +101,7 @@
 
   .cm-jumbotron__text {
     width: 100%;
-    background: #dc3545;
+    background: linear-gradient(90deg, #0d6efd, #dc3545);
     border: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;

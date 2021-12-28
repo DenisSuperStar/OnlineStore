@@ -1,7 +1,6 @@
 .cm-access-form {
   width: 396px;
   padding: 24px 0;
-  margin-top: 40px;
   border-radius: 16px;
 }
 .cm-access-form--strict {
@@ -72,6 +71,10 @@
 }
 
 @media screen and (max-width: 991px) {
+  .cm-access-form {
+    width: 100% !important;
+  }
+
   .cm-access-form--strict {
     margin: 0;
   }
