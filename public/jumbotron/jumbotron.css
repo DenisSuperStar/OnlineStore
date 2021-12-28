@@ -1,5 +1,11 @@
 .grid-container {
-  margin: 300px auto;
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
+.grid-box {
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 .text-data {
@@ -17,13 +23,20 @@
 }
 
 @media screen and (min-width: 992px) {
-  .text-data { padding: 0; }
+  .text-data {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 991px) {
   .grid-container {
     margin-top: 64px;
     margin-bottom: 64px;
+  }
+
+  .grid-box {
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .grid-base {

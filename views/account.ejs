@@ -27,24 +27,14 @@
     <main
       class="cm-page-body__content-page cm-page-body__content-page--discarded"
     >
-      <div class="container cm-page-body__grid-container">
-        <div class="row cm-page-body__grid-base">
-          <div
-            class="
-              col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12
-              cm-page-body__jumbotron-box
-            "
-          >
-            <div class="cm-page-body__jumbotron-self">
-              <%- include('partials/jumbotron.ejs', { title: "Платки", text:
-              "Большой выбор женских платков по специальным ценам" }) %>
-            </div>
+      <div class="container grid-box">
+        <div class="row grid-base">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 text-data">
+            <%- include('partials/jumbotron.ejs', { title: "Платки", text:
+            "Большой выбор женских платков по специальным ценам" }) %>
           </div>
           <div
-            class="
-              col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12
-              cm-page-body__access-form-box
-            "
+            class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 entire-form"
           >
             <form method="post" class="shadow rounded cm-access-form">
               <div class="mb-3 cm-access-form__input-box">
@@ -127,8 +117,6 @@
         </div>
       </div>
     </main>
-    <script>
-      
-    </script>
+    <script></script>
   </body>
 </html>
