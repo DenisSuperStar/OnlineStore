@@ -28,12 +28,13 @@
       <div class="container cm-page-body__grid-container">
         <div class="row cm-page-body__grid-base">
           <div class="col-5 cm-page-body__jumbotron-box">
-            <%-include('partials/jumbotron', { title: 'Действие не может быть
-            отменено' , text: 'После удаления, информацию нельзя будет
-            восстановить!' }) %>
+            <%-include("partials/jumbotron.ejs", {
+              title: 'Действие не может быть отменено',
+              text: 'После удаления, информацию нельзя будет восстановить!'
+            }) %>
           </div>
           <div class="col-7 cm-page-body__access-form-box">
-            <%- include('partials/actionForm', { confirm: true }) %>
+            <%- include("partials/actionForm", { confirm: true }) %>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ const {
 
 export const renderValidate = async (req, res) => {
   const { id } = req.params;
-  const { isId } = validate(id);
+  const isId = validate(id);
 
   const publicIp = await getPublicIp();
   const location = geoip.lookup(publicIp);

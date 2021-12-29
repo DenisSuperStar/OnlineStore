@@ -19,7 +19,6 @@ item.post('/access/private', processScope);
 item.get("/upload/:id", renderAttach);
 
 item.get("/delete/:id", renderDelete);
-item.post("/delete/:id", processDeleteToConfirm);
 
 item.get("/delete/confirm/:id", renderValidate);
 item.post("/delete/confirm/:id", processConfirmToDelete);

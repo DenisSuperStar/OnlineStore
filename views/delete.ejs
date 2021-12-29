@@ -28,8 +28,10 @@
       <div class="container">
         <div class="row">
           <div class="col-5 cm-page-body__jumbotron-box">
-            <%- include('partials/jumbotron', { title: "Удалить этот товар" ,
-            text: 'После удаления товара ничего изменить будет нельзя' }) %>
+            <%-include("partials/jumbotron.ejs", {
+              title: 'Удалить этот товар',
+              text: 'После удаления товара ничего изменить будет нельзя'
+            }) %>
           </div>
           <div class="col-7 cm-page-body__access-form-box">
             <form
@@ -114,16 +116,17 @@
               </div>
               <div class="cm-access-form__underline"></div>
               <div class="mb-3 cm-access-form__input-box">
-                <input
-                  type="submit"
+                <a
+                  href="/item/delete/confirm/<%=selfItem._id %>"
                   class="
                     btn btn-outline-danger
                     text-break
                     cm-access-form__submit-btn
                     cm-access-form__submit-btn--full-size
                   "
-                  value="Удалить"
-                />
+                >
+                  Удалить
+                </a>
               </div>
             </form>
           </div>
