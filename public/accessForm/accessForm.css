@@ -13,6 +13,10 @@
   padding: 0 16px;
 }
 
+.cm-access-form:last-child {
+  margin: 0;
+}
+
 .cm-access-form__input-text {
   height: 65px;
   padding: 14px 16px !important;

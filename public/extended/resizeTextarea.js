@@ -1,6 +1,6 @@
-const textareas = Array.from(document.querySelectorAll("textarea"));
+const fields = document.querySelectorAll("textarea");
 
-textareas.forEach((textarea) => {
+fields.forEach((textarea) => {
   textarea.addEventListener("keydown", function () {
     this.style.height = 65 + "px";
 
