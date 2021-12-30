@@ -1,9 +1,8 @@
 import path from "path";
-import { v4 } from "uuid";
+import bcrypt from "bcrypt";
 
+import { confirmUser } from "../../functions/confirmUserData";
 import { readFileToPromise } from "../../functions/toPromise";
-import { getUserData } from "../../functions/userData";
-import { getMatchPassword } from "../../functions/matchPassword";
 
 const __dirname = path.resolve();
 const userFilePath = path.join(__dirname, "/service/users.json");
@@ -14,22 +13,23 @@ export const processAuth = (req, res) => {
 
   if (nickName && password) {
     readFileToPromise(userFilePath)
-      .then((fileToUsers) => {
-        return getUserData(fileToUsers, nickName);
+      .then(fileToUsers => {
+        const users = JSON.parse(fileToUsers);
+        return users.find(user => user.nickName == nickName);
       })
-      .then((dataUser) => {
-        return getMatchPassword(dataUser, password);
+      .then(existUser => {
+        return bcrypt.compare(password, existUser.password);
       })
-      .then((equalPassword) => {
-        if (equalPassword) {
-          const uniqCode = v4();
+      .then(matchPassword => {
+        const userId = confirmUser(nickName);
 
-          res.redirect(`/item/public/${uniqCode}`);
+        if (matchPassword && userId) {
+          res.redirect(`/item/public/${userId}`);
         } else {
-          res.redirect("/user/account");
+          res.redirect('/user/account');
         }
       });
   } else {
-    res.redirect("/user/account");
+    res.redirect('/user/account');
   }
 };

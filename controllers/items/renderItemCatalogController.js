@@ -1,7 +1,7 @@
 import path from "path";
-import { validate } from "uuid";
 import { ReasonPhrases } from "http-status-codes";
 
+import { autorizeUserForId } from "../../functions/autorizationUserForId";
 import { readFileToPromise } from "../../functions/toPromise";
 import { storeFill } from "../../functions/fillingStore";
 import { showItemCatalog } from "../../functions/showCatalog";
@@ -19,6 +19,7 @@ const {
 } = getParsedEnv();
 
 export const renderCatalog = async (req, res) => {
+  const { uId } = req.params;
   const publicIp = await getPublicIp();
   const location = geoip.lookup(publicIp);
   const { city } = location;
@@ -30,10 +31,8 @@ export const renderCatalog = async (req, res) => {
     city == CURRENT_LOCATION
       ? true
       : false;
-  const { uId } = req.params;
-  const isUserId = validate(uId);
 
-  if (isUserId) {
+  if (autorizeUserForId(uId)) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
       showItemCatalog(
         res,
@@ -45,6 +44,6 @@ export const renderCatalog = async (req, res) => {
       );
     });
   } else {
-    res.send(ReasonPhrases.NOT_FOUND);
+    res.send(ReasonPhrases.UNAUTHORIZED);
   }
 };

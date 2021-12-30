@@ -1,15 +1,14 @@
 import path from "path";
+import bcrypt from "bcrypt";
 import fs from "fs";
 
 import { readFileToPromise } from "../../functions/toPromise";
-import { getUserData } from "../../functions/userData";
-import { getMatchPassword } from "../../functions/matchPassword";
 
 const __dirname = path.resolve();
 const userFilePath = path.join(__dirname, "/service/users.json");
 const itemFilePath = path.join(__dirname, "/service/items.json");
 
-export const processConfirmToDelete = (req, res) => {
+export const confirmPersonToDelete = (req, res) => {
   const { id } = req.params;
   const { body } = req;
   const { nickName, password, confirmCode, repeatConfirmCode } = JSON.parse(
@@ -18,29 +17,30 @@ export const processConfirmToDelete = (req, res) => {
 
   readFileToPromise(userFilePath)
     .then((fileToUsers) => {
-      return getUserData(fileToUsers, nickName);
+      const users = JSON.parse(fileToUsers);
+      return users.find((user) => user.nickName == nickName);
     })
-    .then((dataUser) => {
-      return getMatchPassword(dataUser, password);
+    .then((someUser) => {
+      return bcrypt.compare(password, someUser.password);
     })
-    .then((equalPassword) => {
-      return equalPassword ? confirmCode.localeCompare(repeatConfirmCode) : -1;
+    .then((matchPassword) => {
+      return matchPassword ? confirmCode.localCompare(repeatConfirmCode) : -1;
     })
-    .then((dataConfirm) => {
-      const isConfirm = dataConfirm == 0 ? true : false;
+    .then((matchUp) => {
+      const isSuccessMatch = matchUp == 0 ? true : false;
 
-      if (isConfirm) {
+      if (isSuccessMatch) {
         readFileToPromise(itemFilePath).then((allItems) => {
           const items = JSON.parse(allItems);
           const item = items.find((value) => value._id == id);
 
-          const newItems = items.filter((someItem) => someItem._id != item._id);
+          const newItems = items.filter((someItem) => someItem._id == item._id);
           const convertNewItems = JSON.stringify(newItems, null, 4);
 
           fs.writeFileSync(itemFilePath, convertNewItems);
         });
 
-        res.redirect("/user/account");
+        res.redirect("/item/access/private");
       } else {
         res.redirect(`/item/delete/confirm/${id}`);
       }

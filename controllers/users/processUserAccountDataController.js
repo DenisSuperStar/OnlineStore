@@ -1,9 +1,9 @@
 import path from "path";
-import { v4 } from "uuid";
 
 import { readFileToPromise } from "../../functions/toPromise";
 import { checkAccount } from "../../functions/checkUserAccount";
-import { saveUser } from "../../functions/saveUserAccount";
+import { createUser } from "../../functions/createNewUser";
+import { saveUser } from "../../functions/saveUserToDb";
 
 const __dirname = path.resolve();
 const userFilePath = path.join(__dirname, "/service/users.json");
@@ -20,12 +20,13 @@ export const processAccount = async (req, res) => {
       );
 
       if (!currentUser) {
-        const currentUser = new Object();
-        const uniqCode = v4();
+        let currentUser = new Object();
 
-        saveUser(body, currentUser, uniqCode, users, userFilePath);
+        currentUser = createUser(body, currentUser);
+        saveUser(currentUser, users, userFilePath);
+        saveUserToSessionStorage(currentUser);
 
-        res.redirect(`/item/public/${uniqCode}`);
+        res.redirect(`/item/public/${_id}`);
       } else {
         res.redirect("/user/auth");
       }
