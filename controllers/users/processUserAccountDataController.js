@@ -24,9 +24,9 @@ export const processAccount = async (req, res) => {
 
         currentUser = createUser(body, currentUser);
         saveUser(currentUser, users, userFilePath);
-        saveUserToSessionStorage(currentUser);
+        let id = saveUserToSessionStorage(currentUser);
 
-        res.redirect(`/item/public/${_id}`);
+        res.redirect(`/item/public/${id}`);
       } else {
         res.redirect("/user/auth");
       }
