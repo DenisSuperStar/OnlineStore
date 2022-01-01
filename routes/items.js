@@ -1,6 +1,9 @@
 import { Router } from "express";
 
 import { renderCatalog } from "../controllers/items/renderItemCatalogController";
+import { renderNeckerchief } from "../controllers/items/renderNeckerchiefController";
+import { renderHandkerchiefs } from "../controllers/items/renderHandkerchiefsController";
+
 import { renderScope } from "../controllers/items/renderScopeFormController";
 import { processScope } from "../controllers/items/processScopeDataController";
 import { renderAttach } from "../controllers/items/renderAttachFormController";
@@ -11,6 +14,8 @@ import { confirmPersonToDelete } from "../controllers/items/processConfirmToDele
 const item = Router();
 
 item.get("/public", renderCatalog);
+item.get("/public/handkerchiefs", renderHandkerchiefs);
+item.get("/public/neckerchief", renderNeckerchief);
 
 item.get("/access/private", renderScope);
 item.post("/access/private", processScope);
