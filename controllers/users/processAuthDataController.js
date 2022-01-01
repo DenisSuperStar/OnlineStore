@@ -10,10 +10,10 @@ export const processAuth = (req, res) => {
     const { _id } = searchedUserAutorize;
 
     if (autorizeUserForId(_id)) {
-      res.setHeader('Set-cookie', res.cookie('_id', _id), {
+      res.setHeader("Set-cookie", res.cookie("_id", _id), {
         maxAge: 3600 * 24,
         httpOnly: true,
-        signed: true
+        signed: true,
       });
       res.redirect("/item/public");
     } else {
