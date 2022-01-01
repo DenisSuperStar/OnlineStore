@@ -20,10 +20,10 @@ export const processAccount = async (req, res) => {
     if (!isUserSearched) {
       let createdUser = new Object();
       let currentUser = await createUser(body, createdUser);
-      let id = await saveUserToLocalStorage(currentUser);
-      req._id = id;
 
-      res.redirect(`/item/public/${id}`);
+      saveUserToLocalStorage(currentUser);
+
+      res.redirect("/item/public");
     } else {
       res.redirect("/user/auth");
     }

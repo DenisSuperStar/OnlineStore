@@ -19,7 +19,6 @@ const {
 } = getParsedEnv();
 
 export const renderCatalog = async (req, res) => {
-  const { uId } = req.params;
   const publicIp = await getPublicIp();
   const location = geoip.lookup(publicIp);
   const { city } = location;
@@ -32,18 +31,20 @@ export const renderCatalog = async (req, res) => {
       ? true
       : false;
 
-  if (autorizeUserForId(uId)) {
-    readFileToPromise(itemFilePath).then((fileToItems) => {
-      showItemCatalog(
-        res,
-        fileToItems,
-        storeFill,
-        "home",
-        "Каталог товаров.",
-        isPrivateAccess
-      );
-    });
-  } else {
-    res.send(ReasonPhrases.UNAUTHORIZED);
-  }
+      const { _id } = req.cookies;
+
+      if (autorizeUserForId(_id)) {
+        readFileToPromise(itemFilePath).then((fileToItems) => {
+          showItemCatalog(
+            res,
+            fileToItems,
+            storeFill,
+            "home",
+            "Каталог товаров.",
+            isPrivateAccess
+          );
+        });
+      } else {
+        res.send(ReasonPhrases.UNAUTHORIZED);
+      }
 };

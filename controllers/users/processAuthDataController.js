@@ -1,19 +1,17 @@
 import { getUserFromLocalStorage } from "../../functions/getUserFromLocalStorage";
+import { autorizeUserForId } from "../../functions/autorizationUserForId";
 
 export const processAuth = (req, res) => {
-  console.log(req._id);
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
   if (nickName && password) {
-    const userAutorized = getUserFromLocalStorage(nickName, password);
+    const searchedUserAutorize = getUserFromLocalStorage(nickName, password);
+    const { _id } = searchedUserAutorize;
 
-    const { isAutorized, user } = userAutorized;
-
-    if (isAutorized) {
-      const { _id } = user;
-
-      res.redirect(`/item/public/${_id}`);
+    if (autorizeUserForId(_id)) {
+      res.cookie("_id", _id);
+      res.redirect("/item/public");
     } else {
       res.redirect("/user/account");
     }
