@@ -1,6 +1,7 @@
 import { getUserFromLocalStorage } from "../../functions/getUserFromLocalStorage";
 
 export const processAuth = (req, res) => {
+  console.log(req._id);
   const { body } = req;
   const { nickName, password } = JSON.parse(JSON.stringify(body));
 
