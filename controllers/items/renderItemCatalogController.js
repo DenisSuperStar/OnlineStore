@@ -31,20 +31,20 @@ export const renderCatalog = async (req, res) => {
       ? true
       : false;
 
-      const { _id } = req.cookies;
+  const { _id } = req.cookies;
 
-      if (autorizeUserForId(_id)) {
-        readFileToPromise(itemFilePath).then((fileToItems) => {
-          showItemCatalog(
-            res,
-            fileToItems,
-            storeFill,
-            "home",
-            "Каталог товаров.",
-            isPrivateAccess
-          );
-        });
-      } else {
-        res.send(ReasonPhrases.UNAUTHORIZED);
-      }
+  if (autorizeUserForId(_id)) {
+    readFileToPromise(itemFilePath).then((fileToItems) => {
+      showItemCatalog(
+        res,
+        fileToItems,
+        storeFill,
+        "home",
+        "Каталог товаров.",
+        isPrivateAccess
+      );
+    });
+  } else {
+    res.send(ReasonPhrases.UNAUTHORIZED);
+  }
 };
