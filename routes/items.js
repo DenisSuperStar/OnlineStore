@@ -10,7 +10,7 @@ import { confirmPersonToDelete } from "../controllers/items/processConfirmToDele
 
 const item = Router();
 
-item.get("/public/:uId", renderCatalog);
+item.get("/public", renderCatalog);
 
 item.get("/access/private", renderScope);
 item.post("/access/private", processScope);
