@@ -5,7 +5,7 @@ import { renderHandkerchiefs } from "../controllers/items/renderHandkerchiefsCon
 
 const group = Router();
 
-group.get("/public/handkerchiefs", renderHandkerchiefs);
-group.get("/public/neckerchief", renderNeckerchief);
+group.get("/handkerchiefs", renderHandkerchiefs);
+group.get("/neckerchief", renderNeckerchief);
 
 export default group;
