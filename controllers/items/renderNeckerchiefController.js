@@ -9,23 +9,16 @@ const itemFilePath = path.join(__dirname, "/service/items.json");
 
 export const renderNeckerchief = (req, res) => {
   const { _id } = req.cookies;
-  console.log(_id);
 
   if (autorizeUserForId(_id)) {
-    console.log('Работает!');
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const someItems = JSON.parse(fileToItems);
-      const neckerchief = [];
 
-      someItems.forEach((item) => {
-        const { name } = item;
-        console.log(name);
+      someItems.forEach((item) => (item.name = item.name.toLowerCase()));
 
-        console.log(name.indexOf('Платок'));
-        (name.indexOf("Платок") > -1) ? neckerchief.push(item) : "";
-      });
-
-      console.log(neckerchief);
+      const neckerchief = someItems.filter(
+        (item) => item.name.indexOf("шарф") > -1
+      );
 
       res.render("neckerchief", {
         title: "Каталог женских шарфиков",

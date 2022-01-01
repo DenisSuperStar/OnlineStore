@@ -13,13 +13,14 @@ export const renderHandkerchiefs = (req, res) => {
   if (autorizeUserForId(_id)) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const someItems = JSON.parse(fileToItems);
-      const handkerchief = [];
 
       someItems.forEach((item) => {
-        const { name } = item;
-
-        (name.indexOf("Шарф") > -1) ? handkerchief.push(item) : "";
+        item.name = item.name.toLowerCase();
       });
+
+      const handkerchief = someItems.filter(
+        (item) => item.name.indexOf("платок") > -1
+      );
 
       res.render("handkerchief", {
         title: "Каталог женских платочков",
