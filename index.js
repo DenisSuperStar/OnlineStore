@@ -7,6 +7,7 @@ import { getParsedEnv } from "./config/envConfig";
 
 import user from "./routes/users";
 import item from "./routes/items";
+import group from "./routes/groups";
 
 import { start } from "./functions/startServer";
 
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, "/resize")));
 
 app.use("/user", user);
 app.use("/item", item);
+app.use('/item/group', group);
 
 app.get("/", renderPreview);
 
