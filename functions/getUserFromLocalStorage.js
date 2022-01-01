@@ -14,8 +14,5 @@ export const getUserFromLocalStorage = (nick, pass) => {
     if (isAutorized) break;
   }
 
-  return {
-    isAutorized,
-    user,
-  };
+  return user;
 };
