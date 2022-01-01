@@ -17,7 +17,7 @@ import { storage } from "./functions/storageConfig";
 
 const __dirname = path.resolve();
 const multerConfig = multer({ storage }).single("attachFile");
-const { APP_PORT } = getParsedEnv();
+const { APP_PORT, SECRET_COOKIE_KEY } = getParsedEnv();
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(multerConfig);
-app.use(cookieParser());
+app.use(cookieParser(SECRET_COOKIE_KEY));
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/uploads")));
 app.use(express.static(path.join(__dirname, "/resize")));
