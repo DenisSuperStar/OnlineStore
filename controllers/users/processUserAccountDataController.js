@@ -21,6 +21,7 @@ export const processAccount = async (req, res) => {
       let createdUser = new Object();
       let currentUser = await createUser(body, createdUser);
       let id = await saveUserToLocalStorage(currentUser);
+      req._id = id;
 
       res.redirect(`/item/public/${id}`);
     } else {
