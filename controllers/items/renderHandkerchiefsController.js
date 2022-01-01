@@ -13,10 +13,12 @@ export const renderHandkerchiefs = (req, res) => {
   if (autorizeUserForId(_id)) {
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const someItems = JSON.parse(fileToItems);
-      const handkerchief = someItems.find((item) => {
+      const handkerchief = [];
+
+      someItems.forEach((item) => {
         const { name } = item;
 
-        return name.indexOf("Платок") ? item : "";
+        (name.indexOf("Шарф") > -1) ? handkerchief.push(item) : "";
       });
 
       res.render("handkerchief", {

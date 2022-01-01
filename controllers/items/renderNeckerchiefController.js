@@ -9,15 +9,23 @@ const itemFilePath = path.join(__dirname, "/service/items.json");
 
 export const renderNeckerchief = (req, res) => {
   const { _id } = req.cookies;
+  console.log(_id);
 
   if (autorizeUserForId(_id)) {
+    console.log('Работает!');
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const someItems = JSON.parse(fileToItems);
-      const neckerchief = someItems.find((item) => {
-        const { name } = item;
+      const neckerchief = [];
 
-        return name.indexOf("Шарф") ? item : "";
+      someItems.forEach((item) => {
+        const { name } = item;
+        console.log(name);
+
+        console.log(name.indexOf('Платок'));
+        (name.indexOf("Платок") > -1) ? neckerchief.push(item) : "";
       });
+
+      console.log(neckerchief);
 
       res.render("neckerchief", {
         title: "Каталог женских шарфиков",
