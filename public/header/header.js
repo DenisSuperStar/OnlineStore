@@ -13,7 +13,7 @@ const headerStyles = styleModule({
     padding: "0 32px",
   },
   menuItem: {
-    marginRight: "32px",
+    marginRight: "25px",
   },
   textItem: {
     fontSize: "14px",

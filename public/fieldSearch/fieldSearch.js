@@ -2,7 +2,7 @@ import { styleModule } from "https://unpkg.com/style-module?module";
 
 const searchFieldStyles = styleModule({
   search: {
-    width: "50%",
+    width: "calc(50% - 25px)",
     height: "56px",
     borderRadius: "25px",
     background: 'linear-gradient(85deg, #0d6efd, #dc3545)',
