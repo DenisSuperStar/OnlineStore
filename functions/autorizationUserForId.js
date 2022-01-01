@@ -1,10 +1,9 @@
-'use strict';
-
-const sessionStorage = require('sessionstorage-for-node');
+import { LocalStorage } from "node-localstorage";
+const localStorage = new LocalStorage("./scratch");
 
 export const autorizeUserForId = (userId) => {
-  for (let j = 0; j < sessionStorage.length; j++) {
-    let userKey = sessionStorage.key(j);
+  for (let j = 0; j < localStorage.length; j++) {
+    let userKey = localStorage.key(j);
 
     return userKey == userId ? true : false;
   }
