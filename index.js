@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, "/resize")));
 
 app.use("/user", user);
 app.use("/item", item);
-app.use('/item/group', group);
+app.use('/group', group);
 
 app.get("/", renderPreview);
 
