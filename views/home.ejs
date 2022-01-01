@@ -45,29 +45,32 @@
                       text-break
                       text-white
                       link-colored
-                    ">
+                    " id="menuItem">
               Возможности
             </a>
           </li>
           <%} %>
-          <li class="nav-item">
-            <a href="/public/handkerchiefs" class="
-                nav-link 
-                text-break 
-                text-white 
-                link-colored
-              "
-            >Платки</a>
-          </li>
-          <li class="nav-item">
-            <a href="/public/neckerchief" class="
-                nav-link 
-                text-break 
-                text-white 
-                link-colored
-              "
-            >Шарфы</a>
-          </li>
+          
+            <li class="nav-item" id="menuItem">
+              <a href="/item/group/public/handkerchiefs" class="
+                  nav-link 
+                  text-break 
+                  text-white 
+                  link-colored
+                "
+              >Платки</a>
+            </li>
+            <li class="nav-item" id="menuItem">
+              <a href="/item/group/public/neckerchief" class="
+                  nav-link 
+                  text-break 
+                  text-white 
+                  link-colored
+                "
+              >Шарфы</a>
+            </li>
+          
+        
       </ul>
       <input type="text" class="search form-control" placeholder="Введите название или цену товара..." id="search">
     </div>
@@ -146,7 +149,7 @@
       </div>
     </div>
   </main>
-  <script defer src="/../../extended/hiddenConsole.js"></script>
+  <!-- <script defer src="/../../extended/hiddenConsole.js"></script> -->
   <script defer src="/../../header/header.js" type="module"></script>
   <script defer src="/../../fieldSearch/fieldSearch.js" type="module"></script>
   <script defer src="/../../humburger/humburger.js" type="module"></script>
