@@ -14,7 +14,9 @@ export const renderNeckerchief = (req, res) => {
     readFileToPromise(itemFilePath).then((fileToItems) => {
       const someItems = JSON.parse(fileToItems);
       const neckerchief = someItems.find((item) => {
-        return item.indexOf("Шарф") ? item : "";
+        const { name } = item;
+
+        return name.indexOf("Шарф") ? item : "";
       });
 
       res.render("neckerchief", {
