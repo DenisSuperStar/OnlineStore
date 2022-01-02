@@ -1,1 +1,72 @@
-<p>Страница платков</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <link rel="stylesheet" href="/../../page/page.css" />
+    <link rel="stylesheet" href="/../../header/header.css" />
+    <link rel="stylesheet" href="/../../humburger/humburger.css" />
+    <link rel="stylesheet" href="/../../sidebar/sidebar.css" />
+    <link rel="stylesheet" href="/../../cardListInfo/cardListInfo.css">
+    <link rel="stylesheet" href="/../../card/card.css">
+    <link rel="stylesheet" href="/../../slider/slider.css">
+</head>
+<body class="cm-page-body">
+    <header id="header"></header>
+    <main class="card-list" id="cardListInfo">
+        <div class="container">
+            <div class="item-group multiple-items">
+                <% for(var i=0; i<handkerchief.length;i++) {%>
+                    <div class="item-group__item" style="width: 400px;">
+                        <div class="card" style="width: 18rem">
+                            <img src="<%=handkerchief[i].imgPath %>" class="card-img-top" alt="<%=handkerchief[i].name %>" />
+                            <div class="card-body">
+                              <h5 class="card-title"><%=handkerchief[i].name %></h5>
+                              <div class="card-text">
+                                <%=handkerchief[i].size %>
+                              </div>
+                              <div class="card-text">
+                                <%=handkerchief[i].stuff %>
+                              </div>
+                              <div class="card-text">
+                                <%=handkerchief[i].price %>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <%} %>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
+    <script src="/../../slider/slickSettings.js"></script>
+    <script defer src="/../../cardListInfo/cardListInfo.js" type="module"></script>
+</body>
