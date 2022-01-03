@@ -1,3 +1,17 @@
+.app-access-form {
+  width: 53%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .app-access-form {
+    width: 100%;
+  }
+}
+
 .cm-access-form {
   width: 396px;
   padding: 24px 0;

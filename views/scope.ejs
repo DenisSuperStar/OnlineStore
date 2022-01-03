@@ -12,17 +12,19 @@
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/../../documentBody/documentBody.css">
+  <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
   <link rel="stylesheet" href="/../../page/page.css" />
   <link rel="stylesheet" href="/../../animatedBlock/imposition.css">
-  <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+  <link rel="stylesheet" href="/../../adText/adText.css">
   <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   <link rel="stylesheet" href="/../../textHelper/helper.css">
   <link rel="stylesheet" href="/../../banner/banner.css">
   <link rel="stylesheet" href="/../../card/card.css">
 </head>
 
-  <body class="cm-page-body cm-page-body--strict">
-    <main class="cm-page-body__grid-container">
+  <body class="document-body is-private-theme">
+    <main class="section-content is-private">
       <div class="container">
         <div class="row cm-page-body__banner-box">
           <div class="alert alert-primary text-white p-md-5 mb-4 cm-banner">
@@ -83,13 +85,13 @@
         <div class="row">
           <div class="col-5">
             <div class="cm-page-body__jumbotron-box">
-              <%- include('partials/jumbotron.ejs', {
+              <%- include('partials/adText.ejs', {
                 title: "Загрузить товар",
                 text: "Начните добавлять товары прямо сейчас!"
               }) %>
             </div>
           </div>
-          <div class="col-7 cm-page-body__access-form-box cm-page-body__access-form-box--private private-wrapper">
+          <div class="col-7 app-access-form cm-page-body__access-form-box--private private-wrapper">
             <form class="shadow cm-access-form cm-access-form--strict" method="post">
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
@@ -139,10 +141,10 @@
         </div>
       </div>
     </main>
-    <script defer src="/../../extended/hiddenConsole.js"></script>
-    <script defer src="/../../extended/privatePageDOMchanging.js"></script>
-    <script defer src="/../../extended/clearTextarea.js"></script>
-    <script defer src="/../../extended/resizeTextarea.js"></script>
+    <script async src="/../../extended/hiddenConsole.js"></script>
+    <script async src="/../../extended/privatePageDOMchanging.js"></script>
+    <script async src="/../../extended/clearTextarea.js"></script>
+    <script async src="/../../extended/resizeTextarea.js"></script>
   </body>
 
   </html>

@@ -1,0 +1,42 @@
+
+
+.cm-page-body--strict { /*(?)*/
+  background: linear-gradient(-45deg, #0d6efd 20%, #f8f9fa 40%);
+}
+
+.cm-page-body__account-content { /*(?)*/
+  background: transparent;
+}
+
+@media screen and (max-width: 991px) {
+  .cm-page-body__card-box--private { /*(?)*/
+    width: 100%;
+  }
+
+  .cm-page-body__jumbotron-self { /*(?)*/
+    padding: 24px 16px 0;
+  }
+}
+
+/*!!----!!!*/
+
+@media screen and (min-width: 992px) {
+  .private-wrapper { /*(admin)*/
+    margin-bottom: 16px;
+  }
+}
+/*!!--!!*/
+
+/*!!--!!*/
+@media screen and (max-width: 991px) {
+  .cm-page-body__access-form-box--private { /*(admin)*/
+    width: 100%;
+  }
+
+  .private-wrapper { /*(admin)*/
+    margin-bottom: 24px;
+  }
+}
+/*!!--!!*/
+
+

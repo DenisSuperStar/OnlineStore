@@ -17,26 +17,34 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/../../page/page.css" />
-    <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+    <link rel="stylesheet" href="/../../documentBody/documentBody.css">
+    <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
+    <link rel="stylesheet" href="/../../gridTemplate/templateApp.css">
+    <link rel="stylesheet" href="/../../adText/adText.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
     <link rel="stylesheet" href="/../../banner/banner.css" />
     <link rel="stylesheet" href="/../../card/card.css" />
   </head>
-  <body class="cm-page-body">
-    <main
-      class="cm-page-body__content-page cm-page-body__content-page--discarded"
-    >
-      <div class="container grid-box">
-        <div class="row grid-base">
-          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 text-data">
-            <%- include("partials/jumbotron.ejs", {
+  <body class="document-body">
+    <main class="section-content">
+      <div class="container template-app">
+        <div class="row template-app__cols">
+          <div class="
+            col-xxl-6
+            col-xl-6
+            col-lg-6
+            col-md-6
+            col-sm-12
+            ad-text
+            is-custom
+          ">
+            <%- include("partials/adText.ejs", {
               title: "Платки",
               text: "Большой выбор женских платков по специальным ценам"
             }) %>
           </div>
           <div
-            class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 entire-form"
+            class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 app-access-form"
           >
             <form method="post" class="shadow cm-access-form">
               <div class="mb-3 cm-access-form__input-box">
@@ -119,6 +127,6 @@
         </div>
       </div>
     </main>
-    <script defer src="/../../extended/hiddenConsole.js"></script>
+    <!-- <script async src="/../../extended/hiddenConsole.js"></script> -->
   </body>
 </html>

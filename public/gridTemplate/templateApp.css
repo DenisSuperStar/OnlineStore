@@ -1,0 +1,26 @@
+.template-app {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.template-app.is-skewed {
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
+@media screen and (max-width: 991px) {
+  .template-app {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .template-app.is-skewed {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .template-app__cols {
+    display: flex;
+    flex-direction: column;
+  }
+}

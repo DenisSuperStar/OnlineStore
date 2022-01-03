@@ -1,13 +1,36 @@
-<%- include("partials/metadata") %>
-
-  <body class="cm-page-body">
-    <main class="cm-page-body__content-page">
-      <div class="container cm-page-body__grid-container">
-        <div class="row cm-page-body__grid-base">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/../../documentBody/documentBody.css">
+    <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
+    <link rel="stylesheet" href="/../../gridTemplate/templateApp.css">
+    <link rel="stylesheet" href="/../../adText/adText.css">
+    <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
+  </head>
+  <body class="document-body">
+    <main class="section-content">
+      <div class="container template-app">
+        <div class="row template-app__cols">
           <div class="col-5 cm-page-body__jumbotron-box">
             <%- include('partials/jumbotron', { title: 'Прикрепить файл' , text: 'Прикрепите изображение товара' }) %>
           </div>
-          <div class="col-7 cm-page-body__access-form-box">
+          <div class="col-7 app-access-form">
             <form action="/attach" class="shadow rounded cm-access-form" enctype="multipart/form-data" method="post">
               <input type="hidden" value="<%=selfItem._id %>" name="itemId" />
               <div class="mb-3 cm-access-form__input-box">

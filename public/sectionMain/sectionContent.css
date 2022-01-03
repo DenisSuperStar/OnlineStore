@@ -1,0 +1,17 @@
+.section-content.is-private {
+  background: linear-gradient(-52deg, #0d6efd 20%, #f8f9fa 40%);
+  border: 1px solid #dc3545;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 991px) {
+  .section-content {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+}

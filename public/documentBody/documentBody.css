@@ -1,0 +1,7 @@
+.document-body {
+  background: linear-gradient(90deg, #dc3545, #0d6efd);
+}
+
+.document-body.is-private-theme {
+  background: linear-gradient(-225deg, #6c757d 20%, #f8f9fa 40%);
+}

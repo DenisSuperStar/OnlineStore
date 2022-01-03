@@ -17,23 +17,25 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/../../documentBody/documentBody.css">
+    <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
+    <link rel="stylesheet" href="/../../gridTemplate/templateApp.css">
     <link rel="stylesheet" href="/../../page/page.css" />
-
-    <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+    <link rel="stylesheet" href="/../../adText/adText.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   </head>
 
-  <body class="cm-page-body">
-    <main class="cm-page-body__content-page">
-      <div class="container cm-page-body__grid-container">
-        <div class="row cm-page-body__grid-base">
-          <div class="col-5 cm-page-body__jumbotron-box">
-            <%-include("partials/jumbotron.ejs", {
+  <body class="document-body is-private-theme">
+    <main class="section-content is-private">
+      <div class="container template-app">
+        <div class="row template-app__cols">
+          <div class="col-5 ad">
+            <%-include("partials/adText.ejs", {
               title: 'Действие не может быть отменено',
               text: 'После удаления, информацию нельзя будет восстановить!'
             }) %>
           </div>
-          <div class="col-7 cm-page-body__access-form-box">
+          <div class="col-7 app-access-form">
             <%- include("partials/actionForm", { confirm: true }) %>
           </div>
         </div>

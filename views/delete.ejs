@@ -17,23 +17,25 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/../../documentBody/documentBody.css">
+    <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
     <link rel="stylesheet" href="/../../page/page.css" />
     <link rel="stylesheet" href="/../../animatedBlock/imposition.css" />
-    <link rel="stylesheet" href="/../../jumbotron/jumbotron.css" />
+    <link rel="stylesheet" href="/../../adText/adText.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   </head>
 
-  <body class="page-remove-background">
-    <main class="page-remove-content">
+  <body class="document-body is-private-theme">
+    <main class="section-content is-private">
       <div class="container">
         <div class="row">
-          <div class="col-5 cm-page-body__jumbotron-box">
-            <%-include("partials/jumbotron.ejs", {
+          <div class="col-5 ad-text">
+            <%-include("partials/adText.ejs", {
               title: 'Удалить этот товар',
               text: 'После удаления товара ничего изменить будет нельзя'
             }) %>
           </div>
-          <div class="col-7 cm-page-body__access-form-box">
+          <div class="col-7 app-access-form">
             <form
               class="shadow cm-access-form light-beautiful-form"
               method="post"
@@ -133,7 +135,7 @@
         </div>
       </div>
     </main>
-    <script defer src="/../../extended/hiddenConsole.js"></script>
-    <script defer src="/../../extended/privatePageDOMchanging.js"></script>
+    <script async src="/../../extended/hiddenConsole.js"></script>
+    <script async src="/../../extended/privatePageDOMchanging.js"></script>
   </body>
 </html>
