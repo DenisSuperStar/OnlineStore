@@ -26,3 +26,9 @@
   opacity: 0;
   transition: opacity 0.4s;
 }
+
+@media screen and (max-width: 1199px) {
+  .is-hide {
+    pointer-events: none;
+  }
+}
