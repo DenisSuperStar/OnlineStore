@@ -1,6 +1,5 @@
 const search = document.getElementById("search");
 const cards = document.querySelectorAll("#card");
-const sectionContent = document.getElementById("cardListInfo");
 
 search.addEventListener("input", function () {
   const query = this.value.toLowerCase();
