@@ -4,6 +4,7 @@
 
 @media screen and (min-width: 992px) {
   .preview-card-img {
+    cursor: pointer;
     transition: all 0.5s;
   }
 
