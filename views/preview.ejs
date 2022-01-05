@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/../../previewCardList/previewCardList.css">
     <link rel="stylesheet" href="/../../preview/preview.css">
     <link rel="stylesheet" href="/../../showMore/showMore.css">
+    <link rel="stylesheet" href="/../../modalWindow/modalWindow.css">
 </head>
 
 <body class="document-body">
@@ -111,7 +112,7 @@
             </div>
         </div>
     </header>
-    <main class="preview-card-list" id="cardList">
+    <main class="preview-card-list contain-modal" id="cardList">
         <div class="container-fluid mt-4 fluid-card-list" id="fluidList">
             <div class="row">
                 <% for(let j=0; j<thumbnails.length;j++) {%>
@@ -137,20 +138,20 @@
                 <button class="btn btn-light text-white show-more-btn is-shown" id="showMore">Показать еще</button>
             </div>
         </div>
-    </main>
-    <div class="modal-dialog modal-dialog-centered modal-window" id="modalWindow">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="btn btn-light" id="btnClose">&times;</button>
-            </div>
-            <div class="modal-body">
-                <img class="card-img-top preview-card-img" id="showImg">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-light" id="btnClose">Close</button>
+        <div class="modal-dialog modal-dialog-centered modal-window" id="modalWindow">
+            <div class="modal-content modal-window-body">
+                <div class="modal-header modal-window-header">
+                    <div class="btn btn-light text-secondary modal-window-close fas fa-times" id="btnClose"></div>
+                </div>
+                <div class="modal-body modal-window-center">
+                    <img class="card-img-top preview-card-img modal-body-img" id="showImg">
+                </div>
+                <div class="modal-footer modal-window-footer">
+                    <button class="btn btn-light text-white modal-window-close modal-window-btn-close" id="btnClose">Закрыть</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
     <script async src="/../../extended/hiddenConsole.js"></script>
     <script defer src="/../../header/header.js" type="module"></script>
     <script defer src="/../../humburger/humburger.js" type="module"></script>
