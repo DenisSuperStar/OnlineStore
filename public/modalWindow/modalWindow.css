@@ -70,3 +70,11 @@
 .modal-window-btn-close:hover {
   background: linear-gradient(90deg, rgb(220, 53, 69), rgb(255, 193, 7));
 }
+
+
+@media screen and (max-width: 991px) {
+  .modal-window {
+    display: none;
+    position: static;
+  }
+}
