@@ -1,0 +1,74 @@
+.contain-modal {
+  position: relative;
+}
+
+.modal-window {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  margin-top: 0;
+}
+
+.modal-window-body {
+  border-radius: 25px;
+}
+
+.modal-window-header {
+  display: flex;
+  padding: 20px 20px 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.modal-window-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  font-weight: 100;
+}
+
+.modal-window-close:hover {
+  background: transparent;
+}
+
+.modal-window-close::before {
+  font-size: 30px;
+}
+
+.modal-window-center {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.modal-body-img {
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.modal-window-footer {
+  border-top: none;
+}
+
+.modal-window-btn-close {
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, rgb(220, 53, 69), rgb(255, 193, 7));
+}
+
+.modal-window-btn-close:hover {
+  background: linear-gradient(90deg, rgb(220, 53, 69), rgb(255, 193, 7));
+}

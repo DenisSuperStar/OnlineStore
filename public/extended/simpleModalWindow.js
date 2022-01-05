@@ -12,19 +12,31 @@ previewCards.forEach((card) => {
     const elem = e.target;
     const startPos = elem.src.indexOf("-");
     const endPos = elem.src.indexOf("jpg") - 1;
-    const sliceLine = elem.src.substring(startPos, endPos);
-    const modifyLine = elem.src.replace(sliceLine, "");
-    const currentAlt = elem.alt;
+
+    showModal(elem, startPos, endPos);
+
+    getPosForModalWindow();
 
     if (elem.tagName != "IMG") return;
-
-    showImg.src = modifyLine;
-    showImg.alt = currentAlt;
-
-    modalWindow.style.display = "block";
   });
 });
 
 closeButtons.forEach((button) => {
   button.addEventListener("click", () => (modalWindow.style.display = "none"));
 });
+
+function getPosForModalWindow() {
+  const setPos_y = window.event.clientY;
+  modalWindow.style.top = setPos_y + 'px';
+}
+
+function showModal(currentElem, ...range) {
+  const sliceLine = currentElem.src.substring(range[0], range[1]);
+  const modifyLine = currentElem.src.replace(sliceLine, "");
+  const currentAlt = currentElem.alt;
+
+  showImg.src = modifyLine;
+  showImg.alt = currentAlt;
+
+  modalWindow.style.display = "block";
+}
