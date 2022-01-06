@@ -34,7 +34,6 @@
   background: transparent;
   border-radius: 0;
   border: none;
-  font-weight: 100;
 }
 
 .modal-window-close:hover {
@@ -43,6 +42,7 @@
 
 .modal-window-close::before {
   font-size: 30px;
+  font-weight: 100;
 }
 
 .modal-window-center {
