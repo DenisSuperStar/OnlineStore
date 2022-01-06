@@ -42,10 +42,7 @@
     }
 
     .modal-window-body {
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-radius: 25px;
       border: none;
     }
 
@@ -62,7 +59,18 @@
     }
 
     .modal-window-close {
+      width: 26px;
+      height: 26px;
       margin-left: auto;
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modal-window-close::before {
+      font-size: 30px;
+      font-weight: 100;
     }
 
     .modal-window-header-title {
@@ -92,6 +100,7 @@
       border-radius: 16px;
       background: linear-gradient(
 90deg, #dc3545, #ffc107);
+cursor: auto;
     }
 
     .modal-background {
@@ -103,6 +112,28 @@
       opacity: 0.7;
       z-index: 9;
       cursor: pointer;
+    }
+
+    .modal-window-btn-close {
+      width: 300px;
+      height: 50px;
+      font-size: 16px;
+      border-radius: 25px;
+      background: linear-gradient(90deg, rgb(220, 53, 69), rgb(255, 193, 7));
+    }
+
+    .modal-window-footer {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 260px;
+      border: none;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
     }
   </style>
 </head>
@@ -232,7 +263,7 @@
                   <div class="modal-header modal-window-header">
                     <div class="modal-window-header-content">
                       <div class="modal-window-wrapper-close">
-                        <button class="modal-window-close" id="btnClose">x</button>
+                        <div class="modal-window-close fas fa-times" id="btnClose"></div>
                       </div>
                       <h5 class="modal-window-header-title"><%=someItems[j].name %></h5>
                     </div>
@@ -251,8 +282,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-light" id="btnClose">Закрыть</button>
+                  <div class="modal-footer modal-window-footer">
+                    <button class="btn btn-light text-white modal-window-btn-close" id="btnClose">Закрыть</button>
                   </div>
                 </div>
               </div>
@@ -268,7 +299,7 @@
     </div>
   </main>
   <div class="p-3 bg-secondary modal-background" id="modalBackground"></div>
-  <!-- <script defer src="/../../extended/hiddenConsole.js"></script> -->
+  <script defer src="/../../extended/hiddenConsole.js"></script>
   <script defer src="/../../header/header.js" type="module"></script>
   <script defer src="/../../fieldSearch/fieldSearch.js" type="module"></script>
   <script defer src="/../../humburger/humburger.js" type="module"></script>
@@ -277,77 +308,7 @@
   <script async src="/../../extended/searchItem.js"></script>
   <script async src="/../../extended/transformMenu.js"></script>
   <script async src="/../../extended/showMore.js"></script>
-  <script>
-    const products = Array.from(document.querySelectorAll('#card'));
-    const modalWindows = Array.from(document.querySelectorAll('#modalWindow'));
-    const images = Array.from(document.querySelectorAll('#hugeImage'));
-    const quickViews = Array.from(document.querySelectorAll('#quickView'));
-    const modalBackground = document.getElementById('modalBackground');
-
-    document.addEventListener('DOMContentLoaded', () => {
-      products.forEach(card => {
-        let modalNode = card.nextSibling;
-        let modal = modalNode.nextSibling;
-
-        modal.style.display = 'none';
-        modalBackground.style.display = 'none';
-      });
-    });
-
-    images.forEach(image => {
-      const startPos = image.src.indexOf('-');
-      const endPos = image.src.lastIndexOf('.');
-      const findLine = image.src.substring(startPos, endPos);
-      const changePath = image.src.replace(findLine, '');
-      
-      image.src = changePath;
-    });
-
-    products.forEach(item => {
-      item.addEventListener('click', function(e) {
-        const elem = e.target;
-        const modalNode = this.nextSibling;
-        const modal = modalNode.nextSibling;
-
-        modal.style.display = 'block';
-        modalBackground.style.display = 'block';
-
-        if (elem != 'BUTTON') return;
-      });
-    });
-
-    quickViews.forEach(btn => {
-      const cardItemNode = btn.nextSibling;
-      const cardItem = cardItemNode.nextSibling;
-      const imgItem = cardItem.querySelector('#imgItem');
-
-      imgItem.addEventListener('mouseover', () => {
-        btn.classList.add('is-appear');
-      });
-      imgItem.addEventListener('mouseout', () => {
-        btn.classList.remove('is-appear');
-      });
-      btn.addEventListener('mouseover', function() {
-        btn.classList.add('is-appear');
-      });
-    });
-
-    modalWindows.forEach(modal => {
-      const btnClose = Array.from(modal.querySelectorAll('#btnClose'));
-
-      btnClose.forEach(close => {
-        close.addEventListener('click', () => {
-          modal.style.display = 'none';
-          modalBackground.style.display = 'none';
-        });
-
-        modalBackground.addEventListener('click', function() {
-          modal.style.display = 'none';
-          this.style.display = 'none';
-        });
-      });
-    });
-  </script>
+  <script async src="/../../extended/detailItemModel.js"></script>
 </body>
 
 </html>
