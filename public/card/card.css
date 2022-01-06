@@ -1,8 +1,12 @@
+.contains-view-button {
+  position: relative;
+}
+
 .cm-card-item {
   width: 400px;
   background: linear-gradient(-90deg, #dc3545, #ffc107);
   border: none;
-  border-radius: 16px;
+  border-radius: 25px;
 }
 .cm-card-item--strict {
   background: linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%);
@@ -16,13 +20,14 @@
 }
 .cm-card-item__img-box {
   width: 336px;
-  border-radius: 16px;
+  border-radius: 25px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 .cm-card-item__item-img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 25px;
+  cursor: pointer;
 }
 .cm-card-item__card-body {
   position: relative;
@@ -54,6 +59,29 @@
   margin-bottom: 18px;
 }
 
+.btn-quick-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 150px;
+  margin-left: 115px;
+  border: none;
+  border-radius: 25px;
+  background: transparent;
+  opacity: 0;
+  z-index: 8;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.btn-quick-view:not(.is-appear) {
+  opacity: 0;
+}
+
+.btn-quick-view.is-appear {
+  background: #fff;
+  opacity: 1;
+}
+
 @media screen and (max-width: 1199px) {
   .cm-card-item {
     width: 100%;
@@ -74,6 +102,12 @@
     transform: scale(1.02);
     -ms-transform: scale(1.02);
     -webkit-transform: scale(1.02);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .btn-quick-view {
+    display: none;
   }
 }
 
