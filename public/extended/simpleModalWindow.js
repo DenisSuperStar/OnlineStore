@@ -11,7 +11,7 @@ previewCards.forEach((card) => {
   card.addEventListener("click", (e) => {
     const elem = e.target;
     const startPos = elem.src.indexOf("-");
-    const endPos = elem.src.indexOf("jpg") - 1;
+    const endPos = elem.src.lastIndexOf('.');
 
     showModal(elem, startPos, endPos);
 
