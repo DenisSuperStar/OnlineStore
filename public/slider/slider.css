@@ -1,7 +1,82 @@
+.slick-prev,
+.slick-next {
+  width: 27px;
+  height: 44px;
+}
+
+.slick-prev {
+  left: -60px;
+}
+
+.slick-prev::before {
+  content: '\f053';
+  font-family: 'Font Awesome 5 Pro';
+}
+
+.slick-next::before {
+  content: '\f054';
+  font-family: 'Font Awesome 5 Pro';
+}
+
+.slick-next {
+  right: -60px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: #0d6efd;
+}
+
+.slick-dots li button {
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.slick-dots li button:before {
+  content: none;
+}
+
+.slick-dots li.slick-active button {
+  background: #fff;
+  border: none;
+}
+
+.slider-item-body {
+  padding: 16px !important;
+}
+
 @media screen and (max-width: 1199px) {
   .item-group__item {
     display: flex !important;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .multiple-items {
+    margin-top: 168px;
+  }
+
+  .slick-prev {
+    left: -10px;
+  }
+
+  .slick-next {
+    right: -10px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 10;
+  }
+
+  .slick-prev::before {
+    color: #0d6efd;
+  }
+
+  .slick-next::before {
+    color: rgb(255, 193, 7);
   }
 }
 
