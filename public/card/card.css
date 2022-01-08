@@ -8,8 +8,12 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .card-item { width: 100%; }
-  .card-item-price { font-size: 14px; }
+  .card-item {
+    width: 100% !important;
+  }
+  .card-item-price {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -26,10 +30,10 @@
 }
 
 @media screen and (max-width: 575px) {
-  .card-item-detail { padding: 0; }
+  .card-item-detail {
+    padding: 0;
+  }
 }
-
-
 
 .cm-card-item--strict {
   background: linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%);
