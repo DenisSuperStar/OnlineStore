@@ -116,8 +116,35 @@
         <div class="item-group slider-slick">
           <% for(var i=0; i<neckerchief.length;i++) {%>
             <div class="item-group__item">
-              <div class="card" style="width: 18rem">
-                <img src="<%=neckerchief[i].imgPath %>" class="card-img-top" alt="<%=neckerchief[i].name %>" />
+              <div class="card card-item" id="card">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12" id="cardImgPlace">
+                      <div id="cardImgBox">
+                        <img 
+                          src="<%=neckerchief[i].imgPath %>" 
+                          class="card-img-top card-item-img" 
+                          alt="<%=neckerchief[i].name %>" 
+                          id="imgItem" 
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 card-item-detail">
+                      <div class="card-body slider-item-body" id="cardItemBody">
+                        <p class="card-text text-break text-white card-item-price" id="itemPrice">
+                          <%=neckerchief[i].price %>
+                        </p>
+                        <p class="card-text text-break text-white" id="itemSize">
+                          <%=neckerchief[i].size %>
+                        </p>
+                        <p class="card-text text-break text-white" id="itemName">
+                          <%=neckerchief[i].name %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
                 <div class="card-body">
                   <h5 class="card-title"><%=neckerchief[i].name %></h5>
                   <div class="card-text">
