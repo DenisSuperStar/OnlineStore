@@ -3,10 +3,6 @@ const modalWindow = document.getElementById("modalWindow");
 const showImg = document.getElementById("showImg");
 const closeButtons = document.querySelectorAll("#btnClose");
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => (modalWindow.style.display = "none")
-);
 previewCards.forEach((card) => {
   card.addEventListener("click", (e) => {
     const elem = e.target;
