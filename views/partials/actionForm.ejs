@@ -25,6 +25,14 @@
       >
     </div>
   </div>
+  <% if(!confirm) {%>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="showPassword">
+      <label class="form-check-label" for="showPassword">
+        Показать пароль
+      </label>
+    </div>
+  <%} %> 
   <% if(confirm) {%>
   <div class="mb-3 cm-access-form__input-box">
     <input
