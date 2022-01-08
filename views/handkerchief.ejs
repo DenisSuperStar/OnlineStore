@@ -115,7 +115,7 @@
         <div class="container">
             <div class="item-group multiple-items">
                 <% for(var i=0; i<handkerchief.length;i++) {%>
-                    <div class="item-group__item" style="width: 400px;">
+                    <div class="item-group__item">
                         <div class="card card-item" id="card">
                             <div class="container">
                               <div class="row">
@@ -123,14 +123,14 @@
                                   <div id="cardImgBox">
                                     <img 
                                       src="<%=handkerchief[i].imgPath %>" 
-                                      class="img-fluid" 
+                                      class="img-fluid card-item-img" 
                                       alt="<%=handkerchief[i].name %>"
                                       id="imgItem" 
                                     />
                                   </div>
                                 </div>
                                 <div class="col-12 card-item-detail">
-                                  <div class="card-body" id="cardItemBody">
+                                  <div class="card-body slider-item-body" id="cardItemBody">
                                     <p class="card-text text-break text-white card-item-price" id="itemPrice">
                                       <%=handkerchief[i].size %>
                                     </p>
@@ -150,17 +150,17 @@
             </div>
         </div>
     </main>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
-      async
+      defer
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
     ></script>
+    <script defer src="/../../slider/slickSettings.js"></script>
     <script defer src="/../../header/header.js" type="module"></script>
     <script defer src="/../../humburger/humburger.js" type="module"></script>
     <script defer src="/../../cardListInfo/cardListInfo.js" type="module"></script>
     <script defer src="/../../card/card.js" type="module"></script>
-    <script async src="/../../slider/slickSettings.js"></script>
     <script async src="/../extended/openSidebar.js"></script>
     <script async src="/../../extended/transformMenu.js"></script>
 </body>
