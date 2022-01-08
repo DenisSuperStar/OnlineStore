@@ -1,0 +1,28 @@
+.btn-quick-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 150px;
+  margin-left: 115px;
+  border: none;
+  border-radius: 25px;
+  background: transparent;
+  opacity: 0;
+  z-index: 8;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.btn-quick-view:not(.is-appear) {
+  opacity: 0;
+}
+
+.btn-quick-view.is-appear {
+  background: #fff;
+  opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+  .btn-quick-view {
+    display: none;
+  }
+}
