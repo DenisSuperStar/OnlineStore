@@ -1,0 +1,7 @@
+.checkbox {
+  margin: 0 16px;
+}
+
+.checkbox__switch {
+  cursor: pointer;
+}
