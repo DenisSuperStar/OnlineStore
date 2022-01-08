@@ -116,18 +116,32 @@
             <div class="item-group multiple-items">
                 <% for(var i=0; i<handkerchief.length;i++) {%>
                     <div class="item-group__item" style="width: 400px;">
-                        <div class="card" style="width: 18rem">
-                            <img src="<%=handkerchief[i].imgPath %>" class="card-img-top" alt="<%=handkerchief[i].name %>" />
-                            <div class="card-body">
-                              <h5 class="card-title"><%=handkerchief[i].name %></h5>
-                              <div class="card-text">
-                                <%=handkerchief[i].size %>
-                              </div>
-                              <div class="card-text">
-                                <%=handkerchief[i].stuff %>
-                              </div>
-                              <div class="card-text">
-                                <%=handkerchief[i].price %>
+                        <div class="card card-item" id="card">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-12" id="cardImgPlace">
+                                  <div id="cardImgBox">
+                                    <img 
+                                      src="<%=handkerchief[i].imgPath %>" 
+                                      class="img-fluid" 
+                                      alt="<%=handkerchief[i].name %>"
+                                      id="imgItem" 
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-12 card-item-detail">
+                                  <div class="card-body" id="cardItemBody">
+                                    <p class="card-text text-break text-white card-item-price" id="itemPrice">
+                                      <%=handkerchief[i].size %>
+                                    </p>
+                                    <p class="card-text text-break text-white" id="itemSize">
+                                      <%=handkerchief[i].stuff %>
+                                    </p>
+                                    <p class="card-text text-break text-white" id="itemName">
+                                      <%=handkerchief[i].price %>
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -145,6 +159,7 @@
     <script defer src="/../../header/header.js" type="module"></script>
     <script defer src="/../../humburger/humburger.js" type="module"></script>
     <script defer src="/../../cardListInfo/cardListInfo.js" type="module"></script>
+    <script defer src="/../../card/card.js" type="module"></script>
     <script async src="/../../slider/slickSettings.js"></script>
     <script async src="/../extended/openSidebar.js"></script>
     <script async src="/../../extended/transformMenu.js"></script>

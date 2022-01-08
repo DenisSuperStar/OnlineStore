@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/../../sidebar/sidebar.css">
   <link rel="stylesheet" href="/../../cardListInfo/cardListInfo.css">
   <link rel="stylesheet" href="/../../card/card.css">
+  <link rel="stylesheet" href="/../../btnQuickView/quickView.css">
   <link rel="stylesheet" href="/../../textHelper/helper.css">
   <link rel="stylesheet" href="/../../showMore/showMore.css">
   <style>
@@ -232,25 +233,25 @@ cursor: auto;
         <% if(isSomeItem) {%>
           <% for(let j=0; j<someItems.length;j++) {%>
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 card-list-box mb-4" id="cardGrid">
-              <div class="card cm-card-item contains-view-button" id="card">
+              <div class="card card-item contains-view-button" id="card">
                 <button class="btn btn-light btn-quick-view" id="quickView">Быстрый просмотр</button>
-                <div class="container cm-card-item__item-box">
-                  <div class="row cm-card-item__item-grid">
-                    <div class="col-12 cm-card-item__img-place">
-                      <div class="cm-card-item__img-box">
-                        <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
-                          alt="Платочек" id="imgItem">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12" id="cardImgPlace">
+                      <div id="cardImgBox">
+                        <img class="img-fluid card-item-img" src="<%=someItems[j].imgPath %>"
+                          alt="<%=someItems[j].name %>" id="imgItem">
                       </div>
                     </div>
-                    <div class="col-12 cm-card-item__item-content">
-                      <div class="card-body cm-card-item__card-body">
-                        <p class="card-text text-break text-white cm-card-item__item-price" id="itemPrice">
+                    <div class="col-12 card-item-detail">
+                      <div class="card-body" id="cardItemBody">
+                        <p class="card-text text-break text-white card-item-price" id="itemPrice">
                           <%=someItems[j].price %>
                         </p>
-                        <p class="card-text text-break text-white cm-card-item__item-size">
+                        <p class="card-text text-break text-white" id="itemSize">
                           <%=someItems[j].size %>
                         </p>
-                        <h5 class="card-title text-break text-white cm-card-item__item-name" id="itemName">
+                        <h5 class="card-title text-break text-white" id="itemName">
                           <%=someItems[j].name %>
                         </h5>
                       </div>
@@ -305,6 +306,7 @@ cursor: auto;
   <script defer src="/../../fieldSearch/fieldSearch.js" type="module"></script>
   <script defer src="/../../humburger/humburger.js" type="module"></script>
   <script defer src="/../../cardListInfo/cardListInfo.js" type="module"></script>
+  <script defer src="/../../card/card.js" type="module"></script>
   <script async src="/../extended/openSidebar.js"></script>
   <script async src="/../../extended/searchItem.js"></script>
   <script async src="/../../extended/transformMenu.js"></script>
