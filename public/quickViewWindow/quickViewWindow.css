@@ -1,0 +1,117 @@
+.window {
+  height: 1000px;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  min-width: 1000px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 25px;
+}
+
+.window-body {
+  border-radius: 25px;
+  border: none;
+}
+
+.window-header {
+  border: none;
+}
+
+.window-header-content {
+  width: 100%;
+}
+
+.window-wrapper-close {
+  display: flex;
+}
+
+.window-close {
+  width: 26px;
+  height: 26px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.window-close::before {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.window-header-title {
+  font-size: 36px;
+  text-align: center;
+}
+
+.window-header-anchor {
+  text-decoration: none;
+}
+
+.window-image {
+  border-radius: 25px;
+}
+
+.window-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-detail-info {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.price-detail-info::after {
+  content: "\f158";
+  font-family: "Font Awesome 5 Pro";
+}
+
+.prop-detail-info {
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 17px 0;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #dc3545, #ffc107);
+  cursor: auto;
+}
+
+.window-footer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 260px;
+  border: none;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.window-btn-close {
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgb(220, 53, 69), rgb(255, 193, 7));
+}
+
+.hidden-content-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 9;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .window {
+    display: none;
+  }
+}
