@@ -1,0 +1,4 @@
+.item-price::after {
+  content: "\f158";
+  font-family: "Font Awesome 5 Pro";
+}
