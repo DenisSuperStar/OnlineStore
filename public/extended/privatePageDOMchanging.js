@@ -1,4 +1,4 @@
-result();
+/*result();
 
 function result() {
   addClassToJumbotronParent();
@@ -66,4 +66,4 @@ function insertIconInNode(parentSelectorName, ...iconClasses) {
 
   createIcon.classList.add(iconClasses[0], iconClasses[1], iconClasses[2]);
   parent.prepend(createIcon);
-}
+}*/

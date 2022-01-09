@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
     <link rel="stylesheet" href="/../../page/page.css" />
     <link rel="stylesheet" href="/../../animatedBlock/imposition.css" />
-    <link rel="stylesheet" href="/../../adText/adText.css">
+    <link rel="stylesheet" href="/../../showAd/showAd.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   </head>
 
@@ -29,12 +29,10 @@
     <main class="section-content is-private">
       <div class="container">
         <div class="row">
-          <div class="col-5 ad-text">
-            <%-include("partials/adText.ejs", {
-              title: 'Удалить этот товар',
-              text: 'После удаления товара ничего изменить будет нельзя'
-            }) %>
-          </div>
+          <%- include("partials/showAd.ejs", {
+            title: 'Удалить товар',
+            text: 'После удаления товара ничего изменить будет нельзя'
+          }) %>
           <div class="col-7 app-access-form">
             <form
               class="shadow cm-access-form light-beautiful-form"
@@ -135,7 +133,8 @@
         </div>
       </div>
     </main>
-    <script async src="/../../extended/hiddenConsole.js"></script>
+    <!-- <script async src="/../../extended/hiddenConsole.js"></script> -->
     <script async src="/../../extended/privatePageDOMchanging.js"></script>
+    <script type="module" src="/../../showAd/showAd.js"></script>
   </body>
 </html>

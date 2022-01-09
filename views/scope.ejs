@@ -16,18 +16,71 @@
   <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
   <link rel="stylesheet" href="/../../page/page.css" />
   <link rel="stylesheet" href="/../../animatedBlock/imposition.css">
-  <link rel="stylesheet" href="/../../adText/adText.css">
+  <link rel="stylesheet" href="/../../showAd/showAd.css">
   <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   <link rel="stylesheet" href="/../../textHelper/helper.css">
   <link rel="stylesheet" href="/../../banner/banner.css">
   <link rel="stylesheet" href="/../../card/card.css">
+  <style>
+    .admin-section {
+      background: linear-gradient(-52deg, #0d6efd 20%, #f8f9fa 40%);
+      padding: 25px 0;
+    }
+
+    .card-item {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      background: linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%);
+      border: none;
+      border-radius: 25px;
+    }
+
+    .card-item-header {
+      width: 50%;
+      border-radius: 0 !important;
+      border-top-left-radius: 25px !important;
+      border-bottom-left-radius: 25px !important;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .card-img {
+      border-radius: 25px;
+    }
+
+    .card-item-body {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .item-price {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .item-price::after {
+      content: '\f158';
+      font-family: 'Font Awesome 5 Pro';
+    }
+
+    .item-name {
+      font-size: 14px;
+    }
+
+    .btn-remove-item {
+      transition: all .5s;
+    }
+  </style>
 </head>
 
-  <body class="document-body is-private-theme">
-    <main class="section-content is-private">
+  <body>
+    <main class="admin-section">
       <div class="container">
         <div class="row cm-page-body__banner-box">
-          <div class="alert alert-primary text-white p-md-5 mb-4 cm-banner">
+          <div class="alert alert-primary text-white p-md-5 mb-4 cm-banner" style="border-radius: 25px;">
             <div class="col-8 cm-banner__banner-content">
               <h1 class="text-break cm-banner__title">Управление товарами</h1>
               <p class="lead my-3 text-break cm-banner__text">
@@ -42,34 +95,35 @@
         <div class="row">
           <% if(isSomeItem) {%>
             <% for(let j=0; j<someItems.length;j++) {%>
-              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 cm-page-body__card-box cm-page-body__card-box--private">
-                <div class="card cm-card-item cm-card-item--strict сm-card-item--most-wide mb-4">
-                  <div class="container cm-card-item__item-box">
-                    <div class="row cm-card-item__item-grid">
-                      <div class="col-7 cm-card-item__img-place">
-                        <div class="pt-3 pb-3 cm-card-item__img-box">
-                          <img class="card-img-top cm-card-item__item-img" src="<%=someItems[j].imgPath %>"
-                            alt="Платочек">
-                        </div>
-                      </div>
-                      <div class="col-5 cm-card-item__item-data">
-                        <div class="card-body cm-card-item__card-body">
-                          <p class="card-text text-break text-dark cm-card-item__item-price">
-                            <%=someItems[j].price %>
-                          </p>
-                          <p class="card-text text-break text-secondary cm-card-item__item-size">
-                            <%=someItems[j].size %>
-                          </p>
-                          <h5 class="card-title text-break text-secondary cm-card-item__item-name">
-                            <%=someItems[j].name %>
-                          </h5>
-                          <a href="/item/delete/<%=someItems[j]._id %>"
-                            class="btn btn-outline-danger text-break cm-card-item__description-link">
-                            Удалить
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 mb-4" id="cardGrid">
+                <div class="card" id="cardItem">
+                  <div class="pt-3 pb-3 card-header" id="cardHeader">
+                    <img 
+                      class="img-fluid" 
+                      src="<%=someItems[j].imgPath %>" 
+                      alt="<%=someItems[j].name %>"
+                      id="cardImg"
+                    >
+                  </div>
+                  <div class="card-body card-item-body">
+                    <p class="card-text text-break text-dark item-price">
+                      <%=someItems[j].price %>
+                    </p>
+                    <p class="card-text text-break text-dark item-size">
+                      <%=someItems[j].size %>
+                    </p>
+                    <p class="card-text text-break text-dark item-name">
+                      <%=someItems[j].name %>
+                    </p>
+                    <p class="card-text text-break text-dark item-stuff">
+                      <%=someItems[j].stuff %>
+                    </p>
+                    <a 
+                      href="/item/delete/<%=someItems[j]._id %>" 
+                      class="btn btn-outline-danger text-break btn-remove-item"
+                    >
+                      Удалить
+                    </a>
                   </div>
                 </div>
               </div>
@@ -83,16 +137,12 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-5">
-            <div class="cm-page-body__jumbotron-box">
-              <%- include('partials/adText.ejs', {
-                title: "Загрузить товар",
-                text: "Начните добавлять товары прямо сейчас!"
-              }) %>
-            </div>
-          </div>
+          <%- include('partials/showAd.ejs', {
+            title: "Загрузить товар",
+            text: "Начните добавлять товары прямо сейчас!"
+          }) %>
           <div class="col-7 app-access-form cm-page-body__access-form-box--private private-wrapper">
-            <form class="shadow cm-access-form cm-access-form--strict" method="post">
+            <form class="shadow cm-access-form cm-access-form--strict" method="post" style="border: none;">
               <div class="mb-3 cm-access-form__input-box">
                 <div class="form-floating">
                   <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="itemName"
@@ -141,10 +191,66 @@
         </div>
       </div>
     </main>
-    <script async src="/../../extended/hiddenConsole.js"></script>
+    <!-- <script async src="/../../extended/hiddenConsole.js"></script> -->
+    <script defer type="module" src="/../../showAd/showAd.js"></script>
     <script async src="/../../extended/privatePageDOMchanging.js"></script>
     <script async src="/../../extended/clearTextarea.js"></script>
     <script async src="/../../extended/resizeTextarea.js"></script>
+    <script type="module">
+      import { styleModule } from "https://unpkg.com/style-module?module";
+
+      const cardStyles = styleModule({
+        cardItem: {
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          background: 'linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%)',
+          border: 'none',
+          borderRadius: '25px'
+        },
+        cardHeader: {
+          width: '50%',
+          borderTopLeftRadius: '25px',
+          borderBottomLeftRadius: '25px',
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0
+        },
+        cardImg: {
+          borderRadius: '25px'
+        },
+        itemBody: {
+          width: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        },
+        itemPrice: {
+          fontWeight: 600,
+          fontSize: '18px'
+        },
+        itemName: {
+          fontSize: '14px'
+        },
+        btnRemove: {
+          transition: 'all .5s'
+        }
+      });
+      
+      const { cardItem, cardHeader, cardImg, itemBody, itemPrice, itemName, btnRemove } = cardStyles;
+
+      const cards = document.querySelectorAll('#cardItem');
+
+      cards.forEach(card => {
+        const cardHead = card.querySelector('#cardHeader');
+        const cardImage = card.querySelector('#cardImg');
+        const cardBody = card.querySelector('#cardBody');
+
+        card.classList.add(cardItem);
+        cardHead.classList.add(cardHeader);
+        cardImage.classList.add(cardImg);
+        cardBody.classList.add(itemBody);
+      });
+    </script>
   </body>
 
   </html>

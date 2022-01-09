@@ -34,24 +34,3 @@
     padding: 0;
   }
 }
-
-.cm-card-item--strict {
-  background: linear-gradient(45deg, #6c757d 20%, #f8f9fa 40%);
-}
-.сm-card-item--most-wide {
-  width: 100%;
-}
-
-@media screen and (min-width: 992px) {
-  .cm-card-item__description-link {
-    transition: all 0.5s;
-  }
-}
-
-.cm-card-item__description-link {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 18px;
-}
