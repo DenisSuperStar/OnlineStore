@@ -50,14 +50,6 @@ quickViews.forEach((btn) => {
   btn.addEventListener("mouseover", function () {
     this.classList.add("is-appear");
   });
-  btn.addEventListener('click', function() {
-    const cardItem = this.parentElement;
-    const windowY = window.event.clientY;
-    const modalNode = cardItem.nextSibling;
-    const modal = modalNode.nextSibling;
-    
-    modal.style.top = windowY + 'px';
-  });
 });
 
 modalWindows.forEach((modal) => {
