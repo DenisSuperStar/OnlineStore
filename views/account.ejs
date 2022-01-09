@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/../../documentBody/documentBody.css">
     <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
     <link rel="stylesheet" href="/../../gridTemplate/templateApp.css">
-    <link rel="stylesheet" href="/../../adText/adText.css">
+    <link rel="stylesheet" href="/../../showAd/showAd.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
     <link rel="stylesheet" href="/../../banner/banner.css" />
     <link rel="stylesheet" href="/../../card/card.css" />
@@ -29,22 +29,12 @@
     <main class="section-content">
       <div class="container template-app">
         <div class="row template-app__cols">
-          <div class="
-            col-xxl-6
-            col-xl-6
-            col-lg-6
-            col-md-6
-            col-sm-12
-            ad-text
-            is-custom
-          ">
-            <%- include("partials/adText.ejs", {
-              title: "Платки",
-              text: "Большой выбор женских платков по специальным ценам"
-            }) %>
-          </div>
+          <%- include("partials/showAd.ejs", {
+            title: "Платки",
+            text: "Большой выбор женских платков по специальным ценам"
+          }) %>
           <div
-            class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 app-access-form"
+            class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 app-access-form"
           >
             <form method="post" class="shadow cm-access-form">
               <div class="mb-3 cm-access-form__input-box">
@@ -118,7 +108,7 @@
               >
                 <input
                   type="submit"
-                  class="btn btn-dark text-break cm-access-form__submit-btn"
+                  class="btn btn-primary text-break cm-access-form__submit-btn"
                   value="Создать новый аккаунт"
                 />
               </div>
@@ -127,6 +117,7 @@
         </div>
       </div>
     </main>
-    <!-- <script async src="/../../extended/hiddenConsole.js"></script> -->
+    <script async src="/../../extended/hiddenConsole.js"></script>
+    <script defer src="/../../showAd/showAd.js" type="module"></script>
   </body>
 </html>

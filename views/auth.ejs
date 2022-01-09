@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/../../documentBody/documentBody.css">
     <link rel="stylesheet" href="/../../sectionMain/sectionContent.css">
     <link rel="stylesheet" href="/../../gridTemplate/templateApp.css">
-    <link rel="stylesheet" href="/../../adText/adText.css">
+    <link rel="stylesheet" href="/../../showAd/showAd.css">
     <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
     <link rel="stylesheet" href="/../../checkbox/checkbox.css">
   </head>
@@ -29,21 +29,18 @@
     <main class="section-content">
       <div class="container template-app is-skewed">
         <div class="row template__cols">
-          <div class="col-5 ad-text is-custom">
-            <%- include("partials/adText.ejs", {
-              title: "Платки",
-              text: "Большой выбор женских платков по специальным ценам"
-            }) %>
-          </div>
-          <div class="col-7 app-access-form">
-            <%- include("partials/actionForm.ejs", {
-              confirm: false
-            }) %>
-          </div>
+          <%- include("partials/showAd.ejs", {
+            title: "Платки",
+            text: "Большой выбор женских платков по специальным ценам"
+          }) %>
+          <%- include("partials/actionForm.ejs", {
+            confirm: false
+          }) %>
         </div>
       </div>
     </main>
     <script async src="/../../extended/hiddenConsole.js"></script>
     <script async src="/../../extended/showPassword.js"></script>
+    <script defer src="/../../showAd/showAd.js" type="module"></script>
   </body>
 </html>
