@@ -96,6 +96,12 @@
 }
 
 @media screen and (max-width: 991px) {
+  .app-access-form {
+    padding: 0 16px !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
   .cm-access-form {
     width: 100% !important;
   }
@@ -117,3 +123,5 @@
     box-shadow: none !important;
   }
 }
+
+
