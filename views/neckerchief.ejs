@@ -113,7 +113,7 @@
     </header>
     <main class="card-list" id="cardListInfo">
       <div class="container">
-        <div class="item-group slider-slick">
+        <div class="item-group multiple-items">
           <% for(var i=0; i<neckerchief.length;i++) {%>
             <div class="item-group__item">
               <div class="card card-item" id="card">
@@ -144,35 +144,23 @@
                     </div>
                   </div>
                 </div>
-  
-                <div class="card-body">
-                  <h5 class="card-title"><%=neckerchief[i].name %></h5>
-                  <div class="card-text">
-                    <%=neckerchief[i].size %>
-                  </div>
-                  <div class="card-text">
-                    <%=neckerchief[i].stuff %>
-                  </div>
-                  <div class="card-text">
-                    <%=neckerchief[i].price %>
-                  </div>
-                </div>
               </div>
             </div>
         <%} %>
         </div>
       </div>
     </main>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
-      async
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
     ></script>
+    <script defer src="/../../slider/slickSettings.js"></script>
+    <script async src="/../../extended/hiddenConsole.js"></script>
     <script defer src="/../../header/header.js" type="module"></script>
     <script defer src="/../../humburger/humburger.js" type="module"></script>
     <script defer src="/../../cardListInfo/cardListInfo.js" type="module"></script>
-    <script async src="/../../slider/slickSettings.js"></script>
+    <script defer src="/../../card/card.js" type="module"></script>
     <script async src="/../extended/openSidebar.js"></script>
     <script async src="/../../extended/transformMenu.js"></script>
   </body>
