@@ -1,94 +1,87 @@
-<form method="post" class="shadow cm-access-form">
-  <div class="mb-3 cm-access-form__input-box">
-    <div class="form-floating">
-      <input
-        type="text"
-        class="form-control text-break cm-access-form__input-text"
-        id="nickName"
-        name="nickName"
-        autocomplete="off"
-      />
-      <label class="text-break" for="nickName">Ваше имя на сайте</label>
+<div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 app-access-form">
+  <form method="post" class="shadow cm-access-form">
+    <div class="mb-3 cm-access-form__input-box">
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control text-break cm-access-form__input-text"
+          id="nickName"
+          name="nickName"
+          autocomplete="off"
+        />
+        <label class="text-break" for="nickName">Ваше имя на сайте</label>
+      </div>
     </div>
-  </div>
-  <div class="mb-3 cm-access-form__input-box">
-    <div class="form-floating">
-      <input
-        type="password"
-        class="form-control text-break cm-access-form__input-text"
-        id="password"
-        name="password"
-        autocomplete="off"
-      />
-      <label class="text-break" for="password"
-        >Введите пароль пользователя</label
-      >
+    <div class="mb-3 cm-access-form__input-box">
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control text-break cm-access-form__input-text"
+          id="password"
+          name="password"
+          autocomplete="off"
+        />
+        <label class="text-break" for="password"
+          >Введите пароль пользователя</label
+        >
+      </div>
     </div>
-  </div>
-  <% if(!confirm) {%>
+    <% if(!confirm) {%>
     <div class="form-check checkbox">
-      <input class="form-check-input checkbox__switch" type="checkbox" id="showPassword">
+      <input
+        class="form-check-input checkbox__switch"
+        type="checkbox"
+        id="showPassword"
+      />
       <label class="form-check-label text-white" for="showPassword">
         Показать пароль
       </label>
     </div>
-  <%} %> 
-  <% if(confirm) {%>
-  <div class="mb-3 cm-access-form__input-box">
-    <input
-      type="text"
-      class="
-        form-control-plaintext
-        text-break text-muted
-        cm-access-form__plain-text
-      "
-      name="confirmCode"
-      value="<%=confirmCode %>"
-    />
-  </div>
-  <div class="mb-3 cm-access-form__input-box">
-    <div class="form-floating">
+    <%} %> <% if(confirm) {%>
+    <div class="mb-3 cm-access-form__input-box">
       <input
         type="text"
-        class="form-control text-break cm-access-form__input-text"
-        id="repeatConfirmCode"
-        name="repeatConfirmCode"
-        autocomplete="off"
+        class="form-control-plaintext text-break text-muted cm-access-form__plain-text"
+        name="confirmCode"
+        value="<%=confirmCode %>"
       />
-      <label class="text-break" for="repeatConfirmCode"
-        >Введите вышеуказанный код для подтверждения</label
-      >
     </div>
-  </div>
-  <%} %>
-  <div class="cm-access-form__underline"></div>
-  <% if(confirm) {%>
-  <div
-    class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered"
-  >
-    <input
-      type="submit"
-      class="
-        btn btn-primary
-        text-break
-        cm-access-form__submit-btn cm-access-form__submit-btn--full-size
-      "
-      value="Я принимаю и хочу продолжить"
-    />
-  </div>
-  <% }else {%>
-  <div
-    class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered"
-  >
-    <input
-      type="submit"
-      class="
-        btn btn-primary
-        text-break
-        cm-access-form__submit-btn cm-access-form__submit-btn--full-size
-      "
-      value="Подтвердить"
-    />
-  </div>
-  <%} %>
-</form>
+    <div class="mb-3 cm-access-form__input-box">
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control text-break cm-access-form__input-text"
+          id="repeatConfirmCode"
+          name="repeatConfirmCode"
+          autocomplete="off"
+        />
+        <label class="text-break" for="repeatConfirmCode"
+          >Введите вышеуказанный код для подтверждения</label
+        >
+      </div>
+    </div>
+    <%} %>
+    <div class="cm-access-form__underline"></div>
+    <% if(confirm) {%>
+    <div
+      class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered"
+    >
+      <input
+        type="submit"
+        class="btn btn-primary text-break cm-access-form__submit-btn cm-access-form__submit-btn--full-size"
+        value="Я принимаю и хочу продолжить"
+      />
+    </div>
+    <% }else {%>
+    <div
+      class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered"
+    >
+      <input
+        type="submit"
+        class="btn btn-primary text-break cm-access-form__submit-btn cm-access-form__submit-btn--full-size"
+        value="Подтвердить"
+      />
+    </div>
+    <%} %>
+  </form>
+</div>
