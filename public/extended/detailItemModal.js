@@ -4,16 +4,6 @@ const images = Array.from(document.querySelectorAll("#hugeImage"));
 const quickViews = Array.from(document.querySelectorAll("#quickView"));
 const modalBackground = document.getElementById("modalBackground");
 
-document.addEventListener("DOMContentLoaded", () => {
-  products.forEach((card) => {
-    let modalNode = card.nextSibling;
-    let modal = modalNode.nextSibling;
-
-    modal.style.display = "none";
-    modalBackground.style.display = "none";
-  });
-});
-
 images.forEach((image) => {
   const startPos = image.src.indexOf("-");
   const endPos = image.src.lastIndexOf(".");
