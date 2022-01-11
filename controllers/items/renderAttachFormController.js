@@ -11,7 +11,6 @@ import { getParsedEnv } from "../../config/envConfig";
 const __dirname = path.resolve();
 const itemFilePath = path.join(__dirname, "/service/items.json");
 const {
-  ADMIN_LOCATION,
   CUSTOMER_LOCATION,
   SYSTEM_DEFINE_LOCATION,
   CURRENT_LOCATION,
@@ -26,7 +25,6 @@ export const renderAttach = async (req, res) => {
   const { city } = location;
 
   if (
-    city == ADMIN_LOCATION ||
     city == CUSTOMER_LOCATION ||
     city == SYSTEM_DEFINE_LOCATION ||
     city == CURRENT_LOCATION

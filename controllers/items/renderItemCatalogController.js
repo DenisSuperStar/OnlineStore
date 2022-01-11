@@ -24,7 +24,6 @@ export const renderCatalog = async (req, res) => {
   const { city } = location;
 
   const isPrivateAccess =
-    city == ADMIN_LOCATION ||
     city == CUSTOMER_LOCATION ||
     city == SYSTEM_DEFINE_LOCATION ||
     city == CURRENT_LOCATION

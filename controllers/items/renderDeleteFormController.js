@@ -26,7 +26,6 @@ export const renderDelete = async (req, res) => {
   const { city } = location;
 
   if (
-    city == ADMIN_LOCATION ||
     city == CUSTOMER_LOCATION ||
     city == SYSTEM_DEFINE_LOCATION ||
     city == CURRENT_LOCATION
