@@ -1,6 +1,7 @@
 const panelButton = document.getElementById("panelBtn");
 const showPanel = document.getElementById("showPanel");
 const resetButton = showPanel.querySelector("#resetBtn");
+const setScroll = document.getElementById("setScrolling");
 
 panelButton.addEventListener("click", () => {
   if (showPanel.classList.contains("reverse")) {
@@ -14,4 +15,12 @@ resetButton.addEventListener("click", () => {
     showPanel.classList.remove("offset");
     showPanel.classList.add("reverse");
   }
+});
+
+setScroll.addEventListener("mouseover", function () {
+  this.classList.add("is-scrolling");
+});
+
+setScroll.addEventListener("mouseout", function () {
+  this.classList.remove("is-scrolling");
 });
