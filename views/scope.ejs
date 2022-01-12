@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="/../../accessForm/accessForm.css" />
   <link rel="stylesheet" href="/../../textHelper/helper.css">
   <link rel="stylesheet" href="/../../panelPrompt/panelPrompt.css">
-  <!-- <link rel="stylesheet" href="/../../card/card.css"> -->
   <link rel="stylesheet" href="/../../cardItemDetail/cardItemDetail.css">
+  <link rel="stylesheet" href="/../../tooltipBlock/tooltipBlock.css">
+  <link rel="stylesheet" href="/../../uploadForm/uploadForm.css">
 </head>
 
   <body class="admin-page">
@@ -107,57 +108,8 @@
       </div>
       <div class="container">
         <div class="row">
-          <%- include('partials/showAd.ejs', {
-            title: "Загрузить товар",
-            text: "Начните добавлять товары прямо сейчас!"
-          }) %>
-          <div class="col-7 app-access-form cm-page-body__access-form-box--private private-wrapper">
-            <form class="shadow cm-access-form cm-access-form--strict" method="post" style="border: none;">
-              <div class="mb-3 cm-access-form__input-box">
-                <div class="form-floating">
-                  <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="fieldItemName"
-                    name="itemName">
-                </textarea>
-                  <label class="text-break" for="itemName">Введите название товара</label>
-                </div>
-              </div>
-              <div class="mb-3 cm-access-form__input-box">
-                <div class="form-floating">
-                  <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="fieldSize"
-                    name="size">
-                </textarea>
-                  <label class="text-break" for="size">Укажите размер</label>
-                </div>
-              </div>
-              <div class="mb-3 cm-access-form__input-box">
-                <div class="form-floating">
-                  <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="fieldStuff"
-                    name="stuff">
-                </textarea>
-                  <label class="text-break" for="stuff">Укажите материал</label>
-                </div>
-              </div>
-              <div class="mb-3 cm-access-form__input-box">
-                <div class="form-floating">
-                  <textarea class="form-control text-break text-secondary cm-access-form__input-text" id="fieldPrice"
-                    name="price">
-                </textarea>
-                  <label class="text-break" for="price">Укажите цену</label>
-                </div>
-              </div>
-              <div class="mb-3 cm-access-form__input-box cm-access-form__input-box--centered">
-                <input type="submit" class="
-                  btn
-                  btn-light
-                  text-break
-                  text-white
-                  cm-access-form__submit-btn
-                  cm-access-form__submit-btn--full-size
-                  cm-access-form__submit-btn--colored
-                " value="Добавить">
-              </div>
-            </form>
-          </div>
+          <%- include("partials/tooltipBlock.ejs") %>
+          <%- include("partials/uploadForm.ejs") %>
         </div>
       </div>
     </main>
