@@ -10,6 +10,8 @@ Install Nodejs on your pc
 Calling your system manager windows
 Input cmd comand
 Find target catalog with your node js app
-Console input next comand "npm run start"
+Console input next comands
+1) npm i 
+2) npm run start
 Open this app with your browser, usually usage Google Chrome browser
 Engoy working!
