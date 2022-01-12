@@ -1,0 +1,30 @@
+.tooltip-block {
+  width: 400px;
+  height: 200px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(-45deg, #6c757d 20%, #f8f9fa 40%);
+}
+
+.tooltip-block-title {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 23px;
+}
+
+.tooltip-block-text {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tooltip-block-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip-block-upload::before {
+  font-size: 23px;
+  color: #6c757d;
+}
