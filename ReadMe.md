@@ -5,7 +5,7 @@
 2.3) Сверстать блок с текстом и вернуть его анимацию
 4) Оставшиеся товары
 
-Dowmload Node js width official site, It's search with google
+Dowmload Node js width official site, It's search with google: https://nodejs.org/en/
 Install Nodejs on your pc
 Calling your system manager windows
 Input cmd comand
