@@ -25,9 +25,32 @@
   font-size: 23px;
 }
 
-.panel-text {
-  font-size: 20px;
-  padding: 10px;
+.panel-body {
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+.panel-body.is-scrolling {
+  overflow-y: auto;
+}
+
+.panel-tooltip {
+  background: transparent;
+  border: none;
+}
+
+.panel-item {
+  border: none;
+  background: transparent;
+}
+
+.panel-jump-link {
+  text-decoration: none;
+}
+
+.panel-btn-jump {
+  width: 50%;
+  transition: all .5s; 
 }
 
 .reset-btn {
