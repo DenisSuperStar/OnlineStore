@@ -18,7 +18,7 @@ import { storage } from "./functions/storageConfig";
 
 const __dirname = path.resolve();
 const multerConfig = multer({ storage }).single("attachFile");
-const { APP_PORT, SECRET_COOKIE_KEY } = getParsedEnv();
+const { PORT, SECRET_COOKIE_KEY } = getParsedEnv();
 
 const app = express();
 
@@ -46,4 +46,4 @@ app.use((req, res, next) => {
   next();
 });
 
-start(app, APP_PORT);
+start(app, PORT);
